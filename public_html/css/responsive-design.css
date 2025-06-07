@@ -167,7 +167,6 @@ display: block;
   .featured-container {
     height: auto;
     min-height: calc(100vh - 80px);
-    padding: 80px 1rem 2rem;
   }
 
   .featured-grid {
