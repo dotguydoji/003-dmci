@@ -100,13 +100,17 @@ if (slides.length > 0) {
     createIndicators();
     updateCarousel();
 
-    nextButton.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+    }
 
-    prevButton.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+    }
 }
 
 // Newsletter subscribe button (basic validation)
@@ -123,15 +127,6 @@ if (newsletterBtn && newsletterInput) {
         }
     });
 }
-
-// Optional: Mobile nav toggle (if you add a hamburger menu)
-// const navToggle = document.querySelector('.nav-toggle');
-// const navLinks = document.querySelector('.nav-links');
-// if (navToggle && navLinks) {
-//     navToggle.addEventListener('click', () => {
-//         navLinks.classList.toggle('active');
-//     });
-// }
 
 // Parallax effect for .hero section
 window.addEventListener('scroll', () => {
@@ -157,6 +152,9 @@ function isCarouselSectionInView() {
 
 // Keyboard navigation for carousel
 document.addEventListener('keydown', (e) => {
+    // Only allow keyboard navigation on desktop
+    if (window.innerWidth <= 768) return;
+
     if (!isCarouselSectionInView()) return;
 
     if (e.key === 'ArrowLeft') {
@@ -167,9 +165,6 @@ document.addEventListener('keydown', (e) => {
         showSlide(currentSlide + 1);
     }
 });
-
-
-// Add this to your main.js file (uncomment and update the existing mobile nav section)
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
@@ -196,33 +191,61 @@ if (navToggle && navLinks) {
             navToggle.classList.remove('active');
         }
     });
-}// Add this to your main.js file - Touch navigation for mobile carousel
+}
 
-// Touch/Swipe functionality for mobile
+// Touch/Swipe functionality for mobile - FIXED VERSION
 let startX = 0;
+let startY = 0;
 let endX = 0;
+let endY = 0;
 let isDragging = false;
+let isHorizontalSwipe = false;
 
 function handleTouchStart(e) {
     if (window.innerWidth <= 768) {
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
         isDragging = true;
+        isHorizontalSwipe = false;
     }
 }
 
 function handleTouchMove(e) {
     if (!isDragging || window.innerWidth > 768) return;
-    e.preventDefault(); // Prevent scrolling
+
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const deltaX = Math.abs(currentX - startX);
+    const deltaY = Math.abs(currentY - startY);
+
+    // Determine if this is a horizontal or vertical gesture
+    if (deltaX > 10 || deltaY > 10) {
+        if (deltaX > deltaY) {
+            // Horizontal swipe - prevent default to enable carousel navigation
+            isHorizontalSwipe = true;
+            e.preventDefault();
+        } else {
+            // Vertical swipe - allow default scrolling behavior
+            isHorizontalSwipe = false;
+        }
+    }
 }
 
 function handleTouchEnd(e) {
-    if (!isDragging || window.innerWidth > 768) return;
+    if (!isDragging || window.innerWidth > 768 || !isHorizontalSwipe) {
+        isDragging = false;
+        return;
+    }
 
     endX = e.changedTouches[0].clientX;
-    const swipeThreshold = 50; // Minimum swipe distance
-    const swipeDistance = startX - endX;
+    endY = e.changedTouches[0].clientY;
 
-    if (Math.abs(swipeDistance) > swipeThreshold) {
+    const swipeThreshold = 50;
+    const swipeDistance = startX - endX;
+    const verticalDistance = Math.abs(startY - endY);
+
+    // Only trigger carousel if it's primarily a horizontal swipe
+    if (Math.abs(swipeDistance) > swipeThreshold && verticalDistance < 100) {
         if (swipeDistance > 0) {
             // Swipe left - next slide
             showSlide(currentSlide + 1);
@@ -233,28 +256,13 @@ function handleTouchEnd(e) {
     }
 
     isDragging = false;
+    isHorizontalSwipe = false;
 }
 
 // Add touch event listeners to carousel
 const carouselTrack = document.querySelector('.carousel-track');
 if (carouselTrack) {
-    carouselTrack.addEventListener('touchstart', handleTouchStart, { passive: false });
+    carouselTrack.addEventListener('touchstart', handleTouchStart, { passive: true });
     carouselTrack.addEventListener('touchmove', handleTouchMove, { passive: false });
-    carouselTrack.addEventListener('touchend', handleTouchEnd, { passive: false });
+    carouselTrack.addEventListener('touchend', handleTouchEnd, { passive: true });
 }
-
-// Update the existing keyboard navigation to work only on desktop
-document.addEventListener('keydown', (e) => {
-    // Only allow keyboard navigation on desktop
-    if (window.innerWidth <= 768) return;
-
-    if (!isCarouselSectionInView()) return;
-
-    if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        showSlide(currentSlide - 1);
-    } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        showSlide(currentSlide + 1);
-    }
-});
