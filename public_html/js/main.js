@@ -266,3 +266,5 @@ if (carouselTrack) {
     carouselTrack.addEventListener('touchmove', handleTouchMove, { passive: false });
     carouselTrack.addEventListener('touchend', handleTouchEnd, { passive: true });
 }
+
+
