@@ -1,171 +1,56 @@
-/* Add this to your responsive-design.css file, replacing the existing hero responsive section */
-
 /* ═══════════════════════════════════════════════════════════════════════════════════
-   🏠 HERO SECTION RESPONSIVE
+   📱 RESPONSIVE DESIGN STYLESHEET
+   Organized by screen sizes from largest to smallest for better maintainability
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll; /* Better performance on mobile */
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 0;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        height: 100vh;
-        justify-content: center;
-    }
-
-    .hero-text {
-        order: 1;
-        max-width: none;
-    }
-
-    .hero-image {
-        display: none; /* Hide the image column on mobile */
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-        letter-spacing: 1px;
-    }
-
-    .hero-title {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
-    }
-
-    .hero-description {
-        font-size: 1.2rem;
-        margin-bottom: 2.5rem;
-        line-height: 1.6;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-btn {
-        padding: 12px 28px;
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
-    }
-
-    .scroll-indicator {
-        bottom: 1.5rem;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 1.5rem 1rem;
-    }
-
-    .hero-title {
-        font-size: 2.8rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        max-width: 95%;
-    }
-
-    .hero-btn {
-        padding: 10px 24px;
-        font-size: 0.85rem;
-    }
-
-    .scroll-indicator {
-        bottom: 1rem;
-        font-size: 1.2rem;
-    }
-}
-
-
-
-
-/* Mobile Navigation Styles */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-
-    .search-icon {
-        display: none; /* Hide search icon on mobile */
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: rgba(44, 62, 80, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 3rem;
-        gap: 2rem;
-        transition: left 0.3s ease;
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 1rem;
-        font-size: 1.2rem;
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-links a:hover {
-        background: rgba(255, 107, 53, 0.1);
-    }
-
-    /* Hamburger Animation */
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════════════
-   🏗️ FEATURED PROJECTS RESPONSIVE
+   💻 LARGE SCREENS & TABLETS (1024px and below)
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
+    /* Featured Projects */
     .featured-grid {
         grid-template-columns: 1fr 1fr;
         height: auto;
         min-height: calc(100vh - 80px);
     }
+
+    /* Services Section */
+    .services-grid {
+        gap: 1.2rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .services-header h2 {
+        font-size: 2.4rem;
+    }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   📱 TABLETS & SMALL LAPTOPS (768px and below)
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
+    /* Header & Navigation */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    /* Featured Projects */
     .featured-container {
         padding-top: 80px;
     }
@@ -179,111 +64,8 @@
     .project-card {
         min-height: 300px;
     }
-}
 
-@media (max-width: 480px) {
-    .featured-main {
-        padding: 2rem 1.5rem;
-    }
-    
-    .project-card {
-        padding: 1.5rem;
-        min-height: 250px;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   🎠 CAROUSEL SECTION RESPONSIVE
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
-/* Base Carousel Styles */
-.carousel-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-.carousel-container {
-    width: 100%;
-    height: calc(100vh - 80px);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-}
-
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-track {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    background: #f8f9fa;
-}
-
-.slide-image {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.slide-content {
-    padding: 4rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    z-index: 10;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.indicator.active {
-    background: #ff6b35;
-}
-
-/* Carousel Mobile Responsive */
-@media (max-width: 768px) {
+    /* Carousel Section */
     .carousel-slide {
         grid-template-columns: 1fr;
         grid-template-rows: 60% 40%;
@@ -321,37 +103,8 @@
     .carousel-indicators {
         bottom: 1rem;
     }
-}
 
-@media (max-width: 480px) {
-    .slide-content {
-        padding: 1.5rem 1rem;
-    }
-    
-    .slide-content h3 {
-        font-size: 1.8rem;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   🛠️ SERVICES SECTION RESPONSIVE
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 1024px) {
-    .services-grid {
-        gap: 1.2rem;
-    }
-    
-    .service-card {
-        padding: 1.5rem 1.2rem;
-    }
-    
-    .services-header h2 {
-        font-size: 2.4rem;
-    }
-}
-
-@media (max-width: 768px) {
+    /* Services Section */
     .services-section {
         padding: 80px 0.8rem 0;
     }
@@ -397,31 +150,8 @@
     .services-cta p {
         font-size: 0.9rem;
     }
-}
 
-@media (max-width: 480px) {
-    .services-section {
-        padding: 80px 0.5rem 0;
-    }
-    
-    .services-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .service-card {
-        padding: 1.2rem 1rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1.1rem;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   📧 FOOTER SECTION RESPONSIVE
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
+    /* Footer Section */
     .footer-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -455,3 +185,4 @@
         text-align: center;
     }
 }
+
