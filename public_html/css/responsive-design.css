@@ -1,9 +1,27 @@
-/* Responsive Design */
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   📱 BASE RESPONSIVE STYLES
+   Global responsive adjustments and universal mobile-first design principles
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* Global responsive adjustments are handled in main sections below */
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🧭 HEADER & NAVIGATION RESPONSIVE
+   Mobile navigation, hamburger menu, and header adjustments for all screen sizes
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
+}
 
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🏠 HERO SECTION RESPONSIVE
+   Hero content layout, typography, and image adjustments for mobile and tablet
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -13,26 +31,13 @@
     .hero-title {
         font-size: 2.5rem;
     }
-
-
-    .carousel-slide {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-    }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🏗️ FEATURED PROJECTS RESPONSIVE
+   Project grid layout adjustments and card scaling for different screen sizes
+   ═══════════════════════════════════════════════════════════════════════════════════ */
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
     .featured-grid {
         grid-template-columns: 1fr 1fr;
@@ -53,13 +58,13 @@
     }
     
     .project-card {
-        min-height: 300px; /* Ensure cards have minimum height on mobile */
+        min-height: 300px;
     }
 }
 
 @media (max-width: 480px) {
     .featured-main {
-        padding: 2rem 1.5rem; /* Reduce padding on small screens */
+        padding: 2rem 1.5rem;
     }
     
     .project-card {
@@ -67,7 +72,11 @@
         min-height: 250px;
     }
 }
-/* Replace the carousel section styles with these: */
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🎠 CAROUSEL SECTION RESPONSIVE
+   Carousel layout, slide content, and navigation adjustments for mobile devices
+   ═══════════════════════════════════════════════════════════════════════════════════ */
 
 .carousel-section {
     height: 100vh;
@@ -154,7 +163,6 @@
     background: #ff6b35;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .carousel-slide {
         grid-template-columns: 1fr;
@@ -167,31 +175,9 @@
     
     .slide-content h3 {
         font-size: 2rem;
-    }
-    
-    .carousel-indicators {
-        bottom: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .slide-content {
-        padding: 1.5rem 1rem;
-    }
-    
-    .slide-content h3 {
-        font-size: 1.8rem;
-    }
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .slide-content h3 {
         top: 2rem;
         left: 2rem;
         right: 2rem;
-        font-size: 2rem;
     }
     
     .slide-content .project-details {
@@ -211,33 +197,27 @@
         bottom: 2rem;
         left: 2rem;
     }
-}
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-        padding: 80px 1rem 0;
-    }
     
-    .footer {
-        padding: 0 1rem;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        position: relative;
-        transform: none;
-        left: auto;
-        bottom: auto;
-        margin-top: 2rem;
+    .carousel-indicators {
+        bottom: 1rem;
     }
 }
 
+@media (max-width: 480px) {
+    .slide-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.8rem;
+    }
+}
 
-/* Responsive Design for Services Section */
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🛠️ SERVICES SECTION RESPONSIVE
+   Service grid layout, card sizing, and typography adjustments for mobile
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
 @media (max-width: 1024px) {
     .services-grid {
         gap: 1.2rem;
@@ -315,5 +295,34 @@
     
     .service-card h3 {
         font-size: 1.1rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   📧 FOOTER SECTION RESPONSIVE
+   Footer layout, contact info, and social links adjustments for mobile devices
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 80px 1rem 0;
+    }
+    
+    .footer {
+        padding: 0 1rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        position: relative;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        margin-top: 2rem;
     }
 }
