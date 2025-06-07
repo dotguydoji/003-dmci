@@ -496,17 +496,25 @@ body {
 
 .project-detail {
   text-align: center;
+  text-align: left;
 }
 
-.project-detail strong {
-  display: block;
-  font-size: 1.2rem;
-  color: #ff6b35;
-  margin-bottom: 0.5rem;
+.project-detail h4 {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ff6b35; /* Changed from #2c3e50 to orange */
+  margin-bottom: 0.2rem;
+}
+
+.project-detail h2 {
+  font-size: 1rem;
+  color: #fff; /* Changed from #666 to white */
+  margin: 0;
+  font-weight: 400;
 }
 
 .project-detail span {
-  color: #666;
+  color: #777777;
   font-size: 0.9rem;
 }
 
