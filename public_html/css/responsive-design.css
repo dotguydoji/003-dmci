@@ -311,6 +311,7 @@
   /* Carousel Section */
   .carousel-section {
     height: 100vh;
+    margin-top: -10vh;
   }
 
   .carousel-container {
