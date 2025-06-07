@@ -38,7 +38,7 @@ body {
 .carousel-section,
 .services-section,
 .footer {
-  scroll-snap-align: start;
+  scroll-snap-align: start !important;
 }
 
 @keyframes bounce {

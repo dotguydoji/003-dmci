@@ -258,7 +258,7 @@
     min-height: 100vh;
     height: auto;
     padding-top: 0;
-    margin: 0;
+    margin-top: -30vh;
   }
 
   .featured-container {
@@ -274,7 +274,7 @@
   }
 
   .featured-main {
-    order: 1;
+    order: -1;
     padding: 2rem 1.5rem;
     min-height: 200px;
     display: flex;
