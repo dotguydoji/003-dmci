@@ -36,17 +36,17 @@ body {
     right: 0;
     backdrop-filter: blur(20px);
     z-index: 1000;
-    padding: 1rem 2rem;
+    padding: 1rem 0; /* Remove horizontal padding */
     transition: all 0.3s ease;
-    height: 80px; /* Define explicit header height */
+    height: 80px;
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem; /* Minimal padding instead of auto margin */
 }
 
 .logo {
