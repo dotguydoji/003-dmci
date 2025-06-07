@@ -22,30 +22,49 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Carousel functionality
+// Carousel functionality with fade effect and dynamic indicators
 const track = document.querySelector('.carousel-track');
 const slides = Array.from(document.querySelectorAll('.carousel-slide'));
 const nextButton = document.querySelector('.carousel-nav.next');
 const prevButton = document.querySelector('.carousel-nav.prev');
-const indicators = Array.from(document.querySelectorAll('.carousel-indicator, .carousel-indicators .indicator'));
+const indicatorsContainer = document.querySelector('.carousel-indicators');
 
 let currentSlide = 0;
 
+// Dynamically create indicators based on number of slides
+function createIndicators() {
+    if (indicatorsContainer && slides.length > 0) {
+        // Clear existing indicators
+        indicatorsContainer.innerHTML = '';
+
+        // Create new indicators for each slide
+        slides.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (index === 0) indicator.classList.add('active');
+
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+            });
+
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+}
+
 function updateCarousel() {
     slides.forEach((slide, idx) => {
-        // Remove active class from all slides first
-        slide.classList.remove('active');
-        slide.style.display = idx === currentSlide ? 'grid' : 'none';
+        if (idx === currentSlide) {
+            slide.style.opacity = '1';
+            slide.style.zIndex = '2';
+        } else {
+            slide.style.opacity = '0';
+            slide.style.zIndex = '1';
+        }
     });
 
-    // Add active class to current slide after a brief delay
-    setTimeout(() => {
-        if (slides[currentSlide]) {
-            slides[currentSlide].classList.add('active');
-        }
-    }, 50);
-
     // Update indicators
+    const indicators = document.querySelectorAll('.carousel-indicator, .carousel-indicators .indicator');
     indicators.forEach((ind, idx) => {
         if (idx === currentSlide) {
             ind.classList.add('active');
@@ -56,20 +75,24 @@ function updateCarousel() {
 }
 
 function showSlide(idx) {
-    // Remove active class from current slide before transition
-    if (slides[currentSlide]) {
-        slides[currentSlide].classList.remove('active');
-    }
-
     currentSlide = (idx + slides.length) % slides.length;
-
-    // Update carousel after transition delay
-    setTimeout(() => {
-        updateCarousel();
-    }, 100);
+    updateCarousel();
 }
 
 if (slides.length > 0) {
+    // Initialize carousel with fade effect
+    slides.forEach((slide, idx) => {
+        slide.style.position = 'absolute';
+        slide.style.top = '0';
+        slide.style.left = '0';
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        slide.style.transition = 'opacity 1s ease-in-out';
+        slide.style.opacity = idx === 0 ? '1' : '0';
+        slide.style.zIndex = idx === 0 ? '2' : '1';
+    });
+
+    createIndicators();
     updateCarousel();
 
     nextButton.addEventListener('click', () => {
@@ -78,12 +101,6 @@ if (slides.length > 0) {
 
     prevButton.addEventListener('click', () => {
         showSlide(currentSlide - 1);
-    });
-
-    indicators.forEach((indicator, idx) => {
-        indicator.addEventListener('click', () => {
-            showSlide(idx);
-        });
     });
 }
 
@@ -120,9 +137,6 @@ window.addEventListener('scroll', () => {
         hero.style.backgroundPosition = `center ${scrolled * 0.1}px`;
     }
 });
-
-
-// Add this to your existing main.js file
 
 // Check if carousel section is in view
 function isCarouselSectionInView() {

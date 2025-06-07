@@ -358,3 +358,11 @@
         padding: 1rem;
     }
 }
+
+@media (max-width: 768px) {
+    .carousel .carousel-slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60% 40%;
+        /* Position styles remain the same */
+    }
+}

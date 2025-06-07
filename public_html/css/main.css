@@ -427,20 +427,20 @@ body {
 }
 
 .carousel-track {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  transition: transform 0.5s ease;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .carousel .carousel-slide {
-  min-width: 100%;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  align-items: center;
-  background:
-   #f8f9fa;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    background: #f8f9fa;
+    /* Position will be set by JavaScript */
 }
+
 
 .carousel-slide {
   opacity: 0;
