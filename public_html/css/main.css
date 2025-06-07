@@ -225,18 +225,18 @@ body {
 }
 
 .hero-title {
-  font-size: 7rem;
+  font-size: 13dvb;
   font-weight: 300;
   margin-bottom: 2rem;
-  line-height: 1.2;
+  line-height: 1;
   font-family: "Bileha" !important;
 }
 
 .hero-description {
-  font-size: 1.5rem;
+  font-size: 3dvb;
   margin-bottom: 3rem;
   color: #ccc;
-  line-height: 1.8;
+  line-height: 1.3;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -805,7 +805,6 @@ roject:hover {
 
 .services-cta {
   text-align: center;
-  padding: 2rem 1.5rem;
   border-radius: 15px;
   color: #fff;
 }
@@ -813,7 +812,6 @@ roject:hover {
 .services-cta h3 {
   font-size: 1.6rem;
   font-weight: 400;
-  margin-bottom: 0.8rem;
   color: #2c3e50;
 }
 
