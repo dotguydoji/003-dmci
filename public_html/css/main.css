@@ -987,16 +987,21 @@ body {
     font-size: 1.3rem;
 }
 
+
 .form-row {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 .form-row input,
 .form-row select {
-    flex: 1;
+    width: 60%;
 }
+
+
 
 .contact-form input,
 .contact-form select,
@@ -1024,8 +1029,11 @@ body {
 }
 
 .contact-form textarea {
-    resize: vertical;
-    min-height: 80px;
+    width: 60%;
+    height: 120px; /* Same height as other inputs */
+    resize: none;
+    margin: 0 auto;
+    display: block;
 }
 
 .submit-btn {
@@ -1037,8 +1045,10 @@ body {
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
-    margin-top: 1rem;
+    margin: 1rem auto 0;
+    display: block;
 }
+
 
 .submit-btn:hover {
     background: #ff8c69;
@@ -1131,9 +1141,7 @@ body {
         min-height: auto;
     }
     
-    .form-row {
-        flex-direction: column;
-    }
+
     
     .footer-services {
         flex-direction: column;
