@@ -11,7 +11,15 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out !important;
 }
+@font-face {
+    font-family: 'Morning Waves';
+    src: url('/public_html/fonts/Bileha.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -172,18 +180,21 @@ body {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 7rem;
     font-weight: 300;
     margin-bottom: 2rem;
     line-height: 1.2;
+    font-family: 'Bileha' !important;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 3rem;
     color: #ccc;
     line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
+
 
 .hero-btn {
     display: inline-block;
@@ -644,7 +655,9 @@ body {
 
 .service-card:hover {
     transform: translateY(-3px);
+    box-shadow: 0 14px 12px rgba(255, 107, 53, 0.4); /* soft orange shadow */
 }
+
 
 .service-card::before {
     content: '';
