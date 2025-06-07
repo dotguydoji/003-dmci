@@ -1,0 +1,174 @@
+/* Base styles remain the same until the breakpoints */
+
+/* Laptop Screens (1024px and below) */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 70vw;
+        padding: 5vh;
+        font-size: 1.2vw;
+    }
+
+    .hero-title {
+        font-size: 6vw;
+    }
+
+    .hero-desc {
+        font-size: 2vw;
+    }
+
+    .map {
+        width: 100%;
+        height: 35vh;
+    }
+
+    .m-plan {
+        width: 100%;
+    }
+
+    .section1, .section2, .section3, .section4 {
+        flex-direction: column;
+        align-items: center;
+        gap: 4vh;
+    }
+}
+
+/* Tablet Screens (768px and below) */
+@media screen and (max-width: 768px) {
+
+
+    .container {
+        width: 85vw;
+        padding: 4vh;
+        font-size: 1.6vw;
+    }
+
+    .hero {
+        height: 40vh;
+        margin-top: 0% !important;
+    }
+
+    .overlay {
+        height: 40vh;
+        margin-top: -40vh;
+        padding: 4vh;
+    }
+
+    .hero-title {
+        font-size: 8vw;
+    }
+
+    .hero-desc {
+        font-size: 2.5vw;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .gallery, .property-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-list {
+        columns: 1;
+    }
+
+    table.blueTable tbody td {
+        font-size: 1.6vw;
+        padding: 1vh 1vw;
+    }
+
+    .ruler {
+        width: 90vw;
+    }
+}
+
+/* Mobile Screens (480px and below) */
+@media screen and (max-width: 480px) {
+ 
+
+    .navbar{
+        height: auto !important;
+    }
+
+    .container {
+        width: 95vw;
+        padding: 3vh;
+        font-size: 3vw;
+    }
+
+    .hero {
+        height: 30vh;
+        margin-top: 0% !important;
+    }
+
+    .overlay {
+        height: 30vh;
+        margin-top: -30vh;
+        padding: 3vh;
+    }
+
+    .hero-title {
+        font-size: 10vw;
+    }
+
+    .hero-desc {
+        font-size: 4vw;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    table.blueTable tbody td {
+        font-size: 3vw;
+        padding: 0.5vh 1vw;
+    }
+
+    .modal-content,
+    .property-modal-content {
+        width: 95%;
+        height: 70vh;
+    }
+
+    .dots-container,
+    .property-dots-container {
+        bottom: -5vh;
+    }
+
+    .nav-btn,
+    .property-nav-btn {
+        padding: 10px;
+    }
+
+    .ruler {
+        width: 95vw;
+    }
+
+    /* Improve touch targets for mobile */
+    .gallery-item,
+    .property-gallery-item,
+    .nav-btn,
+    .property-nav-btn,
+    .dot,
+    .property-dot {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Additional Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
