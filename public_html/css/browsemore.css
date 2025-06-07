@@ -8,15 +8,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Hind Madurai", serif;
 }
 
 body {
   line-height: 1.6;
   color: var(--dark-gray);
-  background: rgb(18, 23, 66);
 
-  height: 100vh;
 
 }
 
