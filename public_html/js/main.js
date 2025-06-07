@@ -100,3 +100,31 @@ window.addEventListener('scroll', () => {
         hero.style.backgroundPosition = `center ${scrolled * 0.1}px`;
     }
 });
+
+
+// Add this to your existing main.js file
+
+// Check if carousel section is in view
+function isCarouselSectionInView() {
+    const carouselSection = document.querySelector('.carousel-section');
+    if (!carouselSection) return false;
+    
+    const rect = carouselSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Section is considered "in view" if at least 50% is visible
+    return rect.top <= windowHeight * 0.5 && rect.bottom >= windowHeight * 0.5;
+}
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (!isCarouselSectionInView()) return;
+    
+    if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showSlide(currentSlide - 1);
+    } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showSlide(currentSlide + 1);
+    }
+});

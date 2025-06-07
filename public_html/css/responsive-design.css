@@ -183,3 +183,32 @@
         font-size: 1.8rem;
     }
 }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide-content h3 {
+        top: 2rem;
+        left: 2rem;
+        right: 2rem;
+        font-size: 2rem;
+    }
+    
+    .slide-content .project-details {
+        top: 5.5rem;
+        left: 2rem;
+        right: 2rem;
+    }
+    
+    .slide-content p {
+        top: 10rem;
+        left: 2rem;
+        right: 2rem;
+        bottom: 6rem;
+    }
+    
+    .view-project {
+        bottom: 2rem;
+        left: 2rem;
+    }
+}
