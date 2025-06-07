@@ -268,3 +268,176 @@ if (carouselTrack) {
 }
 
 
+
+
+
+
+
+
+
+// searxh :
+// Search Input Fix - Proper Expand/Shrink Behavior
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait a bit for all styles to load
+    setTimeout(function () {
+        const searchInput = document.getElementById('search-bar');
+        const searchContainer = document.querySelector('.search-container');
+        const containerInput = document.querySelector('.container-input');
+        const resultsContainer = document.getElementById('results');
+
+        if (searchInput) {
+            console.log('Search input found:', searchInput);
+
+            // Force clickable properties
+            searchInput.style.pointerEvents = 'auto';
+            searchInput.style.cursor = 'text';
+            searchInput.style.position = 'relative';
+            searchInput.style.zIndex = '1003';
+
+            // Remove any potential blocking elements
+            if (containerInput) {
+                containerInput.style.pointerEvents = 'auto';
+            }
+
+            if (searchContainer) {
+                searchContainer.style.pointerEvents = 'auto';
+            }
+
+            // Fix SVG icon - make sure it doesn't block input
+            const svgIcon = containerInput?.querySelector('svg');
+            if (svgIcon) {
+                svgIcon.style.pointerEvents = 'none';
+                svgIcon.style.zIndex = '1004';
+            }
+
+            // Handle input expansion/shrinking
+            let isExpanded = false;
+
+            // When input gains focus - expand
+            searchInput.addEventListener('focus', function () {
+                console.log('Input focused - expanding');
+                this.style.width = '250px';
+                this.style.opacity = '1';
+                isExpanded = true;
+            });
+
+            // When input loses focus - check if should shrink
+            searchInput.addEventListener('blur', function () {
+                console.log('Input lost focus - checking if should shrink');
+                // Small delay to allow clicking on dropdown items
+                setTimeout(() => {
+                    if (!this.value.trim()) {
+                        this.style.width = '150px';
+                        this.style.opacity = '0.8';
+                        isExpanded = false;
+                        if (resultsContainer) {
+                            resultsContainer.style.display = 'none';
+                        }
+                    }
+                }, 150);
+            });
+
+            // Handle input changes
+            searchInput.addEventListener('input', function () {
+                if (this.value.trim()) {
+                    // Keep expanded if there's content
+                    this.style.width = '250px';
+                    this.style.opacity = '1';
+                    isExpanded = true;
+                } else {
+                    // Hide results if empty
+                    if (resultsContainer) {
+                        resultsContainer.style.display = 'none';
+                    }
+                }
+            });
+
+            // Click handler for input
+            searchInput.addEventListener('click', function (e) {
+                console.log('Input clicked successfully!');
+                this.focus();
+                e.stopPropagation();
+            });
+
+            // Handle hover effects
+            searchInput.addEventListener('mouseenter', function () {
+                if (!isExpanded) {
+                    this.style.opacity = '0.9';
+                }
+            });
+
+            searchInput.addEventListener('mouseleave', function () {
+                if (!isExpanded && document.activeElement !== this) {
+                    this.style.opacity = '0.8';
+                }
+            });
+
+        } else {
+            console.error('Search input not found! Check if element ID "search-bar" exists.');
+        }
+    }, 100);
+});
+
+// Handle clicking outside search area - shrink input
+document.addEventListener('click', function (e) {
+    const searchInput = document.getElementById('search-bar');
+    const searchContainer = document.querySelector('.search-container');
+    const resultsContainer = document.getElementById('results');
+
+    // If click is outside search container
+    if (searchInput && searchContainer && !searchContainer.contains(e.target)) {
+        console.log('Clicked outside search - shrinking input');
+
+        // Only shrink if input is empty
+        if (!searchInput.value.trim()) {
+            searchInput.style.width = '150px';
+            searchInput.style.opacity = '0.8';
+            searchInput.blur(); // Remove focus
+        }
+
+        // Hide results dropdown
+        if (resultsContainer) {
+            resultsContainer.style.display = 'none';
+        }
+    }
+
+    // If clicking on search area but not on input, focus the input
+    else if (searchContainer && searchContainer.contains(e.target) && e.target !== searchInput) {
+        if (searchInput) {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    }
+});
+
+// Handle escape key to shrink search
+document.addEventListener('keydown', function (e) {
+    const searchInput = document.getElementById('search-bar');
+    const resultsContainer = document.getElementById('results');
+
+    if (e.key === 'Escape' && searchInput) {
+        console.log('Escape pressed - shrinking search');
+        searchInput.blur();
+
+        if (!searchInput.value.trim()) {
+            searchInput.style.width = '150px';
+            searchInput.style.opacity = '0.8';
+        }
+
+        if (resultsContainer) {
+            resultsContainer.style.display = 'none';
+        }
+    }
+});
+
+// Additional fix: Handle window resize
+window.addEventListener('resize', function () {
+    const searchInput = document.getElementById('search-bar');
+    if (searchInput && window.innerWidth <= 768) {
+        // On mobile, keep search smaller
+        if (!document.activeElement === searchInput) {
+            searchInput.style.width = '120px';
+        }
+    }
+});

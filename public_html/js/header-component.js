@@ -57,18 +57,74 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeSearch() {
     const files = [
         // Manila/Makati/Ortigas:
-        { name: "Two Central", path: "/pages/two.html" },
-        { name: "Trellis Towers", path: "/pages/trellis.html" },
-        { name: "One Spatial", path: "/pages/one.html" },
-        { name: "Flair Towers", path: "/pages/flair.html" },
+        { name: "Manila", path: "/pages/browsemore.html#manila" },
+        { name: "Makati City", path: "/pages/browsemore.html#makati" },
+        { name: "Pasay City", path: "/pages/browsemore.html#pasay" },
+        { name: "Quezon City", path: "/pages/browsemore.html#quezon" },
+        { name: "Mandaluyong City", path: "/pages/browsemore.html#mandaluyong" },
+        { name: "Pasig City", path: "/pages/browsemore.html#pasig" },
+        { name: "Taguig City", path: "/pages/browsemore.html#taguig" },
+        { name: "Caloocan City", path: "/pages/browsemore.html#caloocan" },
+        { name: "Las Piñas", path: "/pages/browsemore.html#laspinas" },
+        { name: "Parañaque City", path: "/pages/browsemore.html#paranaque" },
+        { name: "Muntinlupa City", path: "/pages/browsemore.html#muntinlupa" },
+        { name: "Cavite", path: "/pages/browsemore.html#cavite" },
+        { name: "Baguio City", path: "/pages/browsemore.html#baguio" },
+        { name: "Boracay", path: "/pages/browsemore.html#boracay" },
+        { name: "Davao City", path: "/pages/browsemore.html#davao" },
+        { name: "Benguet", path: "/pages/browsemore.html#benguet" },
+        { name: "Batangas", path: "/pages/browsemore.html#batangas" },
+        { name: "Cebu", path: "/pages/browsemore.html#cebu" },
+
+
+        // Manila:
+        { name: "Sorrel Residences", path: "/pages/sorrel.html" },
+        { name: "The Camden Place", path: "/pages/camden.html" },
+        { name: "Torre De Manila", path: "/pages/torre.html" },
+        { name: "Illumina Residences Manila", path: "/pages/illumina.html" },
+
+
+        // Makati:
+        { name: "Fortis Residences", path: "/pages/fortis.html" },
         { name: "Brio Tower", path: "/pages/brio.html" },
-        { name: "One Archers Place", path: "/pages/archers.html" },
-        { name: "Perla Ortigas", path: "/pages/perla.html" },
-        { name: "Magnolia Place II", path: "/pages/magnolia.html" },
-        { name: "One Shangrila Place", path: "/pages/shangrila.html" },
+
+
+        // Pasay:
+        { name: "Fairway Terraces", path: "/pages/fairway.html" },
+        { name: "La Verti Residences", path: "/pages/laverti.html" },
+        { name: "The Aston Place", path: "/pages/aston.html" },
+        { name: "Anissa Heights", path: "/pages/anissa.html" },
+
+
+        // Quezon:
+        { name: "The Oriana", path: "/pages/oriana.html" },
+        { name: "The Crestmont", path: "/pages/crestmont.html" },
+        { name: "Infina Towers", path: "/pages/infina.html" },
+        { name: "The Erin Heights", path: "/pages/erin.html" },
+        { name: "Stellar Place", path: "/pages/stellar.html" },
+        { name: "One Castilla Place", path: "/pages/castilla.html" },
+        { name: "Zinnia Towers", path: "/pages/zinnia.html" },
+        { name: "The Orabella", path: "/pages/orabella.html" },
+        { name: "Cameron Residences", path: "/pages/cameron.html" },
+        { name: "Viera Residences", path: "/pages/viera.html" },
+        { name: "The Celandine", path: "/pages/celandine.html" },
+        { name: "Accolade Place", path: "/pages/accolade.html" },
+        { name: "Magnolia Place", path: "/pages/magnolia.html" },
+        { name: "One Delta Terraces", path: "/pages/delta.html" },
+        { name: "The Redwoods", path: "/pages/redwoods.html" },
+
+
+        // Mandaluyong:
+        { name: "Kai Garden Residences", path: "/pages/kai.html" },
+        { name: "Tivoli Garden Residences", path: "/pages/tivoli.html" },
+        { name: "Flair Towers", path: "/pages/flair.html" },
+        { name: "Sage Residences", path: "/pages/sage.html" },
+        { name: "Dansalan Gardens Condominiums", path: "/pages/dansalan.html" },
+
 
         // Pasig:
         { name: "Lumiere Residences", path: "/pages/lumiere.html" },
+        { name: "Satori Residences", path: "/pages/satori.html" },
         { name: "Mirea Residences", path: "/pages/mirea.html" },
         { name: "Sheridan Towers", path: "/pages/sheridan.html" },
         { name: "Brixton Place", path: "/pages/brixton.html" },
@@ -77,6 +133,7 @@ function initializeSearch() {
         { name: "Fairlane Residences", path: "/pages/fairlane.html" },
         { name: "Levina Place", path: "/pages/levina.html" },
         { name: "The Valeron Tower", path: "/pages/valeron.html" },
+
 
         // Taguig:
         { name: "Mahogany Place III", path: "/pages/mahogany.html" },
@@ -88,12 +145,15 @@ function initializeSearch() {
         { name: "Cypress Towers", path: "/pages/cypress.html" },
         { name: "Alder Residences", path: "/pages/alder.html" },
 
+
         // Caloocan:
         { name: "The Calinea Tower", path: "/pages/calinea.html" },
+
 
         // Las Pinas:
         { name: "Sonora Garden Residences", path: "/pages/sonora.html" },
         { name: "Maricielo Villas", path: "/pages/maricielo.html" },
+
 
         // Paranaque:
         { name: "Siena Park Residences", path: "/pages/siena.html" },
@@ -103,27 +163,35 @@ function initializeSearch() {
         { name: "Arista Place", path: "/pages/arista.html" },
         { name: "Calathea Place", path: "/pages/calathea.html" },
 
+
         // Muntinlupa:
         { name: "Rhapsody Residences", path: "/pages/rhapsody.html" },
 
+
         // Cavite:
         { name: "Alea Residences", path: "/pages/alea.html" },
+
 
         // Baguio:
         { name: "Outlook Ridge Residences", path: "/pages/outlook.html" },
         { name: "Bristle Ridge", path: "/pages/bristle.html" },
 
+
         // Boracay:
         { name: "Alta Vista De Boracay", path: "/pages/alta.html" },
+
 
         // Davao:
         { name: "Verdon Parc", path: "/pages/verdon.html" },
 
+
         // Benguet:
         { name: "Moncello Crest", path: "/pages/moncello.html" },
 
+
         // Batangas: 
         { name: "Solmera Coast", path: "/pages/solmera.html" },
+
 
         // Cebu:
         { name: "Kalea Heights", path: "/pages/kalea.html" },
