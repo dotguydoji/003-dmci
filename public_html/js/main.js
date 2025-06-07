@@ -196,4 +196,65 @@ if (navToggle && navLinks) {
             navToggle.classList.remove('active');
         }
     });
+}// Add this to your main.js file - Touch navigation for mobile carousel
+
+// Touch/Swipe functionality for mobile
+let startX = 0;
+let endX = 0;
+let isDragging = false;
+
+function handleTouchStart(e) {
+    if (window.innerWidth <= 768) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }
 }
+
+function handleTouchMove(e) {
+    if (!isDragging || window.innerWidth > 768) return;
+    e.preventDefault(); // Prevent scrolling
+}
+
+function handleTouchEnd(e) {
+    if (!isDragging || window.innerWidth > 768) return;
+
+    endX = e.changedTouches[0].clientX;
+    const swipeThreshold = 50; // Minimum swipe distance
+    const swipeDistance = startX - endX;
+
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+            // Swipe left - next slide
+            showSlide(currentSlide + 1);
+        } else {
+            // Swipe right - previous slide
+            showSlide(currentSlide - 1);
+        }
+    }
+
+    isDragging = false;
+}
+
+// Add touch event listeners to carousel
+const carouselTrack = document.querySelector('.carousel-track');
+if (carouselTrack) {
+    carouselTrack.addEventListener('touchstart', handleTouchStart, { passive: false });
+    carouselTrack.addEventListener('touchmove', handleTouchMove, { passive: false });
+    carouselTrack.addEventListener('touchend', handleTouchEnd, { passive: false });
+}
+
+// Update the existing keyboard navigation to work only on desktop
+document.addEventListener('keydown', (e) => {
+    // Only allow keyboard navigation on desktop
+    if (window.innerWidth <= 768) return;
+
+    if (!isCarouselSectionInView()) return;
+
+    if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showSlide(currentSlide - 1);
+    } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showSlide(currentSlide + 1);
+    }
+});
