@@ -1055,7 +1055,6 @@ body {
 
 .register-card {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
@@ -1065,7 +1064,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 400px;
 }
 
 .register-card:hover {
