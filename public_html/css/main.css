@@ -982,12 +982,6 @@ body {
     flex-direction: column;
 }
 
-.contact-form h4 {
-    color: #ff6b35;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
 
 .form-row {
     display: flex;
