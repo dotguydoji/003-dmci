@@ -167,3 +167,33 @@ document.addEventListener('keydown', (e) => {
         showSlide(currentSlide + 1);
     }
 });
+
+
+// Add this to your main.js file (uncomment and update the existing mobile nav section)
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+}

@@ -143,6 +143,22 @@ body {
   color: #ff6b35;
 }
 
+/* Mobile Menu Toggle Button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
 /* Replace the existing .logo styles in main.css with this: */
 
 .logo {
