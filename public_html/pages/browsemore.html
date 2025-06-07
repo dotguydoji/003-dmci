@@ -76,7 +76,8 @@
     <link rel="stylesheet" href="/css/browsemore.css">
     <link rel="stylesheet" href="/css/header.css">
 
-    <link rel="stylesheet" href="/css/whatsapp.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" href="../css/header.css">
 
 
 
@@ -94,60 +95,7 @@
 </head>
 
 <body>
-    <header id="header">
-        <img loading="lazy" class="dmci-logo" src="/images/dmci-logo.png" alt="DMCI Homes Logo">
-        <nav class="header-nav">
-
-            <ul class="header-nav-ul">
-
-                <div class="search-container">
-                    <form id="search" class="search-form">
-                        <div class="container-input">
-                            <input id="search-bar" type="text" placeholder="Search Location" name="text" class="input">
-                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
-                                    fill-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </form>
-                    <div id="results" class="results-dropdown"></div>
-                </div>
-
-                <li class="header-nav-ul-li">
-                    <a href="/index.html#home">
-                        <span>HOME</span>
-                        <i class="fa-solid header-icon fa-house" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="header-nav-ul-li">
-                    <a href="/pages/browsemore.html">
-                        <span>LOCATION</span>
-                        <i class="fa-solid header-icon fa-location-dot" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="header-nav-ul-li">
-                    <a href="/index.html#section2">
-                        <span>FEATURED</span>
-                        <i class="fa-solid header-icon fa-hotel" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="header-nav-ul-li">
-                    <a href="https://sid.dmcihomes.com/OnlineCRF/Main.aspx?ac=NO35033" target="_blank">
-                        <span>REGISTER</span>
-                        <i class="fa-solid header-icon fa-address-card" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li class="header-nav-ul-li">
-                    <a href="/index.html#section6">
-                        <span>TALK TO US</span>
-                        <i class="fa-solid header-icon fa-phone" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main class="main-container" id="main-content">
         <nav class="scrollspy" aria-label="Location Navigation">
             <h2 id="locations-heading">Locations</h2>
@@ -864,6 +812,7 @@
         <script src="hanap.js"></script>
         <script src="/js/bm-gallery.js"></script>
         <script src="/js/scrollspy.js"></script>
+        <script src="../js/header-component.js"></script>
     </main>
 </body>
 

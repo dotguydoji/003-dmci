@@ -1,0 +1,381 @@
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   🧭 HEADER & NAVIGATION STYLES
+   Extracted from main.css and responsive-design.css for reusable header component
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* Main Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  padding: 1rem 0;
+  height: 80px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 2rem;
+  height: 100%;
+  position: relative;
+}
+
+.logo {
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.logo:hover {
+  color: #ff8c69;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover img {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #ff6b35;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff6b35;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.search-icon {
+  flex: 0 0 auto;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.search-icon:hover {
+  color: #ff6b35;
+}
+
+/* Search Container Positioning (replaces search-icon) */
+.search-container {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Mobile Menu Toggle Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  position: fixed;
+  top: 25px;
+  right: 2rem;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   HEADER STYLES FOR PROPERTY PAGES STRUCTURE
+   Styles for the header structure used in property pages (dmci-logo, header-nav, etc.)
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* Property pages header structure */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  padding: 1rem 0;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.21);
+  transition: background 0.3s ease;
+}
+
+.dmci-logo {
+  height: 50px;
+  width: auto;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dmci-logo:hover {
+  opacity: 0.8;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.header-nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header-nav-ul-li {
+  position: relative;
+}
+
+.header-nav-ul-li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.header-nav-ul-li a:hover {
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.header-nav-ul-li a span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.header-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.header-nav-ul-li a:hover .header-icon {
+  transform: scale(1.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   📱 RESPONSIVE DESIGN - LAPTOP SCREENS (1024px and below)
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Header & Navigation */
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .dmci-logo {
+    left: 1.5rem;
+  }
+
+  .header-nav-ul {
+    gap: 1.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   📱 RESPONSIVE DESIGN - MOBILE SCREENS (768px and below)
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Header & Navigation */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .search-icon {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 0 2rem;
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(44, 62, 80, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    transform: none;
+    position: fixed;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+  .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
+  .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: scale(1.05);
+  }
+
+  /* Property pages mobile styles */
+  .header-nav-ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(44, 62, 80, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .header-nav-ul.active {
+    left: 0;
+  }
+
+  .header-nav-ul-li {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.3s ease;
+  }
+
+  .header-nav-ul.active .header-nav-ul-li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .header-nav-ul.active .header-nav-ul-li:nth-child(1) { transition-delay: 0.1s; }
+  .header-nav-ul.active .header-nav-ul-li:nth-child(2) { transition-delay: 0.2s; }
+  .header-nav-ul.active .header-nav-ul-li:nth-child(3) { transition-delay: 0.3s; }
+  .header-nav-ul.active .header-nav-ul-li:nth-child(4) { transition-delay: 0.4s; }
+  .header-nav-ul.active .header-nav-ul-li:nth-child(5) { transition-delay: 0.5s; }
+  .header-nav-ul.active .header-nav-ul-li:nth-child(6) { transition-delay: 0.6s; }
+
+  .header-nav-ul-li a {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .header-nav-ul-li a:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: scale(1.05);
+  }
+
+  .dmci-logo {
+    left: 2rem;
+  }
+}
