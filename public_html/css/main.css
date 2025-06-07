@@ -72,34 +72,35 @@ body {
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   max-width: 100%;
   margin: 0;
   padding: 0 1rem;
+  height: 100%;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
+  justify-self: start;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
+
 
 .logo:hover {
   color: #ff8c69;
 }
 
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   list-style: none;
   gap: 2rem;
+  justify-self: center;
+  margin: 0;
+  padding: 0;
 }
+
 
 .nav-links a {
   color: #fff;
@@ -129,6 +130,7 @@ body {
 }
 
 .search-icon {
+  justify-self: end;
   color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
@@ -139,6 +141,22 @@ body {
   color: #ff6b35;
 }
 
+/* Replace the existing .logo styles in main.css with this: */
+
+.logo {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logo img {
+  height: 50px; /* Adjust this value to fit your header */
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover img {
+  opacity: 0.8;
+}
 /* ═══════════════════════════════════════════════════════════════════════════════════
    🏠 HERO SECTION
    Main landing area with background image, hero content, and call-to-action
