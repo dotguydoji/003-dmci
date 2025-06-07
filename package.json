@@ -1,0 +1,27 @@
+{
+  "name": "dmci-homes-website",
+  "version": "1.0.0",
+  "description": "DMCI Homes Real Estate Website",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "netlify-cli": "^22.1.3"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotguydoji/003-dmci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dotguydoji/003-dmci/issues"
+  },
+  "homepage": "https://github.com/dotguydoji/003-dmci#readme"
+}
