@@ -34,6 +34,7 @@
   }
 
   /* Featured Projects */
+  
   .featured-grid {
     grid-template-columns: 1fr 1fr;
     height: auto;
@@ -115,9 +116,8 @@
     padding: 1.2rem;
   }
 }
-
 /* ═══════════════════════════════════════════════════════════════════════════════════
-   📱 MOBILE SCREENS (768px and below)
+   📱 MOBILE SCREENS (768px and below) - UPDATED WITH LARGER FONTS
    Complete mobile optimization for phones and small tablets
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
@@ -223,11 +223,11 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.2rem; /* Increased from 2.5rem */
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Increased from 1rem */
     padding: 0 1rem;
   }
 
@@ -237,7 +237,7 @@
     max-width: 280px;
     margin: 0 auto;
     padding: 14px 20px;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased from 0.9rem */
     text-align: center;
     border-radius: 25px;
     font-weight: 600;
@@ -255,7 +255,7 @@
     min-height: 100vh;
     height: auto;
     padding-top: 0;
-    margin-top: -30vh;
+    margin-top: -20vh;
   }
 
   .featured-container {
@@ -281,17 +281,17 @@
   }
 
   .featured-main h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Increased from 1.8rem */
     margin-bottom: 1rem;
   }
 
   .featured-main p {
-    font-size: 0.9rem;
+    font-size: 1.1rem; /* Increased from 0.9rem */
     margin-bottom: 1.5rem;
   }
 
   .brand-logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Increased from 1.5rem */
     margin-bottom: 1rem;
   }
 
@@ -301,11 +301,11 @@
   }
 
   .project-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Increased from 1.4rem */
   }
 
   .project-card p {
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Increased from 0.8rem */
   }
 
   /* Carousel Section */
@@ -361,7 +361,7 @@
   }
 
   .slide-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.7rem; /* Increased from 1.4rem */
     font-weight: 600;
     color: #fff;
     margin-bottom: 0.5rem;
@@ -377,7 +377,7 @@
   }
 
    .project-detail h4 {
-    font-size: 0.7rem;
+    font-size: 0.85rem; /* Increased from 0.7rem */
     font-weight: 400;
     color: #ff6b35;
     margin-bottom: 0.1rem;
@@ -386,7 +386,7 @@
   }
 
   .project-detail h2 {
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Increased from 0.8rem */
     color: #fff;
     margin: 0;
     font-weight: 500;
@@ -396,7 +396,7 @@
     color: #ccc;
     line-height: 1.4;
     margin-bottom: 1rem;
-    font-size: 0.8rem;
+    font-size: 1rem; /* Increased from 0.8rem */
     flex: 1;
     overflow: hidden;
     display: -webkit-box;
@@ -412,7 +412,7 @@
     text-decoration: none;
     border-radius: 20px;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Increased from 0.8rem */
     transition: all 0.3s ease;
     align-self: flex-start;
     margin-top: auto;
@@ -475,11 +475,11 @@
   }
 
   .services-header h2 {
-    font-size: 1.8rem;
+    font-size: 2.1rem; /* Increased from 1.8rem */
   }
 
   .services-header p {
-    font-size: 0.9rem;
+    font-size: 1.1rem; /* Increased from 0.9rem */
     max-width: 90vw;
   }
 
@@ -503,38 +503,38 @@
   }
 
   .service-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Increased from 1rem */
   }
 
   .service-description {
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Increased from 0.8rem */
   }
 
   .service-list li {
-    font-size: 0.7rem;
+    font-size: 0.85rem; /* Increased from 0.7rem */
     padding-left: 0.8rem;
   }
 
   .service-list strong {
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   .service-list span {
-    font-size: 0.65rem;
+    font-size: 0.8rem; /* Increased from 0.65rem */
   }
 
   .services-cta h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Increased from 1.2rem */
   }
 
   .services-cta p {
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Increased from 0.8rem */
     max-width: 90vw;
   }
 
   .cta-button {
     padding: 8px 20px;
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   /* Footer Section */
@@ -565,19 +565,19 @@
   }
 
   .specialist-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Increased from 1rem */
   }
 
   .specialist-card > p {
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   .specialist-card .contact-info p {
-    font-size: 0.7rem;
+    font-size: 0.85rem; /* Increased from 0.7rem */
   }
 
   .specialist-card .social-links a {
-    font-size: 0.65rem;
+    font-size: 0.8rem; /* Increased from 0.65rem */
     padding: 0.15rem 0.5rem;
   }
 
@@ -588,7 +588,7 @@
   }
 
   .footer-tagline {
-    font-size: 1.1rem;
+    font-size: 1.3rem; /* Increased from 1.1rem */
     margin-bottom: 1.2rem;
   }
 
@@ -602,7 +602,7 @@
   .contact-form textarea {
     width: 90%;
     padding: 8px 10px;
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   .contact-form textarea {
@@ -611,7 +611,7 @@
 
   .submit-btn {
     padding: 8px 20px;
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   .register-section {
@@ -630,15 +630,15 @@
   }
 
   .register-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Increased from 1rem */
   }
 
   .register-card p {
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Increased from 0.75rem */
   }
 
   .footer-bottom {
     padding: 1rem;
-    font-size: 0.7rem;
+    font-size: 0.85rem; /* Increased from 0.7rem */
   }
 }
