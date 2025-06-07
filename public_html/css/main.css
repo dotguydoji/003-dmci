@@ -72,20 +72,21 @@ body {
 }
 
 .nav-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   max-width: 100%;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0 2rem;
   height: 100%;
 }
 
 .logo {
-  justify-self: start;
+  flex: 0 0 auto;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
+
 
 
 .logo:hover {
@@ -96,9 +97,10 @@ body {
   display: flex;
   list-style: none;
   gap: 2rem;
-  justify-self: center;
   margin: 0;
   padding: 0;
+  flex: 1;
+  justify-content: center;
 }
 
 
@@ -130,7 +132,7 @@ body {
 }
 
 .search-icon {
-  justify-self: end;
+  flex: 0 0 auto;
   color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
