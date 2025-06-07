@@ -1,12 +1,10 @@
-
 /* From Uiverse.io by garerim */ 
 .container-input {
     position: relative;
-    margin-right: 3vw;
-
-  }
+    /* Removed margin-right: 3vw; that was interfering */
+}
   
-  .input {
+.input {
     width: 150px;
     padding: 10px 0px 10px 40px;
     border-radius: 9999px;
@@ -14,29 +12,25 @@
     transition: all .2s ease-in-out;
     outline: none;
     opacity: 0.8;
-  }
+}
   
-  .container-input svg {
+.container-input svg {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translate(0, -50%);
-  }
+}
   
-  .input:focus {
+.input:focus {
     opacity: 1;
     width: 250px;
-  }
-
-
-
+}
 
 /* Search Form Styles */
 .search-container {
     position: relative;
-    margin: 0 auto;
+    /* Removed margin: 0 auto; that was centering the search */
 }
-
 
 /* Dropdown Results Styles */
 #results {
@@ -101,8 +95,6 @@
     border-radius: 0.25em;
 }
 
-
-
 /* Security and User Experience Enhancements */
 .search-form input {
     -webkit-text-security: none;
@@ -125,4 +117,10 @@
 .search-form button:focus {
     outline: 0.125em solid #0056b3;
     outline-offset: -0.0625em;
+}
+
+/* Selection highlight for dropdown navigation */
+.dropdown-item.selected {
+    background-color: #4f82c5;
+    color: white;
 }

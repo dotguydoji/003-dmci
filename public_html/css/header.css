@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
-  backdrop-filter: blur(20px);
+  background: #1a2b50;
   z-index: 1000;
   padding: 1rem 0;
   height: 80px;
@@ -103,6 +103,7 @@
   flex: 0 0 auto;
   position: relative;
   z-index: 10;
+  margin-left: auto; /* This pushes it to the far right */
 }
 
 /* Mobile Menu Toggle Button */
@@ -140,11 +141,10 @@
   top: 0;
   left: 0;
   right: 0;
-  backdrop-filter: blur(20px);
+  background: #1a2b50;
   z-index: 1000;
   padding: 1rem 0;
   height: 80px;
-  background: rgba(0, 0, 0, 0.21);
   transition: background 0.3s ease;
 }
 
