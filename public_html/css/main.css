@@ -367,52 +367,65 @@ body {
 
 /* Carousel Section */
 .carousel-section {
-    padding: 8rem 2rem;
-    background: #fff;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    margin-top: 80px; /* Add margin to account for header */
-    padding-top: calc(8rem + 80px); /* Adjust top padding */
+    justify-content: center;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
+
 .carousel-container {
-    max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
+    height: calc(100vh - 80px);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
 }
-
-
 
 .carousel {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .carousel-track {
     display: flex;
+    height: 100%;
+    width: 100%;
     transition: transform 0.5s ease;
 }
 
-.carousel-slide {
+.carousel .carousel-slide {
     min-width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 70% 30%; /* Image 70%, Content 30% */
     align-items: center;
     background: #f8f9fa;
 }
 
 .slide-image {
-    height: 500px;
+    height: 100%;
     background-size: cover;
     background-position: center;
 }
 
 .slide-content {
     padding: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
 .slide-content h3 {
     font-size: 2.5rem;
@@ -509,7 +522,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: background 0.3s ease;
 }
