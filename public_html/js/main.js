@@ -33,8 +33,19 @@ let currentSlide = 0;
 
 function updateCarousel() {
     slides.forEach((slide, idx) => {
+        // Remove active class from all slides first
+        slide.classList.remove('active');
         slide.style.display = idx === currentSlide ? 'grid' : 'none';
     });
+
+    // Add active class to current slide after a brief delay
+    setTimeout(() => {
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.add('active');
+        }
+    }, 50);
+
+    // Update indicators
     indicators.forEach((ind, idx) => {
         if (idx === currentSlide) {
             ind.classList.add('active');
@@ -45,8 +56,17 @@ function updateCarousel() {
 }
 
 function showSlide(idx) {
+    // Remove active class from current slide before transition
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.remove('active');
+    }
+
     currentSlide = (idx + slides.length) % slides.length;
-    updateCarousel();
+
+    // Update carousel after transition delay
+    setTimeout(() => {
+        updateCarousel();
+    }, 100);
 }
 
 if (slides.length > 0) {
@@ -108,10 +128,10 @@ window.addEventListener('scroll', () => {
 function isCarouselSectionInView() {
     const carouselSection = document.querySelector('.carousel-section');
     if (!carouselSection) return false;
-    
+
     const rect = carouselSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
+
     // Section is considered "in view" if at least 50% is visible
     return rect.top <= windowHeight * 0.5 && rect.bottom >= windowHeight * 0.5;
 }
@@ -119,7 +139,7 @@ function isCarouselSectionInView() {
 // Keyboard navigation for carousel
 document.addEventListener('keydown', (e) => {
     if (!isCarouselSectionInView()) return;
-    
+
     if (e.key === 'ArrowLeft') {
         e.preventDefault();
         showSlide(currentSlide - 1);

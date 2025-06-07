@@ -438,7 +438,21 @@ body {
   display: grid;
   grid-template-columns: 70% 30%;
   align-items: center;
-  background: #f8f9fa;
+  background:
+   #f8f9fa;
+}
+
+.carousel-slide {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .slide-image {
@@ -481,6 +495,7 @@ body {
   margin: 0;
   height: 3rem;
   line-height: 3rem;
+  
 }
 
 .slide-content .project-details {
