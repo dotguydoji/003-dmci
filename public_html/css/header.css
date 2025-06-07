@@ -254,6 +254,11 @@
     display: none;
   }
 
+  /* HIDE SEARCH CONTAINER ON MOBILE */
+  .search-container {
+    display: none !important;
+  }
+
   .nav-container {
     padding: 0 2rem;
   }
@@ -292,6 +297,46 @@
     left: 0;
   }
 
+  /* ADD SEARCH TO MOBILE MENU */
+  .nav-links .mobile-search {
+    order: -1; /* Place search at the top of mobile menu */
+    margin-bottom: 1rem;
+  }
+
+  .nav-links .mobile-search .search-container {
+    display: block !important;
+    position: relative;
+    margin: 0;
+  }
+
+  .nav-links .mobile-search .container-input {
+    margin: 0;
+  }
+
+  .nav-links .mobile-search .input {
+    width: 250px;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links .mobile-search .input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .nav-links .mobile-search .input:focus {
+    border-color: #ff6b35;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+  }
+
+  .nav-links .mobile-search svg {
+    filter: invert(1);
+  }
+
   .nav-links li {
     opacity: 0;
     transform: translateX(-50px);
@@ -323,8 +368,9 @@
     transform: scale(1.05);
   }
 
-  /* Property pages mobile styles */
+  /* Property Pages Mobile Styles */
   .header-nav-ul {
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: -100%;
@@ -332,7 +378,6 @@
     height: 100vh;
     background: rgba(44, 62, 80, 0.98);
     backdrop-filter: blur(20px);
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
@@ -342,6 +387,21 @@
 
   .header-nav-ul.active {
     left: 0;
+  }
+
+  /* Hide search in property pages header on mobile */
+  .header-nav-ul .search-container {
+    display: none !important;
+  }
+
+  /* Add mobile search to property pages menu */
+  .header-nav-ul .mobile-search {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .header-nav-ul .mobile-search .search-container {
+    display: block !important;
   }
 
   .header-nav-ul-li {
@@ -360,22 +420,15 @@
   .header-nav-ul.active .header-nav-ul-li:nth-child(3) { transition-delay: 0.3s; }
   .header-nav-ul.active .header-nav-ul-li:nth-child(4) { transition-delay: 0.4s; }
   .header-nav-ul.active .header-nav-ul-li:nth-child(5) { transition-delay: 0.5s; }
-  .header-nav-ul.active .header-nav-ul-li:nth-child(6) { transition-delay: 0.6s; }
 
   .header-nav-ul-li a {
     font-size: 1.5rem;
     font-weight: 300;
     padding: 1rem 2rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .header-nav-ul-li a:hover {
-    background: rgba(255, 107, 53, 0.2);
-    transform: scale(1.05);
   }
 
   .dmci-logo {
-    left: 2rem;
+    left: 1.5rem;
   }
 }
