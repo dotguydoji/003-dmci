@@ -1,31 +1,89 @@
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   📱 RESPONSIVE DESIGN STYLESHEET
-   Mobile-first responsive breakpoints organized by component sections
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   🧭 HEADER & NAVIGATION RESPONSIVE
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-}
+/* Add this to your responsive-design.css file, replacing the existing hero responsive section */
 
 /* ═══════════════════════════════════════════════════════════════════════════════════
    🏠 HERO SECTION RESPONSIVE
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Better performance on mobile */
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 0;
         text-align: center;
+        padding: 2rem 1.5rem;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .hero-text {
+        order: 1;
+        max-width: none;
+    }
+
+    .hero-image {
+        display: none; /* Hide the image column on mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+        letter-spacing: 1px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .scroll-indicator {
+        bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 95%;
+    }
+
+    .hero-btn {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1rem;
+        font-size: 1.2rem;
     }
 }
 
