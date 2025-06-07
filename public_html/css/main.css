@@ -856,16 +856,112 @@ body {
     line-height: 1.6;
 }
 
-.footer-main {
-    text-align: center;
+/* Updated Footer Section CSS */
+.footer {
+    min-height: 100vh;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 2rem 0;
+    margin: 0;
+    position: relative;
 }
 
-.footer-logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ff6b35;
-    margin-bottom: 1rem;
+.footer-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+    flex: 1;
+    padding: 2rem 0;
+    min-height: 600px;
 }
+
+/* Specialist Card Updates */
+.specialist-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.specialist-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: url('https://scontent.fmnl4-6.fna.fbcdn.net/v/t39.30808-6/481766744_1136148801539130_6903673079706144326_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=DCqC_4fyeGgQ7kNvwEjk6tG&_nc_oc=AdnBjkgubXR1y-U-hUNnQ6Y2yRPYW632EIrFsWNncTXwl2MYwl6gFwhYDgd6Cz7fPSYW3DtAyn6ZKRyFAWIfHlZ4&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&_nc_gid=3lR8aHtTN2kWxoy0mqTHzg&oh=00_AfO0kp6g8bzcxHDVDbnLoBAlDDpjJGqDPgRJwY2gRLB3NA&oe=6849A55D') no-repeat center/cover;
+    margin: 0 auto 1rem;
+}
+
+.specialist-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #ff6b35;
+}
+
+.specialist-card > p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Info in Specialist Card */
+.specialist-card .contact-info {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.specialist-card .contact-info p {
+    color: #ccc;
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+}
+
+/* Social Links in Specialist Card */
+.specialist-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.specialist-card .social-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.specialist-card .social-links a:hover {
+    color: #ff6b35;
+    border-color: #ff6b35;
+}
+
+/* Footer Main Updates */
+.footer-main {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 
 .footer-tagline {
     font-size: 1.5rem;
@@ -874,91 +970,180 @@ body {
     line-height: 1.4;
 }
 
-.footer-services {
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin-top: 1rem;
+}
+
+.contact-form h4 {
+    color: #ff6b35;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.form-row {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.footer-services a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-services a:hover {
-    color: #ff6b35;
-}
-
-.contact-info {
-    text-align: center;
-}
-
-.contact-info h4 {
-    color: #ff6b35;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.contact-info p {
-    color: #ccc;
-    margin-bottom: 0.5rem;
+.form-row input,
+.form-row select {
+    flex: 1;
 }
 
-.newsletter {
-    margin-top: 2rem;
-}
-
-.newsletter input {
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
-    padding: 12px 20px;
-    border-radius: 25px;
-    margin-right: 1rem;
-    width: 250px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.newsletter button {
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ccc;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
     background: #ff6b35;
     color: #fff;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 25px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
-.newsletter button:hover {
+.submit-btn:hover {
     background: #ff8c69;
+    transform: translateY(-2px);
 }
 
+/* Register Section */
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b35;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.register-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b35, #ff8c69);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.register-image::before {
+    content: '📝';
+}
+
+.register-card h3 {
+    color: #ff6b35;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.register-card p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Footer Bottom */
 .footer-bottom {
     width: 100%;
     padding: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: #ccc;
     font-size: 0.9rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    margin-top: 2rem;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ff6b35;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    .footer {
+        padding: 80px 1rem 0;
+        min-height: auto;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .footer-services {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .specialist-card .social-links {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding: 1rem;
+    }
 }

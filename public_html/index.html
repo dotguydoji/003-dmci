@@ -251,42 +251,24 @@ Our curated collection showcases elegant condo residences that redefine modern l
 
     
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-container">
-            <div class="specialist-card">
-                <div class="specialist-image"></div>
-                <h3>Rossana B. Fajardo</h3>
-<p>With 8 years of experience, Rossana is a trusted real estate expert known for personalized service and smart guidance in buying, selling, or investing. She helps clients reach their goals with ease and confidence.</p>
-
-            </div>
-            <div class="footer-main">
-                <div class="footer-logo">DMCI HOMES</div>
-                <div class="footer-tagline">We deliver the results that are best for you.</div>
-                <div class="footer-services">
-                    <a href="#">Luxury Sales</a>
-                    <a href="#">Property Management</a>
-                    <a href="#">Investment Advisory</a>
-                    <a href="#">Market Analysis</a>
-                </div>
-                <div class="newsletter">
-                    <input type="email" placeholder="Enter your email" />
-                    <button>Subscribe</button>
-                </div>
-            </div>
+    <!-- Updated Footer Section -->
+<footer class="footer" id="contact">
+    <div class="footer-container">
+        <!-- Specialist Card with Contact Info -->
+        <div class="specialist-card">
+            <div class="specialist-image"></div>
+            <h3>Rossana B. Fajardo</h3>
+            <p>With 8 years of experience, Rossana is a trusted real estate expert known for personalized service and smart guidance in buying, selling, or investing. She helps clients reach their goals with ease and confidence.</p>
+            
+            <!-- Contact Information -->
             <div class="contact-info">
-                <h4>Contact Information</h4>
                 <p>Monday - Friday: 9AM - 6PM</p>
                 <p>+1 (555) 123-4567</p>
                 <p>info@luxeproperties.com</p>
                 <p>123 Premium Ave, City Center</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div>
-                <p>Copyright © 2024 DMCI HOMES. All rights reserved.</p>
-                <p>Terms of Use | Privacy Policy | Cookie Settings</p>
-            </div>
+            
+            <!-- Social Links -->
             <div class="social-links">
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
@@ -294,7 +276,57 @@ Our curated collection showcases elegant condo residences that redefine modern l
                 <a href="#">LinkedIn</a>
             </div>
         </div>
-    </footer>
+
+        <!-- Main Footer with Form -->
+        <div class="footer-main">
+            <div class="footer-tagline">We deliver the results that are best for you.</div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h4>Contact Me</h4>
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="">Select Property Type</option>
+                            <option value="condo">Condominium</option>
+                            <option value="house">House & Lot</option>
+                            <option value="townhouse">Townhouse</option>
+                        </select>
+                        <select required>
+                            <option value="">Select Budget Range</option>
+                            <option value="under-5m">Under 5M</option>
+                            <option value="5m-10m">5M - 10M</option>
+                            <option value="above-10m">Above 10M</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Additional Details" rows="4"></textarea>
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Register Section -->
+        <div class="register-section">
+            <div class="register-card" onclick="window.location.href='#register'">
+                <div class="register-image"></div>
+                <h3>Register Here</h3>
+                <p>Join our exclusive community and get early access to premium properties</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div>
+            <p>Copyright © 2024 DMCI HOMES. All rights reserved.</p>
+            <p>Terms of Use | Privacy Policy | Cookie Settings</p>
+        </div>
+    </div>
+</footer>
 
     <script src="js/main.js"></script>
 </body>
