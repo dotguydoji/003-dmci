@@ -564,18 +564,38 @@ body {
 
 /* Footer */
 .footer {
+    height: 100vh;
     background: #2c3e50;
     color: #fff;
-    padding: 4rem 2rem 2rem;
-    margin-top: 80px; /* Add margin to account for header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0;
+    position: relative;
 }
+
+/* Footer Layout Fix - Replace existing footer styles */
+.footer {
+    height: 100vh;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0;
+    position: relative;
+}
+
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: center;
+    flex: 1;
+    padding: 80px 2rem 0; /* Account for fixed header */
 }
 
 .specialist-card {
@@ -684,15 +704,20 @@ body {
 }
 
 .footer-bottom {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    width: 100%;
+    padding: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #ccc;
     font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
+
+
 
 .social-links {
     display: flex;
