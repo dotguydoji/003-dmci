@@ -652,6 +652,10 @@ roject:hover {
    Service cards, offerings grid, and call-to-action elements
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
+   /* ═══════════════════════════════════════════════════════════════════════════════════
+   🛠️ COMPLETE SERVICES SECTION - RECOMMENDED FONT SIZES
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
 .services-section {
   height: 100vh;
   width: 100vw;
@@ -672,32 +676,32 @@ roject:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding-top: 80px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-
 .services-header {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .services-header h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 300;
   color: #2c3e50;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .services-header p {
   font-size: 1.1rem;
   color: #666;
   margin: 0;
-  max-width: 700px;
+  max-width: 80vw;
   margin: 0 auto;
-  line-height: 1.5;
-  text-wrap: nowrap;
+  line-height: 1.4;
 }
 
 .services-grid {
@@ -712,7 +716,7 @@ roject:hover {
 
 .service-card {
   background: #fff;
-  padding: 1.8rem 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -724,7 +728,7 @@ roject:hover {
 
 .service-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 12px rgba(255, 107, 53, 0.4); /* soft orange shadow */
+  box-shadow: 0 14px 12px rgba(255, 107, 53, 0.4);
 }
 
 .service-card::before {
@@ -738,15 +742,15 @@ roject:hover {
 }
 
 .service-icon {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #ff6b35, #ff8c69);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0 auto;
 }
@@ -762,10 +766,11 @@ roject:hover {
 
 .service-description {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   text-align: center;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .service-list {
@@ -783,6 +788,7 @@ roject:hover {
   position: relative;
   color: #666;
   font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .service-list li::before {
@@ -812,19 +818,21 @@ roject:hover {
   text-align: center;
   border-radius: 15px;
   color: #fff;
+  margin-top: 1.5rem;
 }
 
 .services-cta h3 {
   font-size: 1.6rem;
   font-weight: 400;
   color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
 .services-cta p {
   font-size: 1rem;
   color: #2c3e50;
   margin-bottom: 1.5rem;
-  max-width: 600px;
+  max-width: 70vw;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
