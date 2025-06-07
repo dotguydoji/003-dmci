@@ -1,0 +1,128 @@
+
+/* From Uiverse.io by garerim */ 
+.container-input {
+    position: relative;
+    margin-right: 3vw;
+
+  }
+  
+  .input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+  }
+  
+  .container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+  
+  .input:focus {
+    opacity: 1;
+    width: 250px;
+  }
+
+
+
+
+/* Search Form Styles */
+.search-container {
+    position: relative;
+    margin: 0 auto;
+}
+
+
+/* Dropdown Results Styles */
+#results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 85%;
+    max-height: 18.75em;
+    overflow-y: auto;
+    background: white;
+    border: 0.0625em solid #ddd;
+    border-radius: 0 0 0.25em 0.25em;
+    box-shadow: 0 0.125em 0.3125em rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+}
+
+.results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.625em 0.9375em;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom: 0.0625em solid #eee;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #4f82c5;
+}
+
+/* Scrollbar Styles */
+#results::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+#results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.25em;
+}
+
+#results::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0.25em;
+}
+
+
+
+/* Security and User Experience Enhancements */
+.search-form input {
+    -webkit-text-security: none;
+    user-select: text;
+}
+
+#results {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Focus States */
+.search-form input:focus {
+    outline: 0.125em solid #007bff;
+    outline-offset: -0.0625em;
+}
+
+.search-form button:focus {
+    outline: 0.125em solid #0056b3;
+    outline-offset: -0.0625em;
+}
