@@ -90,6 +90,11 @@ if (slides.length > 0) {
         slide.style.transition = 'opacity 1s ease-in-out';
         slide.style.opacity = idx === 0 ? '1' : '0';
         slide.style.zIndex = idx === 0 ? '2' : '1';
+
+        // Fix: Ensure proper grid layout is maintained
+        slide.style.display = 'grid';
+        slide.style.gridTemplateColumns = '70% 30%';
+        slide.style.alignItems = 'center';
     });
 
     createIndicators();
