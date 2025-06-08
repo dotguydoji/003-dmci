@@ -956,8 +956,8 @@ body {
   width: 12vw;
   aspect-ratio: 1 / 1;
   border-radius: 5%;
-  background: url("https://scontent.fmnl4-6.fna.fbcdn.net/v/t39.30808-6/481766744_1136148801539130_6903673079706144326_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=DCqC_4fyeGgQ7kNvwEjk6tG&_nc_oc=AdnBjkgubXR1y-U-hUNnQ6Y2yRPYW632EIrFsWNncTXwl2MYwl6gFwhYDgd6Cz7fPSYW3DtAyn6ZKRyFAWIfHlZ4&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&_nc_gid=3lR8aHtTN2kWxoy0mqTHzg&oh=00_AfO0kp6g8bzcxHDVDbnLoBAlDDpjJGqDPgRJwY2gRLB3NA&oe=6849A55D")
-    no-repeat center/cover;
+  background: url("../images/property-specialist.jpg") center/cover  no-repeat;
+  background-size: cover;
   margin: 0 auto 1rem;
   transition: all 0.3s ease;
   flex-shrink: 0;

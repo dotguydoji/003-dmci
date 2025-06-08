@@ -1,6 +1,6 @@
 // Config object for easier management and validation
 const config = {
-    phone: "639685838414",
+    phone: "6399297044108",
     maxMessageLength: 1000,
     minMessageLength: 1,
     messageRateLimit: 5000, // ms between messages
@@ -49,7 +49,7 @@ try {
 // Rate-limited message sender
 function sendToWhatsApp(message) {
     const currentTime = Date.now();
-    
+
     if (currentTime - lastMessageTime < config.messageRateLimit) {
         console.warn('Rate limit exceeded. Please wait before sending another message.');
         return false;
@@ -106,7 +106,7 @@ sendMessage.addEventListener('click', () => {
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message sent';
             messageDiv.textContent = sanitizeInput(message);
-            
+
             const chatBody = getElement('chat-body');
             chatBody.appendChild(messageDiv);
             chatInput.value = '';
