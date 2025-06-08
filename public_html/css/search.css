@@ -32,12 +32,12 @@
     /* Removed margin: 0 auto; that was centering the search */
 }
 
-/* Dropdown Results Styles */
+/* Dropdown Results Styles - FIXED ALIGNMENT */
 #results {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 85%;
+    width: 100%; /* Changed from 85% to 100% to match input width */
     max-height: 18.75em;
     overflow-y: auto;
     background: white;
@@ -52,7 +52,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    right: 0; /* This ensures it spans the full width of the container */
     background: white;
     border: 1px solid #ddd;
     border-top: none;
@@ -61,6 +61,7 @@
     display: none;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 0 0 0.25em 0.25em; /* Added border radius to match */
 }
 
 .dropdown-item {
@@ -76,8 +77,10 @@
     border-bottom: none;
 }
 
-.dropdown-item:hover {
+/* FIXED: Prevent double focus when using keyboard + mouse */
+.dropdown-item:hover:not(.selected) {
     background-color: #4f82c5;
+    color: white;
 }
 
 /* Scrollbar Styles */
@@ -101,11 +104,14 @@
     user-select: text;
 }
 
+/* FIXED: Allow clicking on dropdown items */
 #results {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* Focus States */
@@ -123,4 +129,26 @@
 .dropdown-item.selected {
     background-color: #4f82c5;
     color: white;
+}
+
+/* Additional fix to ensure dropdown aligns properly when input expands */
+.input:focus + .results-dropdown,
+.input:focus ~ #results {
+    width: 250px; /* Match the expanded input width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input {
+        width: 120px;
+    }
+    
+    .input:focus {
+        width: 200px;
+    }
+    
+    .input:focus + .results-dropdown,
+    .input:focus ~ #results {
+        width: 200px;
+    }
 }

@@ -380,10 +380,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Handle clicking outside search area - shrink input
+// Handle clicking outside search area - shrink input
 document.addEventListener('click', function (e) {
     const searchInput = document.getElementById('search-bar');
     const searchContainer = document.querySelector('.search-container');
     const resultsContainer = document.getElementById('results');
+
+    // Check if clicked element is a dropdown item
+    const isDropdownItem = e.target.classList.contains('dropdown-item') ||
+        e.target.closest('.dropdown-item');
+
+    // If clicked on a dropdown item, let it work normally
+    if (isDropdownItem) {
+        console.log('Dropdown item clicked - allowing navigation');
+        return; // Don't interfere with dropdown item clicks
+    }
 
     // If click is outside search container
     if (searchInput && searchContainer && !searchContainer.contains(e.target)) {
@@ -402,15 +413,16 @@ document.addEventListener('click', function (e) {
         }
     }
 
-    // If clicking on search area but not on input, focus the input
-    else if (searchContainer && searchContainer.contains(e.target) && e.target !== searchInput) {
+    // If clicking on search area but not on input or dropdown, focus the input
+    else if (searchContainer && searchContainer.contains(e.target) &&
+        e.target !== searchInput && !resultsContainer.contains(e.target)) {
         if (searchInput) {
-            e.preventDefault();
+            console.log('Clicked on search area - focusing input');
+            // Don't preventDefault here - it was blocking dropdown clicks
             searchInput.focus();
         }
     }
 });
-
 // Handle escape key to shrink search
 document.addEventListener('keydown', function (e) {
     const searchInput = document.getElementById('search-bar');
