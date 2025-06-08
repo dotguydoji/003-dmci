@@ -137,8 +137,8 @@
     position: fixed;
     bottom: 90px;
     right: 20px;
-    background: #232324;
-    color: white;
+    background: #9292f1;
+    color: rgb(26, 25, 25);
     width: 60px;
     height: 60px;
     border: none;
@@ -148,27 +148,27 @@
     align-items: center;
     justify-content: center;
     box-shadow: 
-        0 0 20px rgba(255, 23, 68, 0.6),
-        0 0 40px rgba(255, 23, 68, 0.4),
-        0 0 80px rgba(255, 23, 68, 0.2);
+        0 0 10px rgba(255, 23, 68, 0.6),
+        0 0 20px rgba(255, 23, 68, 0.4),
+        0 0 40px rgba(255, 23, 68, 0.2);
     font-size: 20px;
     font-weight: 600;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
     z-index: 9997;
-    animation: neonPulse 2s infinite;
+    animation: neonPulse 1s infinite;
     gap: 0; /* Optional: remove gap for single-icon use */
     padding: 0; /* Important: remove padding for perfect circle */
 }
 
 
 .quick-contact-btn:hover {
-    background: #ff1744;
+    background: #ff1744; 
     transform: translateY(-3px);
     box-shadow: 
-        0 0 30px rgba(255, 23, 68, 0.8),
-        0 0 60px rgba(255, 23, 68, 0.6),
-        0 0 100px rgba(255, 23, 68, 0.4);
+        0 0 15px rgba(255, 23, 68, 0.8),
+        0 0 30px rgba(255, 23, 68, 0.6),
+        0 0 50px rgba(255, 23, 68, 0.4);
     animation-play-state: paused;
 }
 
