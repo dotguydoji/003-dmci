@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <!-- Essential Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DMCI Homes | Noreen Kim</title>
     <!-- Enhanced Security Headers -->
     <!-- DOM Purify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
         default-src 'self';
         img-src 'self' https://www.dmcionlinecondos.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
@@ -24,796 +25,1118 @@
         media-src 'self';
         worker-src 'none';
         upgrade-insecure-requests;
-        block-all-mixed-content;">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-    <meta http-equiv="Permissions-Policy"
-        content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), battery=(), ambient-light-sensor=()">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+        block-all-mixed-content;"
+    />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta
+      http-equiv="Strict-Transport-Security"
+      content="max-age=31536000; includeSubDomains; preload"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), battery=(), ambient-light-sensor=()"
+    />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
     <!-- DNS Prefetch and Preconnect (Performance Optimization) -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico" />
     <!-- Primary SEO Meta Tags -->
-    <meta name="description"
-        content="Find your dream home with DMCI Homes - Premium condominiums, houses, and real estate investments in prime locations. Expert property consultation by Raciel Brown. Discover luxury living spaces, pre-selling condos, and ready for occupancy units in Metro Manila.">
-    <meta name="author" content="Raciel Brown">
-    <meta name="keywords"
-        content="DMCI Homes, condominiums, real estate, Metro Manila, Raciel Brown, property investment">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.dmcihomescondoph.com">
+    <meta
+      name="description"
+      content="Find your dream home with DMCI Homes - Premium condominiums, houses, and real estate investments in prime locations. Expert property consultation by Raciel Brown. Discover luxury living spaces, pre-selling condos, and ready for occupancy units in Metro Manila."
+    />
+    <meta name="author" content="Raciel Brown" />
+    <meta
+      name="keywords"
+      content="DMCI Homes, condominiums, real estate, Metro Manila, Raciel Brown, property investment"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.dmcihomescondoph.com" />
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="DMCI Homes - Raciel Brown">
-    <meta property="og:locale" content="en_PH">
-    <meta property="og:url" content="https://www.dmcihomescondoph.com">
-    <meta property="og:title" content="DMCI Homes - Premium Condominiums & Real Estate | Raciel Brown">
-    <meta property="og:description"
-        content="Explore luxury DMCI condominiums and properties in Metro Manila. Pre-selling and RFO units available. Premium locations, world-class amenities, and investment opportunities. Contact Raciel Brown for expert assistance.">
-    <meta property="og:image" content="https://www.dmcihomescondoph.com/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DMCI Homes Property Showcase">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DMCI Homes - Raciel Brown" />
+    <meta property="og:locale" content="en_PH" />
+    <meta property="og:url" content="https://www.dmcihomescondoph.com" />
+    <meta
+      property="og:title"
+      content="DMCI Homes - Premium Condominiums & Real Estate | Raciel Brown"
+    />
+    <meta
+      property="og:description"
+      content="Explore luxury DMCI condominiums and properties in Metro Manila. Pre-selling and RFO units available. Premium locations, world-class amenities, and investment opportunities. Contact Raciel Brown for expert assistance."
+    />
+    <meta
+      property="og:image"
+      content="https://www.dmcihomescondoph.com/images/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DMCI Homes Property Showcase" />
     <!-- Cache Control -->
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, must-revalidate">
-    <meta http-equiv="Expires" content="31536000">
+    <meta
+      http-equiv="Cache-Control"
+      content="public, max-age=31536000, must-revalidate"
+    />
+    <meta http-equiv="Expires" content="31536000" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="/css/whatsapp.css">
-    <link rel="stylesheet" href="/css/bmresponsive.css">
-    <link rel="stylesheet" href="/css/browsemore.css">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/whatsapp.css" />
+    <link rel="stylesheet" href="/css/bmresponsive.css" />
+    <link rel="stylesheet" href="/css/browsemore.css" />
+    <link rel="stylesheet" href="/css/header.css" />
 
     <link rel="stylesheet" href="../css/search.css" />
-    <link rel="stylesheet" href="../css/header.css">
-
-
-
+    <link rel="stylesheet" href="../css/header.css" />
 
     <!-- Font Awesome (loaded last as it's less critical) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Google Fonts Fallback -->
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet" crossorigin="anonymous">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+        crossorigin="anonymous"
+      />
     </noscript>
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
     <main class="main-container" id="main-content">
-        <nav class="scrollspy" aria-label="Location Navigation">
-            <h2 id="locations-heading">Locations</h2>
-            <ul class="scrollspy-nav" aria-labelledby="locations-heading">
-                <li>
-                    <a href="#manila" class="active" aria-current="true">Manila</a>
-                </li>
-                <li>
-                    <a href="#makati">Makati City</a>
-                </li>
-                <li>
-                    <a href="#pasay">Pasay City</a>
-                </li>
-                <li>
-                    <a href="#quezon">Quezon City</a>
-                </li>
-                <li>
-                    <a href="#mandaluyong">Mandaluyong City</a>
-                </li>
-                <li>
-                    <a href="#pasig">Pasig City</a>
-                </li>
-                <li>
-                    <a href="#taguig">Taguig City</a>
-                </li>
-                <li>
-                    <a href="#caloocan">Caloocan City</a>
-                </li>
-                <li>
-                    <a href="#laspinas">Las Piñas</a>
-                </li>
-                <li>
-                    <a href="#paranaque">Parañaque City</a>
-                </li>
-                <li>
-                    <a href="#muntinlupa">Muntinlupa City</a>
-                </li>
-                <li>
-                    <a href="#benguet">Benguet</a>
-                </li>
-                <li>
-                    <a href="#batangas">Batangas</a>
-                </li>
-                <li>
-                    <a href="#cavite">Cavite</a>
-                </li>
-                <li>
-                    <a href="#baguio">Baguio City</a>
-                </li>
-                <li>
-                    <a href="#boracay">Boracay</a>
-                </li>
-                <li>
-                    <a href="#cebu">Cebu</a>
-                </li>
-                <li>
-                    <a href="#davao">Davao City</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Content Area -->
-        <div class="content-container">
-            <div class="content">
-                <!-- Manila Section -->
-                <section id="manila" class="location-section">
-                    <h2>Manila</h2>
-                    <p class="description">
-                        The heart of the Philippines, Manila offers a unique blend of historical charm and modern urban
-                        living. Our premium properties in Manila showcase the best of city living with easy access to
-                        cultural landmarks, business districts, and entertainment hubs.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/sorrel.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/sorrel-residences-featured-image-large_5_orig.jpg"
-                                alt=" DMCI Homes Manila Sorrel">
-                            <div class="gallery-item-overlay">
-                                <h3>Sorrel Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/camden.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/the-camden-place-building-297-medium_8.jpg"
-                                alt=" DMCI Homes Manila Camden">
-                            <div class="gallery-item-overlay">
-                                <h3>The Camden Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/torre.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/torre.jpg" alt=" DMCI Homes Manila Torre">
-                            <div class="gallery-item-overlay">
-                                <h3>Torre De Manila</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/illumina.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/illumina.jpg" alt=" DMCI Homes Manila Illumina">
-                            <div class="gallery-item-overlay">
-                                <h3>Illumina Residences Manila</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Makati Section -->
-                <section id="makati" class="location-section">
-                    <h2>Makati City</h2>
-                    <p class="description">
-                        The financial capital of the Philippines, Makati City represents the pinnacle of luxury urban
-                        living. Our properties here offer unprecedented access to premier shopping destinations,
-                        international businesses, and world-class entertainment.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/fortis.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/fortis.jpg" alt=" DMCI Homes Makati Fortis">
-                            <div class="gallery-item-overlay">
-                                <h3>Fortis Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/brio.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/brio.jpg" alt=" DMCI Homes Makati Brio">
-                            <div class="gallery-item-overlay">
-                                <h3>Brio Tower</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Pasay Section -->
-                <section id="pasay" class="location-section">
-                    <h2>Pasay City</h2>
-                    <p class="description">
-                        Entertainment hub near NAIA. Our residential properties offer modern urban living with quick
-                        access to Mall of Asia and transport terminals.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/fairway.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/fairway.jpg" alt=" DMCI Homes Pasay Fairway">
-                            <div class="gallery-item-overlay">
-                                <h3>Fairway Terraces</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/laverti.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/laverti.jpg" alt=" DMCI Homes Pasay La Verti">
-                            <div class="gallery-item-overlay">
-                                <h3>La Verti Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/aston.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/aston.jpg" alt=" DMCI Homes Pasay Aston">
-                            <div class="gallery-item-overlay">
-                                <h3>The Aston Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/anissa.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/anissa.webp" alt=" DMCI Homes Pasay Anissa">
-                            <div class="gallery-item-overlay">
-                                <h3>Anissa Heights</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Quezon Section -->
-                <section id="quezon" class="location-section">
-                    <h2>Quezon City</h2>
-                    <p class="description">
-                        Largest city in Metro Manila. Our modern condominiums provide urban convenience near major
-                        commercial centers and government offices.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/oriana.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/oriana.jpg" alt=" DMCI Homes Quezon Oriana">
-                            <div class="gallery-item-overlay">
-                                <h3>The Oriana</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/crestmont.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/crestmont.jpg" alt=" DMCI Homes Quezon Crestmont">
-                            <div class="gallery-item-overlay">
-                                <h3>The Crestmont</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/infina.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/infina.jpg" alt=" DMCI Homes Quezon Infina">
-                            <div class="gallery-item-overlay">
-                                <h3>Infina Towers</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/erin.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/erin.jpg" alt=" DMCI Homes Quezon Erin">
-                            <div class="gallery-item-overlay">
-                                <h3>The Erin Heights</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/stellar.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/stellar.jpg" alt=" DMCI Homes Quezon Stellar">
-                            <div class="gallery-item-overlay">
-                                <h3>Stellar Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/castilla.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/castilla.jpg" alt=" DMCI Homes Quezon Castilla">
-                            <div class="gallery-item-overlay">
-                                <h3>One Castilla Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/zinnia.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/zinnia.jpg" alt=" DMCI Homes Quezon Zinnia">
-                            <div class="gallery-item-overlay">
-                                <h3>Zinnia Towers</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/orabella.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/orabella.jpg" alt=" DMCI Homes Quezon Orabella">
-                            <div class="gallery-item-overlay">
-                                <h3>The Orabella</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/cameron.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/cameron.jpg" alt=" DMCI Homes Quezon Cameron">
-                            <div class="gallery-item-overlay">
-                                <h3>Cameron Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/viera.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/viera.jpg" alt=" DMCI Homes Quezon Viera">
-                            <div class="gallery-item-overlay">
-                                <h3>Viera Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/celandine.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/celandine.jpg" alt=" DMCI Homes Quezon Celandine">
-                            <div class="gallery-item-overlay">
-                                <h3>The Celandine</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/accolade.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/accolade.jpg" alt=" DMCI Homes Quezon Accolade">
-                            <div class="gallery-item-overlay">
-                                <h3>Accoade Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/magnolia.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/magnolia.jpg" alt=" DMCI Homes Quezon Magnolia">
-                            <div class="gallery-item-overlay">
-                                <h3>Magnolia Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/delta.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/delta.png" alt=" DMCI Homes Quezon Delta">
-                            <div class="gallery-item-overlay">
-                                <h3>One Delta Terraces</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/redwoods.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/redwoods.jpg" alt=" DMCI Homes Quezon Redwoods">
-                            <div class="gallery-item-overlay">
-                                <h3>The Redwoods</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Mandaluyong Section -->
-                <section id="mandaluyong" class="location-section">
-                    <h2>Mandaluyong City</h2>
-                    <p class="description">
-                        Dense urban center. Our residential towers offer prime location between Ortigas and Makati, with
-                        excellent shopping options nearby.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/kai.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/kai.jpg" alt=" DMCI Homes Mandaluyong Kai">
-                            <div class="gallery-item-overlay">
-                                <h3>Kai Garden Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/tivoli.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/tivoli.jpg" alt=" DMCI Homes Mandaluyong Tivoli">
-                            <div class="gallery-item-overlay">
-                                <h3>Tivoli Garden Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/flair.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/flair.jpg" alt=" DMCI Homes Mandaluyong Flair">
-                            <div class="gallery-item-overlay">
-                                <h3>Flair Towers</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/sage.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/sage.jpg" alt=" DMCI Homes Mandaluyong Sage">
-                            <div class="gallery-item-overlay">
-                                <h3>Sage Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/dansalan.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/dansalan.jpg" alt=" DMCI Homes Mandaluyong Dansalan">
-                            <div class="gallery-item-overlay">
-                                <h3>Dansalan Gardens Condominiums</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Pasig Section -->
-                <section id="pasig" class="location-section">
-                    <h2>Pasig City</h2>
-                    <p class="description">
-                        Modern city mixing old and new. Our condominiums provide sophisticated urban living with
-                        complete amenities and strategic access to major business districts.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/lumiere.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/lumiere.jpg" alt=" DMCI Homes Pasig Lumiere">
-                            <div class="gallery-item-overlay">
-                                <h3>Lumiere Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/satori.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/satori.jpg" alt=" DMCI Homes Pasig Satori">
-                            <div class="gallery-item-overlay">
-                                <h3>Satori Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/mirea.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/mirea.jpg" alt=" DMCI Homes Pasig Mirea">
-                            <div class="gallery-item-overlay">
-                                <h3>Mirea Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/sheridan.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/sheridan.jpg" alt=" DMCI Homes Pasig Sheridan">
-                            <div class="gallery-item-overlay">
-                                <h3>Sheridan Towers</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/brixton.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/brixton.jpg" alt=" DMCI Homes Pasig Brixton">
-                            <div class="gallery-item-overlay">
-                                <h3>Brixton Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/allegra.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/allegra.jpg" alt=" DMCI Homes Pasig Allegra">
-                            <div class="gallery-item-overlay">
-                                <h3>Allegra Garden Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/prisma.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/prisma.jpg" alt=" DMCI Homes Pasig Prisma">
-                            <div class="gallery-item-overlay">
-                                <h3>Prisma Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/fairlane.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/fairlane.jpg" alt=" DMCI Homes Pasig Fairlane">
-                            <div class="gallery-item-overlay">
-                                <h3>Fairlane Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/levina.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/levina.jpg" alt=" DMCI Homes Pasig Levina">
-                            <div class="gallery-item-overlay">
-                                <h3>Levina Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/valeron.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/valeron.jpg" alt=" DMCI Homes Pasig Valeron">
-                            <div class="gallery-item-overlay">
-                                <h3>The Valeron Tower</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Taguig Section -->
-                <section id="taguig" class="location-section">
-                    <h2>Taguig City</h2>
-                    <p class="description">
-                        Home to BGC and McKinley Hill. Our upscale developments offer contemporary living in Manila's
-                        most modern business district.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/mahogany.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/mahogany.jpg" alt=" DMCI Homes Taguig Mahogany">
-                            <div class="gallery-item-overlay">
-                                <h3>Mahogany Place III</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/birchwood.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/birchwood.jpg" alt=" DMCI Homes Taguig Birchwood">
-                            <div class="gallery-item-overlay">
-                                <h3>The Birchwood</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/maple.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/maple.jpg" alt=" DMCI Homes Taguig Maple">
-                            <div class="gallery-item-overlay">
-                                <h3>Maple Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/ivory.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/ivory.jpg" alt=" DMCI Homes Taguig Ivory">
-                            <div class="gallery-item-overlay">
-                                <h3>Ivory Wood</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/verawood.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/verawood.jpg" alt=" DMCI Homes Taguig Verawood">
-                            <div class="gallery-item-overlay">
-                                <h3>Verawood Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/mulberry.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/mulberry.jpg" alt=" DMCI Homes Taguig Mulberry">
-                            <div class="gallery-item-overlay">
-                                <h3>Mulberry Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/cypress.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/cypress.jpg" alt=" DMCI Homes Taguig Cypress">
-                            <div class="gallery-item-overlay">
-                                <h3>Cypress Towers</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/alder.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/alder.jpg" alt=" DMCI Homes Taguig Alder">
-                            <div class="gallery-item-overlay">
-                                <h3>Alder Residences</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Caloocan Section -->
-                <section id="caloocan" class="location-section">
-                    <h2>Caloocan City</h2>
-                    <p class="description">
-                        Industrial and residential hub. Our well-designed condominiums offer modern urban spaces with
-                        easy access to major roads and commercial areas.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/calinea.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/calinea.jpg" alt=" DMCI Homes Caloocan Calinea">
-                            <div class="gallery-item-overlay">
-                                <h3>The Calinea Tower</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Las Pinas Section -->
-                <section id="laspinas" class="location-section">
-                    <h2>Las Pinas City</h2>
-                    <p class="description">
-                        Southern Metro Manila city. Our residential properties offer peaceful suburban living with
-                        modern conveniences.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/sonora.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/sonora.jpg" alt=" DMCI Homes Las Pinas Sonora">
-                            <div class="gallery-item-overlay">
-                                <h3>Sonora Garden Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/maricielo.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/maricielo.webp" alt=" DMCI Homes Maricielo">
-                            <div class="gallery-item-overlay">
-                                <h3>Maricielo Villas</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Paranaque Section -->
-                <section id="paranaque" class="location-section">
-                    <h2>Paranaque City</h2>
-                    <p class="description">
-                        Coastal city with Entertainment City. Our condominiums provide easy access to Entertainment
-                        City's casinos, shopping, and dining.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/siena.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/siena.jpg" alt=" DMCI Homes Paranaque Siena">
-                            <div class="gallery-item-overlay">
-                                <h3>Siena Park Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/oak.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/oak.jpg" alt=" DMCI Homes Paranaque Oak Harbor">
-                            <div class="gallery-item-overlay">
-                                <h3>Oak Harbor Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/asteria.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/asteria.jpg" alt=" DMCI Homes Paranaque Asteria">
-                            <div class="gallery-item-overlay">
-                                <h3>Asteria Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/atherton.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/atherton.jpg" alt=" DMCI Homes Paranaque Atherton">
-                            <div class="gallery-item-overlay">
-                                <h3>The Atherton</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/arista.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/arista.jpg" alt=" DMCI Homes Paranaque Arista">
-                            <div class="gallery-item-overlay">
-                                <h3>Arista Place</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/calathea.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/calathea.jpg" alt=" DMCI Homes Muntinlupa Calathea">
-                            <div class="gallery-item-overlay">
-                                <h3>Calathea Place</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Muntinlupa Section -->
-                <section id="muntinlupa" class="location-section">
-                    <h2>Muntinlupa City</h2>
-                    <p class="description">
-                        Southernmost Metro Manila City. Experience the best of Muntinlupa with our premium developments
-                        offering a suburban lifestyle, perfectly balanced with modern city amenities.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/rhapsody.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/rhapsody.jpg" alt=" DMCI Homes Muntinlupa Rhapsody">
-                            <div class="gallery-item-overlay">
-                                <h3>Rhapsody Residences</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Benguet Section -->
-                <section id="benguet" class="location-section">
-                    <h2>Benguet</h2>
-                    <p class="description">
-                        Mountain province retreat. Our condominiums provide cozy mountain living with magnificent valley
-                        views.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/moncello.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/moncello.jpg" alt=" DMCI Homes Benguet Moncello">
-                            <div class="gallery-item-overlay">
-                                <h3>Moncello Crest</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Batangas Section -->
-                <section id="batangas" class="location-section">
-                    <h2>Batangas</h2>
-                    <p class="description">
-                        Coastal province paradise. Our beachfront condominiums offer stunning ocean views and premium
-                        amenities, blending coastal beauty with modern comfort.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/solmera.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/solmera.jpg" alt=" DMCI Homes Batangas Solmera">
-                            <div class="gallery-item-overlay">
-                                <h3>Solmera Coast</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Cavite Section -->
-                <section id="cavite" class="location-section">
-                    <h2>Cavite</h2>
-                    <p class="description">
-                        Historic province near Manila. Our residential developments provide affordable suburban living
-                        with good Manila access.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/alea.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/alea.jpg" alt=" DMCI Homes Cavite Alea">
-                            <div class="gallery-item-overlay">
-                                <h3>Alea Residences</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Baguio Section -->
-                <section id="baguio" class="location-section">
-                    <h2>Baguio City</h2>
-                    <p class="description">
-                        Summer capital of Philippines. Our mountain view condominiums offer cool climate living with
-                        modern comforts.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/outlook.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/outlook.jpg" alt=" DMCI Homes Baguio Outlook">
-                            <div class="gallery-item-overlay">
-                                <h3>Outlook Ridge Residences</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/bristle.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/bristle.jpg" alt=" DMCI Homes Baguio Bristle">
-                            <div class="gallery-item-overlay">
-                                <h3>Bristle Ridge</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Boracay Section -->
-                <section id="boracay" class="location-section">
-                    <h2>Boracay</h2>
-                    <p class="description">
-                        World-renowned island paradise. Our beachfront properties provide luxury vacation homes with
-                        pristine ocean views.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/alta.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/alta.jpg" alt=" DMCI Homes Boracay Alta">
-                            <div class="gallery-item-overlay">
-                                <h3>Alta Vista De Boracay</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Cebu Section -->
-                <section id="cebu" class="location-section">
-                    <h2>Cebu City</h2>
-                    <p class="description">
-                        Queen City of the South. Our condominiums provide the perfect blend of metropolitan comfort and
-                        convenience, with easy access to business hubs and local attractions.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/kalea.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/kalea.jpg" alt=" DMCI Homes Cebu Kalea">
-                            <div class="gallery-item-overlay">
-                                <h3>Kalea Heights</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <!-- Davao Section -->
-                <section id="davao" class="location-section">
-                    <h2>Davao City</h2>
-                    <p class="description">
-                        Mindanao's largest city. Our modern condominiums combine urban convenience with suburban peace
-                        and security.
-                    </p>
-                    <div class="gallery">
-                        <a href="/pages/verdon.html" class="gallery-item">
-                            <img loading="lazy" src="/bm-img/verdon.jpg" alt=" DMCI Homes Davao Verdon">
-                            <div class="gallery-item-overlay">
-                                <h3>Verdon Parc</h3>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-                <section id="card" class="location-section"></section>
+      <nav class="scrollspy" aria-label="Location Navigation">
+        <h2 id="locations-heading">Locations</h2>
+        <ul class="scrollspy-nav" aria-labelledby="locations-heading">
+          <li>
+            <a href="#manila" class="active" aria-current="true">Manila</a>
+          </li>
+          <li>
+            <a href="#makati">Makati City</a>
+          </li>
+          <li>
+            <a href="#pasay">Pasay City</a>
+          </li>
+          <li>
+            <a href="#quezon">Quezon City</a>
+          </li>
+          <li>
+            <a href="#mandaluyong">Mandaluyong City</a>
+          </li>
+          <li>
+            <a href="#pasig">Pasig City</a>
+          </li>
+          <li>
+            <a href="#taguig">Taguig City</a>
+          </li>
+          <li>
+            <a href="#caloocan">Caloocan City</a>
+          </li>
+          <li>
+            <a href="#laspinas">Las Piñas</a>
+          </li>
+          <li>
+            <a href="#paranaque">Parañaque City</a>
+          </li>
+          <li>
+            <a href="#muntinlupa">Muntinlupa City</a>
+          </li>
+          <li>
+            <a href="#benguet">Benguet</a>
+          </li>
+          <li>
+            <a href="#batangas">Batangas</a>
+          </li>
+          <li>
+            <a href="#cavite">Cavite</a>
+          </li>
+          <li>
+            <a href="#baguio">Baguio City</a>
+          </li>
+          <li>
+            <a href="#boracay">Boracay</a>
+          </li>
+          <li>
+            <a href="#cebu">Cebu</a>
+          </li>
+          <li>
+            <a href="#davao">Davao City</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Content Area -->
+      <div class="content-container">
+        <div class="content">
+          <!-- Manila Section -->
+          <section id="manila" class="location-section">
+            <h2>Manila</h2>
+            <p class="description">
+              The heart of the Philippines, Manila offers a unique blend of
+              historical charm and modern urban living. Our premium properties
+              in Manila showcase the best of city living with easy access to
+              cultural landmarks, business districts, and entertainment hubs.
+            </p>
+            <div class="gallery">
+              <a href="/pages/sorrel.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/sorrel-residences-featured-image-large_5_orig.jpg"
+                  alt=" DMCI Homes Manila Sorrel"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Sorrel Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/camden.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/the-camden-place-building-297-medium_8.jpg"
+                  alt=" DMCI Homes Manila Camden"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Camden Place</h3>
+                </div>
+              </a>
+              <a href="/pages/torre.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/torre.jpg"
+                  alt=" DMCI Homes Manila Torre"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Torre De Manila</h3>
+                </div>
+              </a>
+              <a href="/pages/illumina.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/illumina.jpg"
+                  alt=" DMCI Homes Manila Illumina"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Illumina Residences Manila</h3>
+                </div>
+              </a>
             </div>
-            <!-- Add similar sections for all other locations -->
+          </section>
+          <!-- Makati Section -->
+          <section id="makati" class="location-section">
+            <h2>Makati City</h2>
+            <p class="description">
+              The financial capital of the Philippines, Makati City represents
+              the pinnacle of luxury urban living. Our properties here offer
+              unprecedented access to premier shopping destinations,
+              international businesses, and world-class entertainment.
+            </p>
+            <div class="gallery">
+              <a href="/pages/fortis.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/fortis.jpg"
+                  alt=" DMCI Homes Makati Fortis"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Fortis Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/brio.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/brio.jpg"
+                  alt=" DMCI Homes Makati Brio"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Brio Tower</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Pasay Section -->
+          <section id="pasay" class="location-section">
+            <h2>Pasay City</h2>
+            <p class="description">
+              Entertainment hub near NAIA. Our residential properties offer
+              modern urban living with quick access to Mall of Asia and
+              transport terminals.
+            </p>
+            <div class="gallery">
+              <a href="/pages/fairway.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/fairway.jpg"
+                  alt=" DMCI Homes Pasay Fairway"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Fairway Terraces</h3>
+                </div>
+              </a>
+              <a href="/pages/laverti.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/laverti.jpg"
+                  alt=" DMCI Homes Pasay La Verti"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>La Verti Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/aston.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/aston.jpg"
+                  alt=" DMCI Homes Pasay Aston"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Aston Place</h3>
+                </div>
+              </a>
+              <a href="/pages/anissa.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/anissa.webp"
+                  alt=" DMCI Homes Pasay Anissa"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Anissa Heights</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Quezon Section -->
+          <section id="quezon" class="location-section">
+            <h2>Quezon City</h2>
+            <p class="description">
+              Largest city in Metro Manila. Our modern condominiums provide
+              urban convenience near major commercial centers and government
+              offices.
+            </p>
+            <div class="gallery">
+              <a href="/pages/oriana.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/oriana.jpg"
+                  alt=" DMCI Homes Quezon Oriana"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Oriana</h3>
+                </div>
+              </a>
+              <a href="/pages/crestmont.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/crestmont.jpg"
+                  alt=" DMCI Homes Quezon Crestmont"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Crestmont</h3>
+                </div>
+              </a>
+              <a href="/pages/infina.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/infina.jpg"
+                  alt=" DMCI Homes Quezon Infina"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Infina Towers</h3>
+                </div>
+              </a>
+              <a href="/pages/erin.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/erin.jpg"
+                  alt=" DMCI Homes Quezon Erin"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Erin Heights</h3>
+                </div>
+              </a>
+              <a href="/pages/stellar.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/stellar.jpg"
+                  alt=" DMCI Homes Quezon Stellar"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Stellar Place</h3>
+                </div>
+              </a>
+              <a href="/pages/castilla.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/castilla.jpg"
+                  alt=" DMCI Homes Quezon Castilla"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>One Castilla Place</h3>
+                </div>
+              </a>
+              <a href="/pages/zinnia.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/zinnia.jpg"
+                  alt=" DMCI Homes Quezon Zinnia"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Zinnia Towers</h3>
+                </div>
+              </a>
+              <a href="/pages/orabella.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/orabella.jpg"
+                  alt=" DMCI Homes Quezon Orabella"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Orabella</h3>
+                </div>
+              </a>
+              <a href="/pages/cameron.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/cameron.jpg"
+                  alt=" DMCI Homes Quezon Cameron"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Cameron Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/viera.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/viera.jpg"
+                  alt=" DMCI Homes Quezon Viera"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Viera Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/celandine.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/celandine.jpg"
+                  alt=" DMCI Homes Quezon Celandine"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Celandine</h3>
+                </div>
+              </a>
+              <a href="/pages/accolade.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/accolade.jpg"
+                  alt=" DMCI Homes Quezon Accolade"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Accoade Place</h3>
+                </div>
+              </a>
+              <a href="/pages/magnolia.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/magnolia.jpg"
+                  alt=" DMCI Homes Quezon Magnolia"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Magnolia Place</h3>
+                </div>
+              </a>
+              <a href="/pages/delta.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/delta.png"
+                  alt=" DMCI Homes Quezon Delta"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>One Delta Terraces</h3>
+                </div>
+              </a>
+              <a href="/pages/redwoods.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/redwoods.jpg"
+                  alt=" DMCI Homes Quezon Redwoods"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Redwoods</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Mandaluyong Section -->
+          <section id="mandaluyong" class="location-section">
+            <h2>Mandaluyong City</h2>
+            <p class="description">
+              Dense urban center. Our residential towers offer prime location
+              between Ortigas and Makati, with excellent shopping options
+              nearby.
+            </p>
+            <div class="gallery">
+              <a href="/pages/kai.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/kai.jpg"
+                  alt=" DMCI Homes Mandaluyong Kai"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Kai Garden Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/tivoli.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/tivoli.jpg"
+                  alt=" DMCI Homes Mandaluyong Tivoli"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Tivoli Garden Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/flair.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/flair.jpg"
+                  alt=" DMCI Homes Mandaluyong Flair"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Flair Towers</h3>
+                </div>
+              </a>
+              <a href="/pages/sage.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/sage.jpg"
+                  alt=" DMCI Homes Mandaluyong Sage"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Sage Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/dansalan.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/dansalan.jpg"
+                  alt=" DMCI Homes Mandaluyong Dansalan"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Dansalan Gardens Condominiums</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Pasig Section -->
+          <section id="pasig" class="location-section">
+            <h2>Pasig City</h2>
+            <p class="description">
+              Modern city mixing old and new. Our condominiums provide
+              sophisticated urban living with complete amenities and strategic
+              access to major business districts.
+            </p>
+            <div class="gallery">
+              <a href="/pages/lumiere.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/lumiere.jpg"
+                  alt=" DMCI Homes Pasig Lumiere"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Lumiere Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/satori.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/satori.jpg"
+                  alt=" DMCI Homes Pasig Satori"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Satori Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/mirea.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/mirea.jpg"
+                  alt=" DMCI Homes Pasig Mirea"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Mirea Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/sheridan.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/sheridan.jpg"
+                  alt=" DMCI Homes Pasig Sheridan"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Sheridan Towers</h3>
+                </div>
+              </a>
+              <a href="/pages/brixton.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/brixton.jpg"
+                  alt=" DMCI Homes Pasig Brixton"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Brixton Place</h3>
+                </div>
+              </a>
+              <a href="/pages/allegra.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/allegra.jpg"
+                  alt=" DMCI Homes Pasig Allegra"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Allegra Garden Place</h3>
+                </div>
+              </a>
+              <a href="/pages/prisma.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/prisma.jpg"
+                  alt=" DMCI Homes Pasig Prisma"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Prisma Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/fairlane.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/fairlane.jpg"
+                  alt=" DMCI Homes Pasig Fairlane"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Fairlane Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/levina.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/levina.jpg"
+                  alt=" DMCI Homes Pasig Levina"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Levina Place</h3>
+                </div>
+              </a>
+              <a href="/pages/valeron.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/valeron.jpg"
+                  alt=" DMCI Homes Pasig Valeron"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Valeron Tower</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Taguig Section -->
+          <section id="taguig" class="location-section">
+            <h2>Taguig City</h2>
+            <p class="description">
+              Home to BGC and McKinley Hill. Our upscale developments offer
+              contemporary living in Manila's most modern business district.
+            </p>
+            <div class="gallery">
+              <a href="/pages/mahogany.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/mahogany.jpg"
+                  alt=" DMCI Homes Taguig Mahogany"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Mahogany Place III</h3>
+                </div>
+              </a>
+              <a href="/pages/birchwood.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/birchwood.jpg"
+                  alt=" DMCI Homes Taguig Birchwood"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Birchwood</h3>
+                </div>
+              </a>
+              <a href="/pages/maple.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/maple.jpg"
+                  alt=" DMCI Homes Taguig Maple"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Maple Place</h3>
+                </div>
+              </a>
+              <a href="/pages/ivory.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/ivory.jpg"
+                  alt=" DMCI Homes Taguig Ivory"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Ivory Wood</h3>
+                </div>
+              </a>
+              <a href="/pages/verawood.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/verawood.jpg"
+                  alt=" DMCI Homes Taguig Verawood"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Verawood Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/mulberry.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/mulberry.jpg"
+                  alt=" DMCI Homes Taguig Mulberry"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Mulberry Place</h3>
+                </div>
+              </a>
+              <a href="/pages/cypress.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/cypress.jpg"
+                  alt=" DMCI Homes Taguig Cypress"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Cypress Towers</h3>
+                </div>
+              </a>
+              <a href="/pages/alder.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/alder.jpg"
+                  alt=" DMCI Homes Taguig Alder"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Alder Residences</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Caloocan Section -->
+          <section id="caloocan" class="location-section">
+            <h2>Caloocan City</h2>
+            <p class="description">
+              Industrial and residential hub. Our well-designed condominiums
+              offer modern urban spaces with easy access to major roads and
+              commercial areas.
+            </p>
+            <div class="gallery">
+              <a href="/pages/calinea.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/calinea.jpg"
+                  alt=" DMCI Homes Caloocan Calinea"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Calinea Tower</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Las Pinas Section -->
+          <section id="laspinas" class="location-section">
+            <h2>Las Pinas City</h2>
+            <p class="description">
+              Southern Metro Manila city. Our residential properties offer
+              peaceful suburban living with modern conveniences.
+            </p>
+            <div class="gallery">
+              <a href="/pages/sonora.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/sonora.jpg"
+                  alt=" DMCI Homes Las Pinas Sonora"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Sonora Garden Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/maricielo.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/maricielo.webp"
+                  alt=" DMCI Homes Maricielo"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Maricielo Villas</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Paranaque Section -->
+          <section id="paranaque" class="location-section">
+            <h2>Paranaque City</h2>
+            <p class="description">
+              Coastal city with Entertainment City. Our condominiums provide
+              easy access to Entertainment City's casinos, shopping, and dining.
+            </p>
+            <div class="gallery">
+              <a href="/pages/siena.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/siena.jpg"
+                  alt=" DMCI Homes Paranaque Siena"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Siena Park Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/oak.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/oak.jpg"
+                  alt=" DMCI Homes Paranaque Oak Harbor"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Oak Harbor Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/asteria.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/asteria.jpg"
+                  alt=" DMCI Homes Paranaque Asteria"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Asteria Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/atherton.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/atherton.jpg"
+                  alt=" DMCI Homes Paranaque Atherton"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>The Atherton</h3>
+                </div>
+              </a>
+              <a href="/pages/arista.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/arista.jpg"
+                  alt=" DMCI Homes Paranaque Arista"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Arista Place</h3>
+                </div>
+              </a>
+              <a href="/pages/calathea.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/calathea.jpg"
+                  alt=" DMCI Homes Muntinlupa Calathea"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Calathea Place</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Muntinlupa Section -->
+          <section id="muntinlupa" class="location-section">
+            <h2>Muntinlupa City</h2>
+            <p class="description">
+              Southernmost Metro Manila City. Experience the best of Muntinlupa
+              with our premium developments offering a suburban lifestyle,
+              perfectly balanced with modern city amenities.
+            </p>
+            <div class="gallery">
+              <a href="/pages/rhapsody.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/rhapsody.jpg"
+                  alt=" DMCI Homes Muntinlupa Rhapsody"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Rhapsody Residences</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Benguet Section -->
+          <section id="benguet" class="location-section">
+            <h2>Benguet</h2>
+            <p class="description">
+              Mountain province retreat. Our condominiums provide cozy mountain
+              living with magnificent valley views.
+            </p>
+            <div class="gallery">
+              <a href="/pages/moncello.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/moncello.jpg"
+                  alt=" DMCI Homes Benguet Moncello"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Moncello Crest</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Batangas Section -->
+          <section id="batangas" class="location-section">
+            <h2>Batangas</h2>
+            <p class="description">
+              Coastal province paradise. Our beachfront condominiums offer
+              stunning ocean views and premium amenities, blending coastal
+              beauty with modern comfort.
+            </p>
+            <div class="gallery">
+              <a href="/pages/solmera.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/solmera.jpg"
+                  alt=" DMCI Homes Batangas Solmera"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Solmera Coast</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Cavite Section -->
+          <section id="cavite" class="location-section">
+            <h2>Cavite</h2>
+            <p class="description">
+              Historic province near Manila. Our residential developments
+              provide affordable suburban living with good Manila access.
+            </p>
+            <div class="gallery">
+              <a href="/pages/alea.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/alea.jpg"
+                  alt=" DMCI Homes Cavite Alea"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Alea Residences</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Baguio Section -->
+          <section id="baguio" class="location-section">
+            <h2>Baguio City</h2>
+            <p class="description">
+              Summer capital of Philippines. Our mountain view condominiums
+              offer cool climate living with modern comforts.
+            </p>
+            <div class="gallery">
+              <a href="/pages/outlook.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/outlook.jpg"
+                  alt=" DMCI Homes Baguio Outlook"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Outlook Ridge Residences</h3>
+                </div>
+              </a>
+              <a href="/pages/bristle.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/bristle.jpg"
+                  alt=" DMCI Homes Baguio Bristle"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Bristle Ridge</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Boracay Section -->
+          <section id="boracay" class="location-section">
+            <h2>Boracay</h2>
+            <p class="description">
+              World-renowned island paradise. Our beachfront properties provide
+              luxury vacation homes with pristine ocean views.
+            </p>
+            <div class="gallery">
+              <a href="/pages/alta.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/alta.jpg"
+                  alt=" DMCI Homes Boracay Alta"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Alta Vista De Boracay</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Cebu Section -->
+          <section id="cebu" class="location-section">
+            <h2>Cebu City</h2>
+            <p class="description">
+              Queen City of the South. Our condominiums provide the perfect
+              blend of metropolitan comfort and convenience, with easy access to
+              business hubs and local attractions.
+            </p>
+            <div class="gallery">
+              <a href="/pages/kalea.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/kalea.jpg"
+                  alt=" DMCI Homes Cebu Kalea"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Kalea Heights</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <!-- Davao Section -->
+          <section id="davao" class="location-section">
+            <h2>Davao City</h2>
+            <p class="description">
+              Mindanao's largest city. Our modern condominiums combine urban
+              convenience with suburban peace and security.
+            </p>
+            <div class="gallery">
+              <a href="/pages/verdon.html" class="gallery-item">
+                <img
+                  loading="lazy"
+                  src="/bm-img/verdon.jpg"
+                  alt=" DMCI Homes Davao Verdon"
+                />
+                <div class="gallery-item-overlay">
+                  <h3>Verdon Parc</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+          <section id="card" class="location-section"></section>
         </div>
+        <!-- Add similar sections for all other locations -->
+      </div>
 
-        <!-- Quick Contact Button -->
-        <div class="quick-contact-popup" id="quick-contact-popup">
-            <div class="quick-contact-header">
-                <h3>Enter your active number</h3>
-                <button class="close-quick-contact" id="close-quick-contact">×</button>
-            </div>
-            <form class="quick-contact-form" id="quick-contact-form">
-                <input type="tel" id="contact-number" placeholder="Phone Number (e.g., 09123456789)"
-                    pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)" required />
-
-                <div class="platform-selector">
-                    <label>
-                        <input type="radio" name="platform" value="whatsapp" checked>
-                        <span class="platform-icon"><i class="fab fa-whatsapp"></i> WhatsApp</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="platform" value="viber">
-                        <span class="platform-icon"><i class="fab fa-viber"></i> Viber</span>
-                    </label>
-                </div>
-
-                <button type="submit">Submit</button>
-            </form>
-            <div class="quick-contact-message success-message" id="quick-success-message">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <div class="success-text">
-                    <span class="success-title">Message Sent!</span>
-                    <span class="success-desc">We'll contact you shortly on your preferred platform.</span>
-                </div>
-            </div>
-            <div class="quick-contact-message error-message" id="quick-error-message"></div>
+      <!-- Quick Contact Button -->
+      <div class="quick-contact-popup" id="quick-contact-popup">
+        <div class="quick-contact-header">
+          <h3>Enter your active number</h3>
+          <button class="close-quick-contact" id="close-quick-contact">
+            ×
+          </button>
         </div>
-        <button id="quick-contact-button" class="quick-contact-btn">
-            <i class="fas fa-phone-alt"></i>
-            For quicker live inquiry
-        </button>
+        <form class="quick-contact-form" id="quick-contact-form">
+          <input
+            type="tel"
+            id="contact-number"
+            placeholder="Phone Number (e.g., 09123456789)"
+            pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)"
+            required
+          />
 
-        <!-- WhatsAPP -->
-        <div class="whatsapp-chatbox" id="whatsapp-chatbox">
-            <div class="chat-header">
-                <img src="images/foo-agent-img.jpg" alt="Profile" class="profile-pic" />
-                <div class="chat-info">
-                    <h3>Noreen Kim</h3>
-                    <p>Usually replies within 1 hour</p>
-                </div>
-                <button id="close-chat">×</button>
-            </div>
-            <div class="chat-body">
-                <div class="message received">Hello! How can we help you today?</div>
-            </div>
-            <div class="chat-footer">
-                <input type="text" id="chat-input" placeholder="Type a message..." />
-                <button id="send-message">Send</button>
-            </div>
+          <div class="platform-selector">
+            <label>
+              <input type="radio" name="platform" value="whatsapp" checked />
+              <span class="platform-icon"
+                ><i class="fab fa-whatsapp"></i> WhatsApp</span
+              >
+            </label>
+            <label>
+              <input type="radio" name="platform" value="viber" />
+              <span class="platform-icon"
+                ><i class="fab fa-viber"></i> Viber</span
+              >
+            </label>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+        <div
+          class="quick-contact-message success-message"
+          id="quick-success-message"
+        >
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="success-text">
+            <span class="success-title">Message Sent!</span>
+            <span class="success-desc"
+              >We'll contact you shortly on your preferred platform.</span
+            >
+          </div>
         </div>
-        <button id="whatsapp-button" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
-            Chat with us
-        </button>
+        <div
+          class="quick-contact-message error-message"
+          id="quick-error-message"
+        ></div>
+      </div>
+      <button id="quick-contact-button" class="quick-contact-btn">
+        <i class="fas fa-phone-alt"></i>
+        For quicker live inquiry
+      </button>
 
+      <!-- WhatsAPP -->
+      <div class="whatsapp-chatbox" id="whatsapp-chatbox">
+        <div class="chat-header">
+          <img
+            src="images/foo-agent-img.jpg"
+            alt="Profile"
+            class="profile-pic"
+          />
+          <div class="chat-info">
+            <h3>Noreen Kim</h3>
+            <p>Usually replies within 1 hour</p>
+          </div>
+          <button id="close-chat">×</button>
+        </div>
+        <div class="chat-body">
+          <div class="message received">Hello! How can we help you today?</div>
+        </div>
+        <div class="chat-footer">
+          <input type="text" id="chat-input" placeholder="Type a message..." />
+          <button id="send-message">Send</button>
+        </div>
+      </div>
+      <button id="whatsapp-button" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+        Chat with us
+      </button>
 
-        <script src="/js/quick-contact.js"></script>
-        <script src="/js/whatsapp.js"></script>
-        <script src="hanap.js"></script>
-        <script src="/js/bm-gallery.js"></script>
-        <script src="/js/scrollspy.js"></script>
-        <script src="../js/header-component.js"></script>
+      <script src="/js/quick-contact.js"></script>
+      <script src="/js/whatsapp.js"></script>
+      <script src="hanap.js"></script>
+      <script src="/js/bm-gallery.js"></script>
+      <script src="/js/scrollspy.js"></script>
+      <script src="../js/header-component.js"></script>
     </main>
-</body>
-
+  </body>
 </html>
