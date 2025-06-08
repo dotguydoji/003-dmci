@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DMCI HOMES - Premium Real Estate</title>
@@ -13,585 +12,679 @@
     <link rel="stylesheet" href="css/search.css" />
     <link rel="stylesheet" href="css/whatsapp.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- DOM Purify for Search Security -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <img src="images/dmci-logo.png" alt="DMCI Homes Logo" />
-            </div>
+      <nav class="nav-container">
+        <div class="logo">
+          <img src="images/dmci-logo.png" alt="DMCI Homes Logo" />
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="pages/browsemore.html">Locations</a></li>
-                <li><a href="#highlights">Highlights</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="pages/browsemore.html">Locations</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
 
-            <!-- Mobile Menu Toggle -->
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <!-- Mobile Menu Toggle -->
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-            <!-- Functional Search Container (replaces search-icon) -->
-            <div class="search-container">
-                <form id="search" class="search-form">
-                    <div class="container-input">
-                        <input id="search-bar" type="text" placeholder="Location" name="text" class="input" />
-                        <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </form>
-                <div id="results" class="results-dropdown"></div>
+        <!-- Functional Search Container (replaces search-icon) -->
+        <div class="search-container">
+          <form id="search" class="search-form">
+            <div class="container-input">
+              <input
+                id="search-bar"
+                type="text"
+                placeholder="Location"
+                name="text"
+                class="input"
+              />
+              <svg
+                fill="#000000"
+                width="20px"
+                height="20px"
+                viewBox="0 0 1920 1920"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
             </div>
-        </nav>
+          </form>
+          <div id="results" class="results-dropdown"></div>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-subtitle">Premium Properties</div>
-                <h1 class="hero-title">Luxury Condominiums</h1>
-                <p class="hero-description">
-                    Discover exceptional condominiums in the most sought-after
-                    locations. Our curated collection showcases elegant condo residences
-                    that redefine modern luxury, offering sophisticated design, top-tier
-                    amenities, and effortless urban living.
-                </p>
-                <a href="#featured" class="hero-btn">Explore Properties</a>
-            </div>
-            <div class="hero-image"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-subtitle">Premium Properties</div>
+          <h1 class="hero-title">Luxury Condominiums</h1>
+          <p class="hero-description">
+            Discover exceptional condominiums in the most sought-after
+            locations. Our curated collection showcases elegant condo residences
+            that redefine modern luxury, offering sophisticated design, top-tier
+            amenities, and effortless urban living.
+          </p>
+          <a href="#featured" class="hero-btn">Explore Properties</a>
         </div>
-        <div class="scroll-indicator">
-            <div style="font-size: 2rem">↓</div>
-        </div>
+        <div class="hero-image"></div>
+      </div>
+      <div class="scroll-indicator">
+        <div style="font-size: 2rem">↓</div>
+      </div>
     </section>
 
     <!-- Featured Projects Section -->
     <section class="featured-projects" id="featured">
-        <div class="featured-container">
-            <div class="featured-grid">
-                <div class="featured-main">
-                    <div class="brand-logo">+</div>
-                    <h2>Featured Projects</h2>
-                    <p>
-                        DMCI Homes is set to introduce premium loft units that combine
-                        modern design with elevated urban living.
-                    </p>
-                    <a href="#" class="see-more">See more</a>
-                </div>
-                <div class="project-card" style="
+      <div class="featured-container">
+        <div class="featured-grid">
+          <div class="featured-main">
+            <div class="brand-logo">+</div>
+            <h2>Featured Projects</h2>
+            <p>
+              DMCI Homes is set to introduce premium loft units that combine
+              modern design with elevated urban living.
+            </p>
+            <a href="#" class="see-more">See more</a>
+          </div>
+          <div
+            class="project-card"
+            style="
               background-image: url('https://www.dmcihomes.com/uploads/news/dmci-homes-to-introduce-premium-loft-units-1748836402049.jpg');
-            ">
-                    <div class="project-number">01</div>
-                    <h3>Dining Room</h3>
-                    <p>
-                        A visual rendering of the dining space in DMCI Homes' upscale
-                        loft-style condo unit.
-                    </p>
-                </div>
-                <div class="project-card" style="
+            "
+          >
+            <div class="project-number">01</div>
+            <h3>Dining Room</h3>
+            <p>
+              A visual rendering of the dining space in DMCI Homes' upscale
+              loft-style condo unit.
+            </p>
+          </div>
+          <div
+            class="project-card"
+            style="
               background-image: url('https://www.dmcihomes.com/uploads/news/dmci-homes-to-introduce-premium-loft-units-1748837636316.jpg');
-            ">
-                    <div class="project-number">02</div>
-                    <h3>Bedroom</h3>
-                    <p>
-                        Depicted above is an artist's impression of Bedroom 1 in DMCI
-                        Homes' high-end loft unit.
-                    </p>
-                </div>
-                <div class="project-card" style="
+            "
+          >
+            <div class="project-number">02</div>
+            <h3>Bedroom</h3>
+            <p>
+              Depicted above is an artist's impression of Bedroom 1 in DMCI
+              Homes' high-end loft unit.
+            </p>
+          </div>
+          <div
+            class="project-card"
+            style="
               background-image: url('https://www.dmcihomes.com/uploads/news/dmci-homes-to-introduce-premium-loft-units-1748837255254.jpg');
-            ">
-                    <div class="project-number">03</div>
-                    <h3>Living Room</h3>
-                    <p>
-                        A visual rendering of the living area in DMCI Homes' upscale
-                        loft-style condominium.
-                    </p>
-                </div>
-            </div>
+            "
+          >
+            <div class="project-number">03</div>
+            <h3>Living Room</h3>
+            <p>
+              A visual rendering of the living area in DMCI Homes' upscale
+              loft-style condominium.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Carousel Section -->
     <section class="carousel-section" id="highlights">
-        <div class="carousel-container">
-            <div class="carousel-header"></div>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-onedelta.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>One Delta Terraces</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Quezon City, Metro Manila</h2>
-                                </div>
-                            </div>
-
-                            <p>
-                                <br />A new icon of resort-style living is coming soon to the
-                                corner of West Avenue and Quezon Avenue in West Triangle,
-                                Quezon City. One Delta Terraces is a single-tower development
-                                combining prime location with a refreshing, resort-inspired
-                                lifestyle in the heart of the city.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-solmera.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>Solmera Coast</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>Mid-rise Condotel</h4>
-                                    <h2>San Juan, Batangas</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />Solmera Coast is DMCI Homes' pioneering condotel
-                                development in San Juan, Batangas. Inspired by tropical Asian
-                                architecture, it offers a unique blend of comfort, wellness,
-                                and refined indulgence, providing an immersive holiday
-                                experience.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-kalea.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>Kalea Heights</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Cebu City, Cebu</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />Kalea Heights marks DMCI Homes' debut in Cebu City with
-                                a four-tower residential development. Located along Good
-                                Shepherd Road in Barangay Guadalupe, it embodies expansive,
-                                open spaces and lush living environments, redefining urban
-                                living in the Queen City of the South.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-oriana.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>The Oriana</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Quezon City, Metro Manila</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />The Oriana is a two-tower high-rise residential
-                                development by DMCI Homes, situated along Aurora Boulevard in
-                                Quezon City. Designed with modern tropical architecture, it
-                                offers convenient access to major transportation hubs,
-                                educational institutions, business centers, and shopping
-                                malls.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-fortis.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>Fortis Residences</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>Mixed-use High-rise</h4>
-                                    <h2>Makati City, Metro Manila</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />Fortis Residences is a high-end mixed-use development by
-                                DMCI Homes, located along Chino Roces Avenue in Makati City.
-                                Combining modern design and premium amenities, it redefines
-                                high-rise living with a perfect balance of tranquility and
-                                city convenience.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-aston.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>The Aston Place</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Pasay City, Metro Manila</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />The Aston Place is a modern-themed, resort-inspired
-                                condominium by DMCI Homes, situated along Dominga Street in
-                                Pasay City. It offers a convenient and well-balanced
-                                lifestyle, connecting residents to business districts,
-                                shopping malls, and key areas in Manila's south.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-alder.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>Alder Residences</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Taguig City, Metro Manila</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />Alder Residences is a resort-inspired community by DMCI
-                                Homes, located in Acacia Estates, Taguig City. Offering a
-                                fresh opportunity for families and professionals, it provides
-                                a comfortable and relaxing home near NAIA, McKinley Hill, BGC,
-                                and Makati City.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <div class="slide-image" style="background-image: url('images/bg-allegra.jpg')"></div>
-                        <div class="slide-content">
-                            <h3>Allegra Garden Place</h3>
-                            <div class="project-details">
-                                <div class="project-detail">
-                                    <h4>High-rise Condominium</h4>
-                                    <h2>Pasig City, Metro Manila</h2>
-                                </div>
-                            </div>
-                            <p>
-                                <br />Allegra Garden Place is a two-tower high-rise
-                                residential development by DMCI Homes, located along Pasig
-                                Boulevard in Barangay Bagong Ilog, Pasig City. Featuring a
-                                modern architectural theme with Moroccan inspiration, it
-                                offers a unique and sophisticated living experience with
-                                resort-style amenities.
-                            </p>
-                            <a href="#" class="view-project">View Project</a>
-                        </div>
-                    </div>
+      <div class="carousel-container">
+        <div class="carousel-header"></div>
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-onedelta.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>One Delta Terraces</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Quezon City, Metro Manila</h2>
+                  </div>
                 </div>
-                <button class="carousel-nav prev">‹</button>
-                <button class="carousel-nav next">›</button>
+
+                <p>
+                  <br />A new icon of resort-style living is coming soon to the
+                  corner of West Avenue and Quezon Avenue in West Triangle,
+                  Quezon City. One Delta Terraces is a single-tower development
+                  combining prime location with a refreshing, resort-inspired
+                  lifestyle in the heart of the city.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
             </div>
-            <div class="carousel-indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-solmera.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>Solmera Coast</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>Mid-rise Condotel</h4>
+                    <h2>San Juan, Batangas</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />Solmera Coast is DMCI Homes' pioneering condotel
+                  development in San Juan, Batangas. Inspired by tropical Asian
+                  architecture, it offers a unique blend of comfort, wellness,
+                  and refined indulgence, providing an immersive holiday
+                  experience.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
             </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-kalea.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>Kalea Heights</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Cebu City, Cebu</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />Kalea Heights marks DMCI Homes' debut in Cebu City with
+                  a four-tower residential development. Located along Good
+                  Shepherd Road in Barangay Guadalupe, it embodies expansive,
+                  open spaces and lush living environments, redefining urban
+                  living in the Queen City of the South.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-oriana.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>The Oriana</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Quezon City, Metro Manila</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />The Oriana is a two-tower high-rise residential
+                  development by DMCI Homes, situated along Aurora Boulevard in
+                  Quezon City. Designed with modern tropical architecture, it
+                  offers convenient access to major transportation hubs,
+                  educational institutions, business centers, and shopping
+                  malls.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-fortis.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>Fortis Residences</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>Mixed-use High-rise</h4>
+                    <h2>Makati City, Metro Manila</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />Fortis Residences is a high-end mixed-use development by
+                  DMCI Homes, located along Chino Roces Avenue in Makati City.
+                  Combining modern design and premium amenities, it redefines
+                  high-rise living with a perfect balance of tranquility and
+                  city convenience.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-aston.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>The Aston Place</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Pasay City, Metro Manila</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />The Aston Place is a modern-themed, resort-inspired
+                  condominium by DMCI Homes, situated along Dominga Street in
+                  Pasay City. It offers a convenient and well-balanced
+                  lifestyle, connecting residents to business districts,
+                  shopping malls, and key areas in Manila's south.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-alder.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>Alder Residences</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Taguig City, Metro Manila</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />Alder Residences is a resort-inspired community by DMCI
+                  Homes, located in Acacia Estates, Taguig City. Offering a
+                  fresh opportunity for families and professionals, it provides
+                  a comfortable and relaxing home near NAIA, McKinley Hill, BGC,
+                  and Makati City.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div
+                class="slide-image"
+                style="background-image: url('images/bg-allegra.jpg')"
+              ></div>
+              <div class="slide-content">
+                <h3>Allegra Garden Place</h3>
+                <div class="project-details">
+                  <div class="project-detail">
+                    <h4>High-rise Condominium</h4>
+                    <h2>Pasig City, Metro Manila</h2>
+                  </div>
+                </div>
+                <p>
+                  <br />Allegra Garden Place is a two-tower high-rise
+                  residential development by DMCI Homes, located along Pasig
+                  Boulevard in Barangay Bagong Ilog, Pasig City. Featuring a
+                  modern architectural theme with Moroccan inspiration, it
+                  offers a unique and sophisticated living experience with
+                  resort-style amenities.
+                </p>
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-nav prev">‹</button>
+          <button class="carousel-nav next">›</button>
         </div>
+        <div class="carousel-indicators">
+          <div class="indicator active"></div>
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Add this section before the footer in your index.html -->
     <!-- Services & Offers Section -->
     <section class="services-section" id="services">
-        <div class="services-container">
-            <div class="services-header">
-                <h2>Your Property Investment Partner</h2>
-                <p>
-                    Complete solutions for your real estate journey with personalized
-                    service and expert guidance
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Exclusive Offers -->
-                <div class="service-card">
-                    <div class="service-icon">%</div>
-                    <h3>Exclusive Offers & Promotions</h3>
-                    <p class="service-description">
-                        Take advantage of limited-time offers and special promotions
-                        designed to make your property investment more affordable and
-                        rewarding.
-                    </p>
-                    <ul class="service-list">
-                        <li>
-                            <strong>Limited Units Available</strong>
-                            <span>Premium locations with exclusive access and priority
-                                selection</span>
-                        </li>
-                        <li>
-                            <strong>Early-Bird Discounts</strong>
-                            <span>Special pricing for advance reservations and quick
-                                decisions</span>
-                        </li>
-                        <li>
-                            <strong>Promotional Payment Terms</strong>
-                            <span>Flexible payment schedules with attractive interest
-                                rates</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Consultation -->
-                <div class="service-card">
-                    <div class="service-icon">C</div>
-                    <h3>Expert Consultation & Support</h3>
-                    <p class="service-description">
-                        Receive personalized guidance from our experienced property
-                        specialists who understand your unique needs and investment goals.
-                    </p>
-                    <ul class="service-list">
-                        <li>
-                            <strong>Free Property Consultation</strong>
-                            <span>One-on-one sessions to discuss your requirements and
-                                preferences</span>
-                        </li>
-                        <li>
-                            <strong>Investment Goals Planning</strong>
-                            <span>Customized strategies based on your budget and timeline</span>
-                        </li>
-                        <li>
-                            <strong>Direct Specialist Access</strong>
-                            <span>Immediate assistance and ongoing support throughout your
-                                journey</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Financing -->
-                <div class="service-card">
-                    <div class="service-icon">F</div>
-                    <h3>Comprehensive Financing Solutions</h3>
-                    <p class="service-description">
-                        Multiple financing options to suit different budgets and
-                        preferences, making property ownership accessible and convenient
-                        for everyone.
-                    </p>
-                    <ul class="service-list">
-                        <li>
-                            <strong>In-House Financing</strong>
-                            <span>Simplified requirements with streamlined approval
-                                process</span>
-                        </li>
-                        <li>
-                            <strong>Bank Partnership Programs</strong>
-                            <span>Competitive rates through partnerships with leading
-                                banks</span>
-                        </li>
-                        <li>
-                            <strong>Flexible Payment Options</strong>
-                            <span>Extended terms and low down payment plans available</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="services-cta">
-                <h3>Ready to Start Your Property Investment Journey?</h3>
-                <p>
-                    Contact our specialists today for a personalized consultation and
-                    discover the perfect property solution for you.
-                </p>
-                <a href="#contact" class="cta-button">Schedule Free Consultation</a>
-            </div>
+      <div class="services-container">
+        <div class="services-header">
+          <h2>Your Property Investment Partner</h2>
+          <p>
+            Complete solutions for your real estate journey with personalized
+            service and expert guidance
+          </p>
         </div>
+
+        <div class="services-grid">
+          <!-- Exclusive Offers -->
+          <div class="service-card">
+            <div class="service-icon">%</div>
+            <h3>Exclusive Offers & Promotions</h3>
+            <p class="service-description">
+              Take advantage of limited-time offers and special promotions
+              designed to make your property investment more affordable and
+              rewarding.
+            </p>
+            <ul class="service-list">
+              <li>
+                <strong>Limited Units Available</strong>
+                <span
+                  >Premium locations with exclusive access and priority
+                  selection</span
+                >
+              </li>
+              <li>
+                <strong>Early-Bird Discounts</strong>
+                <span
+                  >Special pricing for advance reservations and quick
+                  decisions</span
+                >
+              </li>
+              <li>
+                <strong>Promotional Payment Terms</strong>
+                <span
+                  >Flexible payment schedules with attractive interest
+                  rates</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Consultation -->
+          <div class="service-card">
+            <div class="service-icon">C</div>
+            <h3>Expert Consultation & Support</h3>
+            <p class="service-description">
+              Receive personalized guidance from our experienced property
+              specialists who understand your unique needs and investment goals.
+            </p>
+            <ul class="service-list">
+              <li>
+                <strong>Free Property Consultation</strong>
+                <span
+                  >One-on-one sessions to discuss your requirements and
+                  preferences</span
+                >
+              </li>
+              <li>
+                <strong>Investment Goals Planning</strong>
+                <span
+                  >Customized strategies based on your budget and timeline</span
+                >
+              </li>
+              <li>
+                <strong>Direct Specialist Access</strong>
+                <span
+                  >Immediate assistance and ongoing support throughout your
+                  journey</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Financing -->
+          <div class="service-card">
+            <div class="service-icon">F</div>
+            <h3>Comprehensive Financing Solutions</h3>
+            <p class="service-description">
+              Multiple financing options to suit different budgets and
+              preferences, making property ownership accessible and convenient
+              for everyone.
+            </p>
+            <ul class="service-list">
+              <li>
+                <strong>In-House Financing</strong>
+                <span
+                  >Simplified requirements with streamlined approval
+                  process</span
+                >
+              </li>
+              <li>
+                <strong>Bank Partnership Programs</strong>
+                <span
+                  >Competitive rates through partnerships with leading
+                  banks</span
+                >
+              </li>
+              <li>
+                <strong>Flexible Payment Options</strong>
+                <span>Extended terms and low down payment plans available</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="services-cta">
+          <h3>Ready to Start Your Property Investment Journey?</h3>
+          <p>
+            Contact our specialists today for a personalized consultation and
+            discover the perfect property solution for you.
+          </p>
+          <a href="#contact" class="cta-button">Schedule Free Consultation</a>
+        </div>
+      </div>
     </section>
 
     <!-- Updated Footer Section -->
     <footer class="footer" id="contact">
-        <div class="footer-container">
-            <!-- Specialist Card with Contact Info -->
-            <div class="specialist-card">
-                <div class="specialist-image"></div>
-                <h3>Rossana B. Fajardo</h3>
-                <p>
-                    With 8 years of experience, Rossana is a trusted real estate expert
-                    known for personalized service and smart guidance in buying,
-                    selling, or investing. She helps clients reach their goals with ease
-                    and confidence.
-                </p>
+      <div class="footer-container">
+        <!-- Specialist Card with Contact Info -->
+        <div class="specialist-card">
+          <div class="specialist-image"></div>
+          <h3>Rossana B. Fajardo</h3>
+          <p>
+            With 8 years of experience, Rossana is a trusted real estate expert
+            known for personalized service and smart guidance in buying,
+            selling, or investing. She helps clients reach their goals with ease
+            and confidence.
+          </p>
 
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <p><a href="tel:+6399297044108">+63 992 970 44108</a></p>
-                    <p>
-                        <a href="mailto:dmciagent.phils@gmail.com">dmciagent.phils@gmail.com</a>
-                    </p>
-                </div>
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <p><a href="tel:+6399297044108">+63 992 970 44108</a></p>
+            <p>
+              <a href="mailto:dmciagent.phils@gmail.com"
+                >dmciagent.phils@gmail.com</a
+              >
+            </p>
+          </div>
 
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="https://www.facebook.com/investingprperty" target="_blank">Facebook</a>
-                    <a href="https://wa.me/6399297044108" target="_blank">WhatsApp</a>
-                    <a href="viber://chat?number=+6399297044108">Viber</a>
-                </div>
-            </div>
-
-            <!-- Main Footer with Form -->
-            <div class="footer-main">
-                <div class="footer-tagline">
-                    We deliver the results that are best for you.
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <form>
-                        <div class="form-row">
-                            <input type="text" placeholder="Full Name" required />
-                            <input type="email" placeholder="Email Address" required />
-                            <input type="tel" placeholder="Phone Number" required />
-                        </div>
-                        <div class="form-row">
-                            <select required>
-                                <option value="">Select Property Type</option>
-                                <option value="condo">Condominium</option>
-                                <option value="house">House & Lot</option>
-                                <option value="townhouse">Townhouse</option>
-                            </select>
-                            <select required>
-                                <option value="">Select Budget Range</option>
-                                <option value="under-5m">Under 5M</option>
-                                <option value="5m-10m">5M - 10M</option>
-                                <option value="above-10m">Above 10M</option>
-                            </select>
-                        </div>
-                        <textarea placeholder="Additional Details" rows="4"></textarea>
-                        <button type="submit" class="submit-btn">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Register Section -->
-            <div class="register-section">
-                <div class="register-card" onclick="window.location.href='#register'">
-                    <h3>Register Here</h3>
-                    <a href="https://your-target-link.com" target="_blank">
-                        <img src="images/Screenshot 2025-06-07 162231.png" alt="Clickable Image" />
-                    </a>
-
-                    <p>
-                        <br />Book Your Property Viewing Now! <br />
-                        Fill out the form above, and we’ll get in touch to confirm your
-                        schedule.
-                    </p>
-                </div>
-            </div>
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://www.facebook.com/investingprperty" target="_blank"
+              >Facebook</a
+            >
+            <a href="https://wa.me/6399297044108" target="_blank">WhatsApp</a>
+            <a href="viber://chat?number=+6399297044108">Viber</a>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <div>
-                <p>Copyright © 2025 DMCI HOMES. All rights reserved.</p>
-                <p>
-                    Materials like Images/Photos used here are for marketing purposes
-                    only. No copyright infringement intended. D M C I H O M E S . C O M
-                    is the official website.
-                </p>
-            </div>
+        <!-- Main Footer with Form -->
+        <div class="footer-main">
+          <div class="footer-tagline">
+            We deliver the results that are best for you.
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <form>
+              <div class="form-row">
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <input type="tel" placeholder="Phone Number" required />
+              </div>
+              <div class="form-row">
+                <select required>
+                  <option value="">Select Property Type</option>
+                  <option value="condo">Condominium</option>
+                  <option value="house">House & Lot</option>
+                  <option value="townhouse">Townhouse</option>
+                </select>
+                <select required>
+                  <option value="">Select Budget Range</option>
+                  <option value="under-5m">Under 5M</option>
+                  <option value="5m-10m">5M - 10M</option>
+                  <option value="above-10m">Above 10M</option>
+                </select>
+              </div>
+              <textarea placeholder="Additional Details" rows="4"></textarea>
+              <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+          </div>
         </div>
+
+        <!-- Register Section -->
+        <div class="register-section">
+          <div class="register-card" onclick="window.location.href='#register'">
+            <h3>Register Here</h3>
+            <a href="https://your-target-link.com" target="_blank">
+              <img
+                src="images/Screenshot 2025-06-07 162231.png"
+                alt="Clickable Image"
+              />
+            </a>
+
+            <p>
+              <br />Book Your Property Viewing Now! <br />
+              Fill out the form above, and we’ll get in touch to confirm your
+              schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p>Copyright © 2025 DMCI HOMES. All rights reserved.</p>
+          <p>
+            Materials like Images/Photos used here are for marketing purposes
+            only. No copyright infringement intended. D M C I H O M E S . C O M
+            is the official website.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Quick Contact Button -->
     <div class="quick-contact-popup" id="quick-contact-popup">
-        <div class="quick-contact-header">
-            <h3>
-                For Quick Live Inquiry <br />
-                We can call you. <br />
-                Enter your active number
-            </h3>
-            <button class="close-quick-contact" id="close-quick-contact">×</button>
+      <div class="quick-contact-header">
+        <h3>
+          For Quick Live Inquiry <br />
+          We can call you. <br />
+          Enter your active number
+        </h3>
+        <button class="close-quick-contact" id="close-quick-contact">×</button>
+      </div>
+
+      <form class="quick-contact-form" id="quick-contact-form">
+        <input
+          type="tel"
+          id="contact-number"
+          placeholder="Phone Number (e.g., 09123456789)"
+          pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)"
+          required
+        />
+
+        <div class="platform-selector">
+          <label>
+            <input type="radio" name="platform" value="whatsapp" checked />
+            <span class="platform-icon"
+              ><i class="fab fa-whatsapp"></i> WhatsApp</span
+            >
+          </label>
+          <label>
+            <input type="radio" name="platform" value="viber" />
+            <span class="platform-icon"
+              ><i class="fab fa-viber"></i> Viber</span
+            >
+          </label>
         </div>
 
-        <form class="quick-contact-form" id="quick-contact-form">
-            <input type="tel" id="contact-number" placeholder="Phone Number (e.g., 09123456789)"
-                pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)" required />
-
-            <div class="platform-selector">
-                <label>
-                    <input type="radio" name="platform" value="whatsapp" checked />
-                    <span class="platform-icon"><i class="fab fa-whatsapp"></i> WhatsApp</span>
-                </label>
-                <label>
-                    <input type="radio" name="platform" value="viber" />
-                    <span class="platform-icon"><i class="fab fa-viber"></i> Viber</span>
-                </label>
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
-        <div class="quick-contact-message success-message" id="quick-success-message">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <div class="success-text">
-                <span class="success-title">Message Sent!</span>
-                <span class="success-desc">We'll contact you shortly on your preferred platform.</span>
-            </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div
+        class="quick-contact-message success-message"
+        id="quick-success-message"
+      >
+        <div class="success-icon">
+          <i class="fas fa-check-circle"></i>
         </div>
-        <div class="quick-contact-message error-message" id="quick-error-message"></div>
+        <div class="success-text">
+          <span class="success-title">Message Sent!</span>
+          <span class="success-desc"
+            >We'll contact you shortly on your preferred platform.</span
+          >
+        </div>
+      </div>
+      <div
+        class="quick-contact-message error-message"
+        id="quick-error-message"
+      ></div>
     </div>
     <button id="quick-contact-button" class="quick-contact-btn">
-        <i class="fas fa-phone-alt"></i>
+      <i class="fas fa-phone-alt"></i>
     </button>
 
     <!-- WhatsAPP -->
     <div class="whatsapp-chatbox" id="whatsapp-chatbox">
-        <div class="chat-header">
-            <img src="images/property-specialist.jpg" alt="Profile" class="profile-pic" />
-            <div class="chat-info">
-                <h3>Rossana B.</h3>
-                <p>Usually replies within 1 hour</p>
-            </div>
-            <button id="close-chat">×</button>
+      <div class="chat-header">
+        <img
+          src="images/property-specialist.jpg"
+          alt="Profile"
+          class="profile-pic"
+        />
+        <div class="chat-info">
+          <h3>Rossana B.</h3>
+          <p>Usually replies within 1 hour</p>
         </div>
-        <div class="chat-body">
-            <div class="message received">Hello! How can we help you today?</div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="chat-input" placeholder="Type a message..." />
-            <button id="send-message">Send</button>
-        </div>
+        <button id="close-chat">×</button>
+      </div>
+      <div class="chat-body">
+        <div class="message received">Hello! How can we help you today?</div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="chat-input" placeholder="Type a message..." />
+        <button id="send-message">Send</button>
+      </div>
     </div>
     <button id="whatsapp-button" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i>
+      <i class="fab fa-whatsapp"></i>
     </button>
 
     <script src="js/main.js"></script>
     <script src="js/whatsapp.js"></script>
     <script src="js/quick-contact.js"></script>
     <!-- <script src="js/devtool.js"></script> -->
-    <script src="pages/hanap.js"></script>
-</body>
-
+    <script src="js/index-search.js"></script>
+  </body>
 </html>
