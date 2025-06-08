@@ -172,33 +172,88 @@
   /* Quick Contact Button Styles */
 .quick-contact-btn {
     position: fixed;
-    bottom: 90px; /* Moved up slightly from 80px */
+    bottom: 90px;
     right: 20px;
-    background: #4a6be0; /* Different color than WhatsApp */
+    background: #232324;
     color: white;
-    padding: 15px 28px; /* Increased from 12px 24px */
+    width: 60px;
+    height: 60px;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px; /* Increased from 8px */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow */
-    z-index: 99998; /* Just below WhatsApp chatbox */
-    font-size: 16px; /* Increased from 14px */
-    font-weight: 500;
+    justify-content: center;
+    box-shadow: 
+        0 0 20px rgba(255, 23, 68, 0.6),
+        0 0 40px rgba(255, 23, 68, 0.4),
+        0 0 80px rgba(255, 23, 68, 0.2);
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
-    min-width: 220px; /* Added minimum width */
+    z-index: 9997;
+    animation: neonPulse 2s infinite;
+    gap: 0; /* Optional: remove gap for single-icon use */
+    padding: 0; /* Important: remove padding for perfect circle */
 }
 
+
 .quick-contact-btn:hover {
-    background: #3a56b9;
+    background: #ff1744;
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+    box-shadow: 
+        0 0 30px rgba(255, 23, 68, 0.8),
+        0 0 60px rgba(255, 23, 68, 0.6),
+        0 0 100px rgba(255, 23, 68, 0.4);
+    animation-play-state: paused;
 }
 
 .quick-contact-btn i {
-    font-size: 20px; /* Increased icon size */
+    font-size: 18px; /* Exclamation icon size */
+}
+
+/* Change quick contact icon to exclamation icon */
+.quick-contact-btn i.fas.fa-phone-alt:before {
+    content: "\f12a"; /* Font Awesome exclamation icon */
+}
+
+/* Neon pulsing animation */
+@keyframes neonPulse {
+    0% {
+        box-shadow: 
+            0 0 20px rgba(255, 23, 68, 0.6),
+            0 0 40px rgba(255, 23, 68, 0.4),
+            0 0 80px rgba(255, 23, 68, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(255, 23, 68, 0.8),
+            0 0 60px rgba(255, 23, 68, 0.6),
+            0 0 100px rgba(255, 23, 68, 0.4);
+    }
+    100% {
+        box-shadow: 
+            0 0 20px rgba(255, 23, 68, 0.6),
+            0 0 40px rgba(255, 23, 68, 0.4),
+            0 0 80px rgba(255, 23, 68, 0.2);
+    }
+}
+
+/* Blinking animation for exclamation point */
+@keyframes blinkingExclamation {
+    0% {
+        opacity: 1;
+        background: #ff4444;
+    }
+    50% {
+        opacity: 0.6;
+        background: #ff6666;
+    }
+    100% {
+        opacity: 1;
+        background: #ff4444;
+    }
 }
 
 .quick-contact-popup {
@@ -442,21 +497,23 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    width: 60px;
+    height: 60px;
     background: #25D366;
     color: white;
-    padding: 12px 24px;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
     font-weight: 500;
     transition: all 0.3s ease;
     z-index: 9998;
+    padding: 0;   /* Important for perfect circle */
+    gap: 0;       /* Remove gap for icon-only design */
 }
 
 .whatsapp-btn:hover {
@@ -466,38 +523,6 @@
 
 .whatsapp-btn i {
     font-size: 20px;
-}
-
-/* Quick Contact Button - Base Styles */
-.quick-contact-btn {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: #4a6be0;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    z-index: 9997;
-}
-
-.quick-contact-btn:hover {
-    background: #3a56b9;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-}
-
-.quick-contact-btn i {
-    font-size: 18px;
 }
 
 /* ===== Tablet Responsive Styles (768px to 1024px) ===== */

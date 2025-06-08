@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="css/search.css" />
-    <link rel="stylesheet" href="css/whatsapp.css">
+    <link rel="stylesheet" href="css/whatsapp.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
@@ -21,6 +21,9 @@
 
     <!-- DOM Purify for Search Security -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -519,24 +522,28 @@
         </div>
     </footer>
 
-
     <!-- Quick Contact Button -->
     <div class="quick-contact-popup" id="quick-contact-popup">
         <div class="quick-contact-header">
-            <h3>Enter your active number</h3>
+            <h3>
+                For Quick Live Inquiry <br />
+                We can call you. <br />
+                Enter your active number
+            </h3>
             <button class="close-quick-contact" id="close-quick-contact">×</button>
         </div>
+
         <form class="quick-contact-form" id="quick-contact-form">
             <input type="tel" id="contact-number" placeholder="Phone Number (e.g., 09123456789)"
                 pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)" required />
 
             <div class="platform-selector">
                 <label>
-                    <input type="radio" name="platform" value="whatsapp" checked>
+                    <input type="radio" name="platform" value="whatsapp" checked />
                     <span class="platform-icon"><i class="fab fa-whatsapp"></i> WhatsApp</span>
                 </label>
                 <label>
-                    <input type="radio" name="platform" value="viber">
+                    <input type="radio" name="platform" value="viber" />
                     <span class="platform-icon"><i class="fab fa-viber"></i> Viber</span>
                 </label>
             </div>
@@ -556,7 +563,6 @@
     </div>
     <button id="quick-contact-button" class="quick-contact-btn">
         <i class="fas fa-phone-alt"></i>
-        For quicker live inquiry
     </button>
 
     <!-- WhatsAPP -->
@@ -579,7 +585,6 @@
     </div>
     <button id="whatsapp-button" class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
-        Chat with us
     </button>
 
     <script src="js/main.js"></script>
