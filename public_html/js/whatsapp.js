@@ -1,56 +1,54 @@
-// Config object for easier management and validation
-const config = {
-    phone: "6399297044108",
-    maxMessageLength: 1000,
-    minMessageLength: 1,
-    messageRateLimit: 5000, // ms between messages
-    sanitizationRules: /[<>]/g // Remove potentially harmful HTML characters
-};
-
-// Rate limiting implementation
-let lastMessageTime = 0;
-
-// Input sanitization function
-function sanitizeInput(input) {
-    if (typeof input !== 'string') return '';
-    return input
-        .replace(config.sanitizationRules, '')
-        .trim()
-        .slice(0, config.maxMessageLength);
-}
-
-// Validate phone number format
-function validatePhoneNumber(phone) {
-    const phoneRegex = /^\d{10,15}$/;
-    return phoneRegex.test(phone);
-}
-
-// Get elements with error handling
+// Validate elements exist before accessing
 function getElement(id) {
     const element = document.getElementById(id);
-    if (!element) throw new Error(`Element with id '${id}' not found`);
+    if (!element) {
+        console.error(`Element with id '${id}' not found`);
+    }
     return element;
 }
 
-// Initialize elements safely
-let chatbox, whatsappButton, closeChat, chatInput, sendMessage;
+// Core elements
+const whatsappButton = getElement('whatsapp-button');
+const chatbox = getElement('whatsapp-chatbox');
+const closeChat = getElement('close-chat');
+const sendMessage = getElement('send-message');
+const chatInput = getElement('chat-input');
 
-try {
-    chatbox = getElement('whatsapp-chatbox');
-    whatsappButton = getElement('whatsapp-button');
-    closeChat = getElement('close-chat');
-    chatInput = getElement('chat-input');
-    sendMessage = getElement('send-message');
-} catch (error) {
-    console.error('Failed to initialize WhatsApp chat:', error);
-    throw error;
+// Guard clause for missing elements
+if (!whatsappButton || !chatbox || !closeChat || !sendMessage || !chatInput) {
+    console.error('Required WhatsApp elements not found');
 }
 
-// Rate-limited message sender
+// Security configuration
+const config = {
+    phone: '639751243000',
+    minMessageLength: 2,
+    rateLimit: 3000,
+    maxMessageLength: 500
+};
+
+// Rate limiting
+let lastMessageTime = 0;
+
+// Utility functions
+function validatePhoneNumber(phone) {
+    return /^\+?[1-9]\d{7,14}$/.test(phone);
+}
+
+function sanitizeInput(input) {
+    if (typeof input !== 'string') return '';
+    return input
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/javascript:/gi, '')
+        .replace(/on\w+\s*=/gi, '')
+        .trim()
+        .substring(0, config.maxMessageLength);
+}
+
 function sendToWhatsApp(message) {
     const currentTime = Date.now();
 
-    if (currentTime - lastMessageTime < config.messageRateLimit) {
+    if (currentTime - lastMessageTime < config.rateLimit) {
         console.warn('Rate limit exceeded. Please wait before sending another message.');
         return false;
     }
@@ -80,11 +78,21 @@ function sendToWhatsApp(message) {
     }
 }
 
-// Event Listeners with error boundaries
+// Event Listeners with toggle functionality
 whatsappButton.addEventListener('click', () => {
     try {
-        chatbox.style.display = 'flex';
-        whatsappButton.style.display = 'none';
+        // Check if chatbox is currently visible
+        const isVisible = chatbox.style.display === 'flex';
+
+        if (isVisible) {
+            // Close the chat
+            chatbox.style.display = 'none';
+            // Keep the button visible and in its original position
+        } else {
+            // Open the chat
+            chatbox.style.display = 'flex';
+            // Keep the button visible and in its original position - DON'T HIDE IT
+        }
     } catch (error) {
         console.error('Error toggling chat visibility:', error);
     }
@@ -93,7 +101,7 @@ whatsappButton.addEventListener('click', () => {
 closeChat.addEventListener('click', () => {
     try {
         chatbox.style.display = 'none';
-        whatsappButton.style.display = 'flex';
+        // Keep the WhatsApp button visible - DON'T CHANGE ITS DISPLAY
     } catch (error) {
         console.error('Error closing chat:', error);
     }

@@ -18,12 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastSubmitTime = 0;
     const minTimeBetweenSubmits = 60000; // 1 minute
 
-    // Toggle form visibility
+    // Toggle form visibility with improved toggle functionality
     quickContactBtn.addEventListener('click', function () {
-        quickContactPopup.style.display = 'block';
-        // Make sure messages are hidden when popup opens
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
+        // Check if popup is currently visible
+        const isVisible = quickContactPopup.style.display === 'block';
+
+        if (isVisible) {
+            // Close the popup
+            quickContactPopup.style.display = 'none';
+            resetForm();
+        } else {
+            // Open the popup
+            quickContactPopup.style.display = 'block';
+            // Make sure messages are hidden when popup opens
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+        }
     });
 
     closeQuickContactBtn.addEventListener('click', function () {
@@ -163,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Close form when clicking outside
+    // Close form when clicking outside - but don't reset if just clicking elsewhere
     document.addEventListener('click', function (e) {
         if (!quickContactPopup.contains(e.target) && e.target !== quickContactBtn) {
             quickContactPopup.style.display = 'none';

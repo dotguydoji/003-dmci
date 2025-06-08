@@ -92,14 +92,15 @@
 }
 
 #send-message {
-    background: #25D366;
+    /* background: #25D366;
     color: white;
     border: none;
-    padding: 12px 20px; /* Increased from 8px 15px */
-    border-radius: 25px; /* Increased from 20px */
+    padding: 12px 20px; 
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 16px; /* Added font size */
-    font-weight: 500;
+    font-size: 16px; 
+    font-weight: 500; */
+    display:  none;
 }
 
 .whatsapp-btn {
@@ -129,44 +130,6 @@
 .whatsapp-btn i {
     font-size: 22px; /* Increased icon size */
 }
-
-@media screen and (max-width: 900px) {
-    .whatsapp-chatbox {
-      width: 100%;
-      height: 100vh;
-      bottom: 0;
-      right: 0;
-      border-radius: 0;
-    }
-  
-    .chat-header {
-      border-radius: 0;
-    }
-  
-    .chat-body {
-      height: calc(100vh - 140px);
-    }
-  
-    .whatsapp-btn {
-      bottom: 15px;
-      right: 15px;
-      padding: 14px 26px; /* Adjusted for mobile */
-      font-size: 16px;
-    }
-  
-    .message {
-      max-width: 90%;
-    }
-  
-    #chat-input {
-      font-size: 16px;
-      padding: 12px;
-    }
-  
-    #send-message {
-      padding: 12px 24px;
-    }
-  }
 
   /* ----------------------------------- */
   /* Quick Contact Button Styles */
@@ -541,233 +504,42 @@
 @media screen and (max-width: 767px) {
     /* WhatsApp button */
     .whatsapp-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px 16px;
-        font-size: 15px;
-        min-width: 140px;
-        max-width: 180px;
-        height: 38px;
+        bottom: 4vh;
+        right: 4vw;
+        padding: 2vh 4vw;
+        font-size: 1em;
+
+        height: 6vh;
         line-height: 1.2;
     }
-    
+
     .whatsapp-btn i {
-        font-size: 18px;
+        font-size: 1.2em;
     }
-    
+
     /* Quick contact button */
     .quick-contact-btn {
-        bottom: 65px;
-        right: 15px;
-        padding: 8px 16px;
-        font-size: 15px;
-        min-width: 140px;
-        max-width: 180px;
-        height: 38px;
+        bottom: 12vh;
+        right: 4vw;
+        padding: 2vh 4vw;
+        font-size: 1em;
+        height: 6vh;
         line-height: 1.2;
     }
-    
+
     .quick-contact-btn i {
-        font-size: 16px;
+        font-size: 1em;
     }
-    
+
     /* Popup containers */
-    .whatsapp-chatbox, .quick-contact-popup {
-        width: 320px;
-        right: 15px;
-    }
-    
+    .whatsapp-chatbox,
     .quick-contact-popup {
-        bottom: 140px;
-        padding: 20px;
+        width: 80vw;
+        right: 4vw;
     }
-}
 
-/* ===== Small Mobile Responsive Styles (up to 480px) ===== */
-@media screen and (max-width: 480px) {
-    /* WhatsApp button */
-    .whatsapp-btn {
-        bottom: 12px;
-        right: 12px;
-        padding: 5px 10px;
-        font-size: 14px;
-        min-width: 120px;
-        max-width: 160px;
-        height: 36px;
-    }
-    
-    /* Quick contact button */
-    .quick-contact-btn {
-        bottom: 58px;
-        right: 12px;
-        padding: 5px 10px;
-        font-size: 14px;
-        min-width: 120px;
-        max-width: 160px;
-        height: 36px;
-    }
-    
-    /* Popup containers */
-    .whatsapp-chatbox {
-        width: 95%;
-        height: 80vh;
-        right: 2.5%;
-        bottom: 10%;
-        border-radius: 10px;
-    }
-    
     .quick-contact-popup {
-        width: 85%;
-        max-width: 280px;
-        right: 10px;
-        bottom: 120px;
-        padding: 15px;
+        bottom: 20vh;
+        padding: 5vw;
     }
-    
-    /* Form elements within popups */
-    .quick-contact-form input[type="tel"] {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-    }
-    
-    .quick-contact-form button[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-    }
-    
-    .platform-selector {
-        flex-direction: row;
-        gap: 8px;
-    }
-    
-    .platform-selector label {
-        padding: 8px 10px;
-    }
-}
-
-/* ===== Very Small Mobile Screens (up to 360px) ===== */
-@media screen and (max-width: 360px) {
-    /* WhatsApp button */
-    .whatsapp-btn {
-        padding: 4px 8px;
-        font-size: 13px;
-        min-width: 100px;
-        height: 34px;
-    }
-    
-    /* Quick contact button */
-    .quick-contact-btn {
-        padding: 4px 8px;
-        font-size: 13px;
-        min-width: 100px;
-        height: 34px;
-    }
-    
-    /* Adjust icon sizes */
-    .whatsapp-btn i, .quick-contact-btn i {
-        font-size: 16px;
-    }
-    
-    /* Make popups even more compact */
-    .quick-contact-popup {
-        width: 250px;
-        padding: 12px;
-    }
-    
-    /* Adjust spacing in forms */
-    .platform-selector {
-        margin: 15px 0;
-        padding: 8px 0;
-    }
-    
-    .platform-icon {
-        font-size: 14px;
-    }
-}
-
-/* ===== Optional: Ultra-Compact Mode for Very Small Screens ===== */
-/* 
- * Uncomment this section if you prefer an icon-only approach on very small screens
- */
-
-@media screen and (max-width: 360px) {
-    .whatsapp-btn, .quick-contact-btn {
-        min-width: auto;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        border-radius: 50%;
-        justify-content: center;
-    }
-    
-    .whatsapp-btn span, .quick-contact-btn span {
-        display: none;
-    }
-    
-    .whatsapp-btn i, .quick-contact-btn i {
-        margin: 0;
-        font-size: 20px;
-    }
-    
-    .quick-contact-btn {
-        bottom: 62px;
-    }
-}
-
-
-
-
-/* Add this to your whatsapp.css file */
-
-/* Submit button states */
-.quick-contact-form button[type="submit"].submitting {
-    background-color: #3a56b9;
-    cursor: wait;
-    opacity: 0.9;
-}
-
-.quick-contact-form button[type="submit"].success {
-    background-color: #28a745;
-    cursor: default;
-}
-
-/* Loading indicator */
-.loading-indicator {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.loading-indicator i {
-    animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 480px) {
-    .loading-indicator {
-        gap: 5px;
-    }
-    
-    .loading-indicator i {
-        font-size: 14px;
-    }
-}
-
-
-
-
-
-/* singit */
-/* Add this to your CSS file */
-.dropdown-item.selected {
-    background-color: #4f82c5;
-    color: white;
 }
