@@ -2,10 +2,8 @@
     --dark-blue: #1a2942;
     --light-gray: #f5f5f5;
     --dark-gray: #333333;
-    /* Base font size reference - helps with rem calculations */
     font-size: 16px;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +11,6 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-
 body {
     line-height: 1.6;
     color: var(--dark-gray);
@@ -21,8 +18,6 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
-/* Main Content Layout */
 .main-container {
     display: flex;
     gap: 1.25rem;
@@ -31,8 +26,6 @@ body {
     max-width: 120rem;
     margin: 0 auto;
 }
-
-/* Scrollspy Navigation */
 .scrollspy {
     position: fixed;
     top: 5rem;
@@ -40,30 +33,24 @@ body {
     height: calc(100vh - 9.5rem);
     overflow-y: auto;
     padding: 1.25rem;
-    /* background: #2f4255; */
     border-radius: 0.5rem;
-    /* box-shadow: 0 0.25rem 0.938rem rgba(0, 0, 0, 0.2); */
     flex-shrink: 0;
     margin-top: 1.25rem;
     backdrop-filter: blur(0.313rem);
     transition: all 0.3s ease;
 }
-
 .scrollspy h2 {
     color:var(--dark-blue);
     margin-bottom: 1.25rem;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 600;
 }
-
 .scrollspy-nav {
     list-style: none;
 }
-
 .scrollspy-nav li {
     margin-bottom: 0.75rem;
 }
-
 .scrollspy-nav a {
     text-decoration: none;
     color: var(--dark-blue);
@@ -73,63 +60,50 @@ body {
     border-radius: 0.375rem;
     font-size: clamp(0.9rem, 1.5vw, 0.95rem);
 }
-
 .scrollspy-nav a:hover,
 .scrollspy-nav a.active {
     background: rgba(69, 69, 124, 0.8);
     color: white;
     transform: translateX(0.313rem);
 }
-
 .scrollspy-nav a.active {
     background: var(--dark-blue);
     color: white;
     font-weight: 500;
 }
-
-/* Content Container */
 .content-container {
     flex: 1;
     margin-left: 16.875rem;
     padding: 1.25rem 0;
 }
-
 .content {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
 }
-
 .location-section {
     width: 100%;
     scroll-margin-top: 6.25rem;
     margin-bottom: 2.5rem;
     padding: clamp(1.25rem, 4vw, 3.75rem);
     border-radius: 0.75rem;
-    /* background: white; */
-    /* box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.15); */
     transition: transform 0.3s ease;
 }
-
 .location-section:hover {
     transform: translateY(-0.313rem);
 }
-
 .location-section h2 {
     color: var(--dark-blue);
     margin-bottom: 1.25rem;
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 600;
 }
-
-/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
     gap: clamp(0.938rem, 2vw, 1.563rem);
     margin-top: 1.875rem;
 }
-
 .gallery-item {
     position: relative;
     height: 15.625rem;
@@ -138,26 +112,20 @@ body {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 .gallery-item:hover {
   transform: translateY(-5px);
   outline: 2px solid orange;
   outline-offset: 3px;
 }
-
-
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .gallery-item:hover img {
     transform: scale(1.05);
 }
-
 .gallery-item-overlay {
     position: absolute;
     bottom: 0;
@@ -168,68 +136,42 @@ body {
     color: white;
     transition: opacity 0.3s ease;
 }
-
 .description {
     margin: 1.25rem 0;
     line-height: 1.8;
     font-size: clamp(1rem, 1.5vw, 1.1rem);
     color: #444;
 }
-
-/* Scrollbar Styling */
 .scrollspy::-webkit-scrollbar {
     width: 0.375rem;
 }
-
 .scrollspy::-webkit-scrollbar-track {
     background: rgba(114, 114, 114, 0.1);
     border-radius: 0.188rem;
 }
-
 .scrollspy::-webkit-scrollbar-thumb {
     background: var(--dark-blue);
     border-radius: 0.188rem;
 }
-
 #card {
     height: 35vh;
     background-color: rgb(18, 23, 66);
 }
-
-
-
-
-
-/* Media Queries */
 @media screen and (max-width: 70rem) {
     body{
         background-color: white !important;
     }
-
-
-
-
-    /* 800px */
     .main-container {
         margin: 0% !important;
         padding: 0% !important;
-        
-
-
-
     }
-
     .content-container {
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center;
         margin: 0%;
-
-        
     }
-
-
     .scrollspy {
     height: fit-content !important;
     margin: 0% !important;
@@ -239,57 +181,45 @@ body {
     z-index: 99;
     background-color: rgb(214, 212, 212) !important;
     }
-
     .content{
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
     }
-
-
     .location-section {
         padding: 0% !important;
         margin-bottom: 1.5rem;
         padding-top: 30vh !important;
         margin-top: 7vh ;
-
     }
-    
     .scrollspy-nav {
         background-color: rgb(182, 182, 182);
         display: flex;
         flex-direction: column;
-        height: 20vh; /* Set height to 30vh */
-        overflow-y: auto; /* Make it scrollable */
-        scrollbar-width: thin; /* For Firefox */
-        scrollbar-color: #666 #333; /* For Firefox */
+        height: 20vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #666 #333;
     }
-    
-    /* Customize scrollbar for webkit browsers */
     .scrollspy-nav::-webkit-scrollbar {
         width: 8px;
     }
-    
     .scrollspy-nav::-webkit-scrollbar-track {
         background: #333;
     }
-    
     .scrollspy-nav::-webkit-scrollbar-thumb {
         background: #666;
         border-radius: 4px;
     }
-    
     .scrollspy h2 {
         margin-top: .5rem;
         margin-bottom: .5rem;
         font-size: 1rem;
         color: #000000 ;
     }
-    
     .scrollspy-nav li {
         width: 100%;
     }
-    
     .scrollspy-nav a {
         display: block;
         padding: 0.5rem 0.75rem;
@@ -298,47 +228,33 @@ body {
         text-decoration: none;
         transition: background-color 0.3s;
     }
-    
     .scrollspy-nav a:hover,
     .scrollspy-nav a:focus {
         background-color: rgba(255, 255, 255, 0.1);
-
     }
-    
     .scrollspy-nav a.active {
         background-color: rgba(22, 95, 190, 0.349);
     }
-    
-    /* Security enhancements */
     .scrollspy-nav {
-        /* Prevent text selection for smoother scrolling */
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
     }
-    
-    /* Ensure smooth scrolling */
     .scrollspy-nav {
         scroll-behavior: smooth;
     }
-    
-    /* Add overscroll behavior for better UX */
     .scrollspy-nav {
         overscroll-behavior: contain;
     }
-
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         gap: 1rem;
     }
-
     .gallery-item {
         height: 12.5rem;
     }
-
     .description {
         font-size: 0.938rem;
     }
 }
-
