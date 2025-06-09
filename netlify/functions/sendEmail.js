@@ -1,21 +1,14 @@
-// Updated sendEmail.js using Nodemailer instead of EmailJS
 const axios = require('axios');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-
-// Helper function to validate email address format
 const isValidEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 };
-
-// Helper function to validate phone format
 const isValidPhone = (phone) => {
     const phoneRegex = /^(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)/;
     return phoneRegex.test(phone);
 };
-
-// Helper function to sanitize input
 const sanitizeInput = (input, maxLength = 1000) => {
     if (typeof input !== 'string') return '';
     return input
@@ -24,8 +17,6 @@ const sanitizeInput = (input, maxLength = 1000) => {
         .trim()
         .substring(0, maxLength);
 };
-
-// Create email HTML template
 const createEmailHTML = (data) => {
     return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
@@ -57,17 +48,12 @@ const createEmailHTML = (data) => {
     </div>
     `;
 };
-
-// Main handler function
 exports.handler = async function (event, context) {
-    // Add CORS headers
     const headers = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'POST, OPTIONS'
     };
-
-    // Handle preflight OPTIONS request
     if (event.httpMethod === 'OPTIONS') {
         return {
             statusCode: 200,
@@ -75,8 +61,6 @@ exports.handler = async function (event, context) {
             body: JSON.stringify({ message: 'CORS preflight request successful' })
         };
     }
-
-    // Only allow POST requests
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
@@ -85,11 +69,8 @@ exports.handler = async function (event, context) {
             headers: { ...headers, 'Allow': 'POST' }
         };
     }
-
     console.log('Received form submission request');
-
     try {
-        // Parse the request body
         let data;
         try {
             data = JSON.parse(event.body);
@@ -100,8 +81,6 @@ exports.handler = async function (event, context) {
                 body: JSON.stringify({ error: 'Invalid JSON format' })
             };
         }
-
-        // Validate inputs
         if (!data.name || !data.email || !data.phone || !data.location || !data.propertyType || !data.budget) {
             return {
                 statusCode: 400,
@@ -109,8 +88,6 @@ exports.handler = async function (event, context) {
                 body: JSON.stringify({ error: 'Missing required fields' })
             };
         }
-
-        // Validate email format
         if (!isValidEmail(data.email)) {
             return {
                 statusCode: 400,
@@ -118,8 +95,6 @@ exports.handler = async function (event, context) {
                 body: JSON.stringify({ error: 'Invalid email format' })
             };
         }
-
-        // Validate phone format
         if (!isValidPhone(data.phone)) {
             return {
                 statusCode: 400,
@@ -127,13 +102,10 @@ exports.handler = async function (event, context) {
                 body: JSON.stringify({ error: 'Invalid phone format' })
             };
         }
-
-        // Verify reCAPTCHA (if in production)
         if (data.recaptcha && process.env.RECAPTCHA_SECRET_KEY) {
             try {
                 console.log('Verifying reCAPTCHA...');
                 const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${data.recaptcha}`;
-
                 const recaptchaVerification = await axios.post(
                     recaptchaUrl,
                     {},
@@ -141,7 +113,6 @@ exports.handler = async function (event, context) {
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                     }
                 );
-
                 if (!recaptchaVerification.data.success) {
                     console.error('reCAPTCHA verification failed:', recaptchaVerification.data);
                     return {
@@ -153,11 +124,8 @@ exports.handler = async function (event, context) {
                 console.log('reCAPTCHA verification successful');
             } catch (error) {
                 console.error('reCAPTCHA verification error:', error.message);
-                // Continue for local development
             }
         }
-
-        // Sanitize inputs
         const sanitizedData = {
             name: sanitizeInput(data.name, 100),
             email: sanitizeInput(data.email, 100),
@@ -168,10 +136,7 @@ exports.handler = async function (event, context) {
             message: sanitizeInput(data.message || '', 1000),
             recaptcha: data.recaptcha ? true : false
         };
-
         console.log('Preparing to send email with Nodemailer');
-
-        // Check for required environment variables
         if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
             console.error('Missing email credentials in environment variables');
             return {
@@ -183,20 +148,16 @@ exports.handler = async function (event, context) {
                 })
             };
         }
-
-        // Create Nodemailer transporter
         const transporter = nodemailer.createTransport({
-            service: 'gmail',  // Change to your email service
+            service: 'gmail',
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
             }
         });
-
-        // Create email content
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.RECIPIENT_EMAIL || process.env.EMAIL_USER, // Where to send the inquiry
+            to: process.env.RECIPIENT_EMAIL || process.env.EMAIL_USER,
             replyTo: sanitizedData.email,
             subject: `Property Inquiry from ${sanitizedData.name}`,
             html: createEmailHTML(sanitizedData),
@@ -209,12 +170,9 @@ Property Type: ${sanitizedData.propertyType}\n
 Budget: ${sanitizedData.budget}\n
 Message: ${sanitizedData.message}\n`
         };
-
         try {
-            // Send email
             const info = await transporter.sendMail(mailOptions);
             console.log('Email sent successfully:', info.messageId);
-
             return {
                 statusCode: 200,
                 headers,
@@ -225,7 +183,6 @@ Message: ${sanitizedData.message}\n`
             };
         } catch (emailError) {
             console.error('Failed to send email:', emailError);
-
             return {
                 statusCode: 500,
                 headers,

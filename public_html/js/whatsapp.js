@@ -1,25 +1,20 @@
-// Validate elements exist before accessing
 function getElement(id) {
     const element = document.getElementById(id);
     if (!element) {
         console.error(`Element with id '${id}' not found`);
-    }
-    return element;
+    } return element;
 }
 
-// Core elements
 const whatsappButton = getElement('whatsapp-button');
 const chatbox = getElement('whatsapp-chatbox');
 const closeChat = getElement('close-chat');
 const sendMessage = getElement('send-message');
 const chatInput = getElement('chat-input');
 
-// Guard clause for missing elements
 if (!whatsappButton || !chatbox || !closeChat || !sendMessage || !chatInput) {
     console.error('Required WhatsApp elements not found');
 }
 
-// Security configuration
 const config = {
     phone: '639751243000',
     minMessageLength: 2,
@@ -27,10 +22,8 @@ const config = {
     maxMessageLength: 500
 };
 
-// Rate limiting
 let lastMessageTime = 0;
 
-// Utility functions
 function validatePhoneNumber(phone) {
     return /^\+?[1-9]\d{7,14}$/.test(phone);
 }
@@ -78,20 +71,14 @@ function sendToWhatsApp(message) {
     }
 }
 
-// Event Listeners with toggle functionality
 whatsappButton.addEventListener('click', () => {
     try {
-        // Check if chatbox is currently visible
         const isVisible = chatbox.style.display === 'flex';
 
         if (isVisible) {
-            // Close the chat
             chatbox.style.display = 'none';
-            // Keep the button visible and in its original position
         } else {
-            // Open the chat
             chatbox.style.display = 'flex';
-            // Keep the button visible and in its original position - DON'T HIDE IT
         }
     } catch (error) {
         console.error('Error toggling chat visibility:', error);
@@ -101,7 +88,6 @@ whatsappButton.addEventListener('click', () => {
 closeChat.addEventListener('click', () => {
     try {
         chatbox.style.display = 'none';
-        // Keep the WhatsApp button visible - DON'T CHANGE ITS DISPLAY
     } catch (error) {
         console.error('Error closing chat:', error);
     }

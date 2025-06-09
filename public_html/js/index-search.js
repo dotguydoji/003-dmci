@@ -23,28 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Benguet", path: "/pages/browsemore.html#benguet" },
         { name: "Batangas", path: "/pages/browsemore.html#batangas" },
         { name: "Cebu", path: "/pages/browsemore.html#cebu" },
-
-
-        // Manila:
         { name: "Sorrel Residences", path: "/pages/sorrel.html" },
         { name: "The Camden Place", path: "/pages/camden.html" },
         { name: "Torre De Manila", path: "/pages/torre.html" },
         { name: "Illumina Residences Manila", path: "/pages/illumina.html" },
-
-
-        // Makati:
         { name: "Fortis Residences", path: "/pages/fortis.html" },
         { name: "Brio Tower", path: "/pages/brio.html" },
-
-
-        // Pasay:
         { name: "Fairway Terraces", path: "/pages/fairway.html" },
         { name: "La Verti Residences", path: "/pages/laverti.html" },
         { name: "The Aston Place", path: "/pages/aston.html" },
         { name: "Anissa Heights", path: "/pages/anissa.html" },
-
-
-        // Quezon:
         { name: "The Oriana", path: "/pages/oriana.html" },
         { name: "The Crestmont", path: "/pages/crestmont.html" },
         { name: "Infina Towers", path: "/pages/infina.html" },
@@ -60,17 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Magnolia Place", path: "/pages/magnolia.html" },
         { name: "One Delta Terraces", path: "/pages/delta.html" },
         { name: "The Redwoods", path: "/pages/redwoods.html" },
-
-
-        // Mandaluyong:
         { name: "Kai Garden Residences", path: "/pages/kai.html" },
         { name: "Tivoli Garden Residences", path: "/pages/tivoli.html" },
         { name: "Flair Towers", path: "/pages/flair.html" },
         { name: "Sage Residences", path: "/pages/sage.html" },
         { name: "Dansalan Gardens Condominiums", path: "/pages/dansalan.html" },
-
-
-        // Pasig:
         { name: "Lumiere Residences", path: "/pages/lumiere.html" },
         { name: "Satori Residences", path: "/pages/satori.html" },
         { name: "Mirea Residences", path: "/pages/mirea.html" },
@@ -81,9 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Fairlane Residences", path: "/pages/fairlane.html" },
         { name: "Levina Place", path: "/pages/levina.html" },
         { name: "The Valeron Tower", path: "/pages/valeron.html" },
-
-
-        // Taguig:
         { name: "Mahogany Place III", path: "/pages/mahogany.html" },
         { name: "The Birchwood", path: "/pages/birchwood.html" },
         { name: "Maple Place", path: "/pages/maple.html" },
@@ -92,140 +71,81 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Mulberry Place", path: "/pages/mulberry.html" },
         { name: "Cypress Towers", path: "/pages/cypress.html" },
         { name: "Alder Residences", path: "/pages/alder.html" },
-
-
-        // Caloocan:
         { name: "The Calinea Tower", path: "/pages/calinea.html" },
-
-
-        // Las Pinas:
         { name: "Sonora Garden Residences", path: "/pages/sonora.html" },
         { name: "Maricielo Villas", path: "/pages/maricielo.html" },
-
-
-        // Paranaque:
         { name: "Siena Park Residences", path: "/pages/siena.html" },
         { name: "Oak Harbor Residences", path: "/pages/oak.html" },
         { name: "Asteria Residences", path: "/pages/asteria.html" },
         { name: "The Atherton", path: "/pages/atherton.html" },
         { name: "Arista Place", path: "/pages/arista.html" },
         { name: "Calathea Place", path: "/pages/calathea.html" },
-
-
-        // Muntinlupa:
         { name: "Rhapsody Residences", path: "/pages/rhapsody.html" },
-
-
-        // Cavite:
         { name: "Alea Residences", path: "/pages/alea.html" },
-
-
-        // Baguio:
         { name: "Outlook Ridge Residences", path: "/pages/outlook.html" },
         { name: "Bristle Ridge", path: "/pages/bristle.html" },
-
-
-        // Boracay:
         { name: "Alta Vista De Boracay", path: "/pages/alta.html" },
-
-
-        // Davao:
         { name: "Verdon Parc", path: "/pages/verdon.html" },
-
-
-        // Benguet:
         { name: "Moncello Crest", path: "/pages/moncello.html" },
-
-
-        // Batangas: 
         { name: "Solmera Coast", path: "/pages/solmera.html" },
-
-
-        // Cebu:
         { name: "Kalea Heights", path: "/pages/kalea.html" },
     ];
-
-
     if (!searchBar || !resultsContainer) return;
-
-    // Initialize search functionality
     searchBar.addEventListener("input", validateInput);
     searchBar.addEventListener("keydown", handleKeyNavigation);
-
-    // Handle mouse events to detect when mouse interaction should override keyboard
     resultsContainer.addEventListener("mouseenter", function () {
-        // When mouse enters dropdown, disable keyboard-style navigation
         isKeyboardNavActive = false;
     });
-
     resultsContainer.addEventListener("mouseleave", function () {
-        // When mouse leaves dropdown, allow keyboard navigation to take precedence again
-        // but don't automatically set isKeyboardNavActive to true
     });
-
-    // Add mouse event listeners to dropdown items when they're created
     function addMouseListeners() {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
         Array.from(items).forEach((item, index) => {
-            // Remove any existing listeners to avoid duplicates
             item.removeEventListener("mouseenter", handleMouseEnter);
             item.removeEventListener("mouseleave", handleMouseLeave);
-
-            // Add new listeners
             item.addEventListener("mouseenter", function () {
                 handleMouseEnter(index);
             });
-
             item.addEventListener("mouseleave", handleMouseLeave);
         });
     }
-
     function handleMouseEnter(index) {
         if (!isKeyboardNavActive) {
-            // Clear keyboard selection when mouse takes over
             clearSelection();
             selectedIndex = index;
             updateSelection();
         }
     }
-
     function handleMouseLeave() {
         if (!isKeyboardNavActive) {
-            // Clear selection when mouse leaves
             selectedIndex = -1;
             clearSelection();
         }
     }
-
     function validateInput(event) {
         let input = event.target.value.replace(/[^a-zA-Z\s]/g, "").slice(0, 16).trim();
         if (!/^[a-zA-Z\s]*$/.test(input)) input = "";
         event.target.value = input;
         searchFiles(input);
-        selectedIndex = -1; // Reset selection when input changes
-        isKeyboardNavActive = false; // Reset keyboard navigation
+        selectedIndex = -1;
+        isKeyboardNavActive = false;
     }
-
     function handleKeyNavigation(event) {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
-
         if (resultsContainer.style.display === "none" || items.length === 0) return;
-
         switch (event.key) {
             case "ArrowDown":
                 event.preventDefault();
-                isKeyboardNavActive = true; // Enable keyboard navigation
+                isKeyboardNavActive = true;
                 selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
                 updateSelection();
                 break;
-
             case "ArrowUp":
                 event.preventDefault();
-                isKeyboardNavActive = true; // Enable keyboard navigation
+                isKeyboardNavActive = true;
                 selectedIndex = Math.max(selectedIndex - 1, 0);
                 updateSelection();
                 break;
-
             case "Enter":
                 event.preventDefault();
                 if (selectedIndex >= 0 && selectedIndex < items.length) {
@@ -235,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 break;
-
             case "Escape":
                 event.preventDefault();
                 resultsContainer.style.display = "none";
@@ -244,27 +163,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
     }
-
     function updateSelection() {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
         Array.from(items).forEach((item, index) => {
             if (index === selectedIndex) {
                 item.classList.add("selected");
-                // Ensure the selected item is visible in the dropdown
                 item.scrollIntoView({ block: "nearest" });
             } else {
                 item.classList.remove("selected");
             }
         });
     }
-
     function clearSelection() {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
         Array.from(items).forEach((item) => {
             item.classList.remove("selected");
         });
     }
-
     function searchFiles(query) {
         if (query.trim() === "") {
             resultsContainer.innerHTML = "";
@@ -272,40 +187,29 @@ document.addEventListener("DOMContentLoaded", function () {
             visibleResults = [];
             return;
         }
-
         visibleResults = files.filter(file =>
             file.name.toLowerCase().includes(query.toLowerCase())
         );
-
         resultsContainer.innerHTML = visibleResults.length > 0
             ? visibleResults.map(file =>
                 DOMPurify.sanitize(`<a href="${file.path}" class="dropdown-item">${file.name}</a>`)
             ).join("")
             : "<div class='dropdown-item'>No files found.</div>";
-
         resultsContainer.style.display = "block";
-        selectedIndex = -1; // Reset selection when search results change
-        isKeyboardNavActive = false; // Reset keyboard navigation
-
-        // Add mouse listeners to new items
+        selectedIndex = -1;
+        isKeyboardNavActive = false;
         addMouseListeners();
     }
-
     function disableCopyPaste(inputElement) {
         inputElement.addEventListener("copy", e => e.preventDefault());
         inputElement.addEventListener("cut", e => e.preventDefault());
         inputElement.addEventListener("paste", e => e.preventDefault());
     }
-
     function disableAutocomplete(inputElement) {
         inputElement.setAttribute("autocomplete", "off");
     }
-
-    // Initialize security features
     disableCopyPaste(searchBar);
     disableAutocomplete(searchBar);
-
-    // Close results when clicking outside the search bar or results
     document.addEventListener("click", (e) => {
         if (!searchBar.contains(e.target) && !resultsContainer.contains(e.target)) {
             resultsContainer.style.display = "none";

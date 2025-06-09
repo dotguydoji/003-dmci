@@ -2,137 +2,110 @@
     position: fixed;
     bottom: 100px;
     right: 20px;
-    width: 350px;  /* Increased from 300px */
-    height: 450px; /* Increased from 400px */
+    width: 350px; 
+    height: 450px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Enhanced shadow */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: none;
     flex-direction: column;
     z-index: 99999;
 }
-
 .chat-header {
     background: #075E54;
     color: white;
-    padding: 18px; /* Increased from 15px */
+    padding: 18px;
     border-radius: 10px 10px 0 0;
     display: flex;
     align-items: center;
 }
-
 .profile-pic {
-    width: 50px;  /* Increased from 40px */
-    height: 50px; /* Increased from 40px */
+    width: 50px; 
+    height: 50px;
     border-radius: 50%;
     margin-right: 12px;
 }
-
 .chat-info {
     flex-grow: 1;
 }
-
 .chat-info h3 {
     margin: 0;
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     font-weight: 600;
 }
-
 .chat-info p {
     margin: 0;
-    font-size: 14px; /* Increased from 12px */
+    font-size: 14px;
     opacity: 0.8;
 }
-
 #close-chat {
     background: none;
     border: none;
     color: white;
-    font-size: 28px; /* Increased from 24px */
+    font-size: 28px;
     cursor: pointer;
     padding: 5px 10px;
 }
-
 .chat-body {
     flex-grow: 1;
-    padding: 18px; /* Increased from 15px */
+    padding: 18px;
     overflow-y: auto;
 }
-
 .message {
     max-width: 80%;
-    padding: 12px; /* Increased from 10px */
-    margin: 8px; /* Increased from 5px */
-    border-radius: 12px; /* Increased from 10px */
-    font-size: 16px; /* Added font size */
+    padding: 12px;
+    margin: 8px;
+    border-radius: 12px;
+    font-size: 16px;
 }
-
 .received {
     background: #f0f0f0;
 }
-
 .sent {
     background: #DCF8C6;
     margin-left: auto;
 }
-
 .chat-footer {
-    padding: 18px; /* Increased from 15px */
+    padding: 18px;
     display: flex;
-    gap: 12px; /* Increased from 10px */
+    gap: 12px;
 }
-
 #chat-input {
     flex-grow: 1;
-    padding: 12px; /* Increased from 8px */
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 25px; /* Increased from 20px */
-    outline: none;
-    font-size: 16px; /* Added font size */
-}
-
-#send-message {
-    /* background: #25D366;
-    color: white;
-    border: none;
-    padding: 12px 20px; 
     border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px; 
-    font-weight: 500; */
+    outline: none;
+    font-size: 16px;
+}
+#send-message {
     display:  none;
 }
-
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #25D366;
     color: white;
-    padding: 15px 28px; /* Increased from 12px 24px */
+    padding: 15px 28px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow */
-    font-size: 18px; /* Increased from default */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
-
 .whatsapp-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
-
 .whatsapp-btn i {
-    font-size: 22px; /* Increased icon size */
+    font-size: 22px;
 }
-
-  /* ----------------------------------- */
-  /* Quick Contact Button Styles */
 .quick-contact-btn {
     position: fixed;
     bottom: 90px;
@@ -157,11 +130,9 @@
     transition: all 0.3s ease;
     z-index: 9997;
     animation: neonPulse 1s infinite;
-    gap: 0; /* Optional: remove gap for single-icon use */
-    padding: 0; /* Important: remove padding for perfect circle */
+    gap: 0;
+    padding: 0;
 }
-
-
 .quick-contact-btn:hover {
     background: #ff1744; 
     transform: translateY(-3px);
@@ -171,17 +142,12 @@
         0 0 50px rgba(255, 23, 68, 0.4);
     animation-play-state: paused;
 }
-
 .quick-contact-btn i {
-    font-size: 18px; /* Exclamation icon size */
+    font-size: 18px;
 }
-
-/* Change quick contact icon to exclamation icon */
 .quick-contact-btn i.fas.fa-phone-alt:before {
-    content: "\f12a"; /* Font Awesome exclamation icon */
+    content: "\f12a";
 }
-
-/* Neon pulsing animation */
 @keyframes neonPulse {
     0% {
         box-shadow: 
@@ -202,8 +168,6 @@
             0 0 80px rgba(255, 23, 68, 0.2);
     }
 }
-
-/* Blinking animation for exclamation point */
 @keyframes blinkingExclamation {
     0% {
         opacity: 1;
@@ -218,157 +182,134 @@
         background: #ff4444;
     }
 }
-
 .quick-contact-popup {
     position: fixed;
-    bottom: 160px; /* Adjusted from 150px */
+    bottom: 160px;
     right: 20px;
-    width: 350px; /* Increased from 300px */
+    width: 350px;
     background: white;
-    border-radius: 12px; /* Increased from 10px */
-    box-shadow: 0 0 25px rgba(0,0,0,0.25); /* Enhanced shadow */
-    padding: 25px; /* Increased from 20px */
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    padding: 25px;
     display: none;
     z-index: 99998;
     transition: all 0.3s ease;
 }
-
 .quick-contact-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px; /* Increased from 15px */
-    padding-bottom: 12px; /* Increased from 10px */
+    margin-bottom: 20px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #f0f0f0;
 }
-
 .quick-contact-header h3 {
     margin: 0;
     color: #333;
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     font-weight: 600;
 }
-
 .close-quick-contact {
     background: none;
     border: none;
-    font-size: 28px; /* Increased from 24px */
+    font-size: 28px;
     cursor: pointer;
     color: #666;
     line-height: 1;
     padding: 0;
     transition: color 0.3s ease;
 }
-
 .close-quick-contact:hover {
     color: #333;
 }
-
-/* Platform selector styling */
 .platform-selector {
     display: flex;
-    gap: 12px; /* Increased from 10px */
-    margin: 20px 0; /* Increased from 15px 0 */
-    padding: 12px 0; /* Increased from 10px 0 */
-    border-radius: 6px; /* Increased from 5px */
+    gap: 12px;
+    margin: 20px 0;
+    padding: 12px 0;
+    border-radius: 6px;
     justify-content: space-between;
 }
-
 .platform-selector label {
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 10px 15px; /* Increased from 8px 12px */
-    border-radius: 6px; /* Increased from 5px */
+    padding: 10px 15px;
+    border-radius: 6px;
     border: 1px solid #e2e2e2;
     flex: 1;
     transition: all 0.2s ease;
 }
-
 .platform-selector label:hover {
     background: #f9f9f9;
 }
-
 .platform-selector input[type="radio"] {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
-
 .platform-icon {
     display: flex;
     align-items: center;
-    gap: 8px; /* Increased from 5px */
-    font-size: 16px; /* Increased from 14px */
+    gap: 8px;
+    font-size: 16px;
     white-space: nowrap;
     justify-content: center;
 }
-
 .platform-icon i {
-    font-size: 20px; /* Added explicit icon size */
+    font-size: 20px;
 }
-
-/* Style for selected platform */
 .platform-selector input[type="radio"]:checked + .platform-icon {
     font-weight: 600;
 }
-
 .platform-selector input[value="whatsapp"]:checked + .platform-icon {
     color: #25D366;
 }
-
 .platform-selector input[value="viber"]:checked + .platform-icon {
     color: #7360f2;
 }
-
 .platform-selector label:has(input[type="radio"]:checked) {
     border-color: currentColor;
     background: rgba(0,0,0,0.03);
 }
-
 .quick-contact-form input[type="tel"] {
-    width: 92%; /* Changed from 90% */
-    padding: 14px; /* Increased from 12px */
+    width: 92%;
+    padding: 14px;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Increased from 5px */
-    font-size: 16px; /* Increased from 14px */
+    border-radius: 6px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
     outline: none;
-    margin-bottom: 15px; /* Added margin */
+    margin-bottom: 15px;
 }
-
 .quick-contact-form input[type="tel"]:focus {
     border-color: #4a6be0;
-    box-shadow: 0 0 0 3px rgba(74, 107, 224, 0.2); /* Enhanced focus effect */
+    box-shadow: 0 0 0 3px rgba(74, 107, 224, 0.2);
 }
-
 .quick-contact-form button[type="submit"] {
-    width: 92%; /* Changed from 90% */
-    padding: 14px; /* Increased from 12px */
+    width: 92%;
+    padding: 14px;
     background: #4a6be0;
     color: white;
     border: none;
-    border-radius: 6px; /* Increased from 5px */
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 17px; /* Increased from 15px */
+    font-size: 17px;
     font-weight: 500;
     transition: background-color 0.3s ease;
 }
-
 .quick-contact-form button[type="submit"]:hover {
     background: #3a56b9;
 }
-
 .quick-contact-message {
-    margin-top: 18px; /* Increased from 15px */
-    padding: 18px; /* Increased from 15px */
-    border-radius: 10px; /* Increased from 8px */
-    font-size: 16px; /* Increased from 14px */
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 16px;
     display: none;
     transition: all 0.3s ease;
 }
-
 .success-message {
     background: #d4edda;
     color: #155724;
@@ -378,36 +319,30 @@
     gap: 15px;
     animation: successFadeIn 0.5s ease forwards;
 }
-
 .error-message {
     background: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
-    padding: 14px; /* Increased from 12px */
+    padding: 14px;
 }
-
 .success-icon {
-    font-size: 32px; /* Increased from 28px */
+    font-size: 32px;
     color: #28a745;
     animation: checkmarkAnimation 0.5s ease-in-out;
 }
-
 .success-text {
     display: flex;
     flex-direction: column;
 }
-
 .success-title {
     font-weight: 600;
-    font-size: 18px; /* Increased from 16px */
-    margin-bottom: 4px; /* Increased from 3px */
+    font-size: 18px;
+    margin-bottom: 4px;
 }
-
 .success-desc {
-    font-size: 15px; /* Increased from 13px */
+    font-size: 15px;
     opacity: 0.9;
 }
-
 @keyframes checkmarkAnimation {
     0% {
       transform: scale(0);
@@ -421,7 +356,6 @@
       opacity: 1;
     }
 }
-
 @keyframes successFadeIn {
     0% {
       opacity: 0;
@@ -432,30 +366,6 @@
       transform: translateY(0);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* mobile-buttons.css - Complete Mobile Responsive Design for Contact Buttons
- * This file contains all the styles needed to make the WhatsApp and Quick Contact
- * buttons responsive across all device sizes.
- * 
- * Author: Claude
- * Last Updated: May 5, 2025
- */
-
-/* ===== Base Styles for Both Buttons ===== */
-
-/* WhatsApp Button - Base Styles */
 .whatsapp-btn {
     position: fixed;
     bottom: 20px;
@@ -475,49 +385,37 @@
     font-weight: 500;
     transition: all 0.3s ease;
     z-index: 9998;
-    padding: 0;   /* Important for perfect circle */
-    gap: 0;       /* Remove gap for icon-only design */
+    padding: 0;  
+    gap: 0;      
 }
-
 .whatsapp-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
-
 .whatsapp-btn i {
     font-size: 20px;
 }
-
-/* ===== Tablet Responsive Styles (768px to 1024px) ===== */
 @media screen and (max-width: 1024px) {
     .whatsapp-btn, .quick-contact-btn {
         padding: 10px 20px;
         font-size: 15px;
     }
-    
     .whatsapp-btn i, .quick-contact-btn i {
         font-size: 18px;
     }
 }
-
-/* ===== Mobile Responsive Styles (481px to 767px) ===== */
 @media screen and (max-width: 767px) {
-    /* WhatsApp button */
     .whatsapp-btn {
         bottom: 4vh;
         right: 4vw;
         padding: 2vh 4vw;
         font-size: 1em;
-
         height: 6vh;
         line-height: 1.2;
     }
-
     .whatsapp-btn i {
         font-size: 1.2em;
     }
-
-    /* Quick contact button */
     .quick-contact-btn {
         bottom: 12vh;
         right: 4vw;
@@ -526,18 +424,14 @@
         height: 6vh;
         line-height: 1.2;
     }
-
     .quick-contact-btn i {
         font-size: 1em;
     }
-
-    /* Popup containers */
     .whatsapp-chatbox,
     .quick-contact-popup {
         width: 80vw;
         right: 4vw;
     }
-
     .quick-contact-popup {
         bottom: 20vh;
         padding: 5vw;
