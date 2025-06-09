@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <li><a href="/pages/browsemore.html">Locations</a></li>
                     <li><a href="/index.html#highlights">Highlights</a></li>
                     <li><a href="https://sid.dmcihomes.com/OnlineCRF/Main.aspx?ac=NO35033" target="_blank">Register</a></li>
-                    <li><a href="/index.html#section6">Contact Us</a></li>
+                    <li><a href="/index.html#contact">Contact Us</a></li>
                 </ul>
 
                 <!-- Mobile Menu Toggle -->
@@ -89,110 +89,87 @@ function initializeSearch() {
         // Pasay:
         { name: "Fairway Terraces", path: "/pages/fairway.html" },
         { name: "La Verti Residences", path: "/pages/laverti.html" },
-        { name: "The Aston Place", path: "/pages/aston.html" },
-        { name: "Anissa Heights", path: "/pages/anissa.html" },
+        { name: "Air Residences", path: "/pages/air.html" },
 
-        // Quezon:
-        { name: "The Oriana", path: "/pages/oriana.html" },
-        { name: "The Crestmont", path: "/pages/crestmont.html" },
-        { name: "Infina Towers", path: "/pages/infina.html" },
-        { name: "The Erin Heights", path: "/pages/erin.html" },
-        { name: "Stellar Place", path: "/pages/stellar.html" },
-        { name: "One Castilla Place", path: "/pages/castilla.html" },
-        { name: "Zinnia Towers", path: "/pages/zinnia.html" },
-        { name: "The Orabella", path: "/pages/orabella.html" },
-        { name: "Cameron Residences", path: "/pages/cameron.html" },
-        { name: "Viera Residences", path: "/pages/viera.html" },
-        { name: "The Celandine", path: "/pages/celandine.html" },
-        { name: "Accolade Place", path: "/pages/accolade.html" },
-        { name: "Magnolia Place", path: "/pages/magnolia.html" },
-        { name: "One Delta Terraces", path: "/pages/delta.html" },
-        { name: "The Redwoods", path: "/pages/redwoods.html" },
+        // Quezon City:
+        { name: "Beacon Residences", path: "/pages/beacon.html" },
+        { name: "Levina Place", path: "/pages/levina.html" },
+        { name: "Princeton Residences", path: "/pages/princeton.html" },
+        { name: "Callisto Grand Residences", path: "/pages/callisto.html" },
 
         // Mandaluyong:
-        { name: "Kai Garden Residences", path: "/pages/kai.html" },
-        { name: "Tivoli Garden Residences", path: "/pages/tivoli.html" },
-        { name: "Flair Towers", path: "/pages/flair.html" },
-        { name: "Sage Residences", path: "/pages/sage.html" },
-        { name: "Dansalan Gardens Condominiums", path: "/pages/dansalan.html" },
+        { name: "Viera Residences", path: "/pages/viera.html" },
+        { name: "Boni Avenue", path: "/pages/boni.html" },
 
         // Pasig:
-        { name: "Lumiere Residences", path: "/pages/lumiere.html" },
-        { name: "Satori Residences", path: "/pages/satori.html" },
-        { name: "Mirea Residences", path: "/pages/mirea.html" },
         { name: "Sheridan Towers", path: "/pages/sheridan.html" },
-        { name: "Brixton Place", path: "/pages/brixton.html" },
-        { name: "Allegra Garden Place", path: "/pages/allegra.html" },
         { name: "Prisma Residences", path: "/pages/prisma.html" },
-        { name: "Fairlane Residences", path: "/pages/fairlane.html" },
-        { name: "Levina Place", path: "/pages/levina.html" },
-        { name: "The Valeron Tower", path: "/pages/valeron.html" },
+        { name: "Flair Towers", path: "/pages/flair.html" },
+        { name: "Zinnia Towers", path: "/pages/zinnia.html" },
 
         // Taguig:
-        { name: "Mahogany Place III", path: "/pages/mahogany.html" },
-        { name: "The Birchwood", path: "/pages/birchwood.html" },
-        { name: "Maple Place", path: "/pages/maple.html" },
-        { name: "Ivory Wood", path: "/pages/ivory.html" },
-        { name: "Verawood Residences", path: "/pages/verawood.html" },
-        { name: "Mulberry Place", path: "/pages/mulberry.html" },
-        { name: "Cypress Towers", path: "/pages/cypress.html" },
-        { name: "Alder Residences", path: "/pages/alder.html" },
+        { name: "Rhapsody Residences", path: "/pages/rhapsody.html" },
+        { name: "Erin Heights", path: "/pages/erin.html" },
+        { name: "Milano Residences", path: "/pages/milano.html" },
+        { name: "Lumière Residences", path: "/pages/lumiere.html" },
 
-        // Caloocan:
-        { name: "The Calinea Tower", path: "/pages/calinea.html" },
+        // Parañaque:
+        { name: "Shore 3 Residences", path: "/pages/shore3.html" },
+        { name: "Chimes Greenhills", path: "/pages/chimes.html" },
 
-        // Las Pinas:
-        { name: "Sonora Garden Residences", path: "/pages/sonora.html" },
-        { name: "Maricielo Villas", path: "/pages/maricielo.html" },
-
-        // Paranaque:
-        { name: "Siena Park Residences", path: "/pages/siena.html" },
-        { name: "Oak Harbor Residences", path: "/pages/oak.html" },
-        { name: "Asteria Residences", path: "/pages/asteria.html" },
-        { name: "The Atherton", path: "/pages/atherton.html" },
-        { name: "Arista Place", path: "/pages/arista.html" },
-        { name: "Calathea Place", path: "/pages/calathea.html" },
-
-        // Muntinlupa:
+        // Las Piñas:
         { name: "Rhapsody Residences", path: "/pages/rhapsody.html" },
 
+        // Muntinlupa:
+        { name: "Allegra Garden Place", path: "/pages/allegra.html" },
+        { name: "Mint Residences", path: "/pages/mint.html" },
+
+        // Caloocan:
+        { name: "Empress Residences", path: "/pages/empress.html" },
+
         // Cavite:
-        { name: "Alea Residences", path: "/pages/alea.html" },
+        { name: "Accolade Place", path: "/pages/accolade.html" },
+        { name: "Idesia Dasmarinas", path: "/pages/idesia.html" },
 
         // Baguio:
-        { name: "Outlook Ridge Residences", path: "/pages/outlook.html" },
-        { name: "Bristle Ridge", path: "/pages/bristle.html" },
-
-        // Boracay:
-        { name: "Alta Vista De Boracay", path: "/pages/alta.html" },
+        { name: "Ponderosa Ridge", path: "/pages/ponderosa.html" },
 
         // Davao:
-        { name: "Verdon Parc", path: "/pages/verdon.html" },
+        { name: "Aeron Condominium", path: "/pages/aeron.html" },
 
         // Benguet:
-        { name: "Moncello Crest", path: "/pages/moncello.html" },
+        { name: "Mahogany Place III", path: "/pages/mahogany.html" },
 
-        // Batangas: 
-        { name: "Solmera Coast", path: "/pages/solmera.html" },
+        // Batangas:
+        { name: "Asteria Residences", path: "/pages/asteria.html" },
 
         // Cebu:
-        { name: "Kalea Heights", path: "/pages/kalea.html" },
+        { name: "Arista Place", path: "/pages/arista.html" },
+
+        // Boracay:
+        { name: "West Side Lofts", path: "/pages/westside.html" }
     ];
+
+    let visibleResults = [];
+    let selectedIndex = -1;
+    let isKeyboardNavActive = false; // FIXED: Track if keyboard navigation is active
 
     const searchBar = document.getElementById("search-bar");
     const resultsContainer = document.getElementById("results");
-    let selectedIndex = -1;
-    let visibleResults = [];
-    let isKeyboardNavActive = false; // FIXED: Track if keyboard navigation is being used
 
     if (!searchBar || !resultsContainer) {
         console.error("Search elements not found");
         return;
     }
 
-    // Attach event listeners
     searchBar.addEventListener("input", validateInput);
     searchBar.addEventListener("keydown", handleKeyNavigation);
+    searchBar.addEventListener("focus", () => {
+        if (searchBar.value.trim() !== "" && visibleResults.length > 0) {
+            resultsContainer.style.display = "block";
+        }
+    });
+
     disableCopyPaste(searchBar);
     disableAutocomplete(searchBar);
 
