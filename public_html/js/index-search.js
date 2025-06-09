@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBar = document.getElementById("search-bar");
+    const resultsContainer = document.getElementById("results");
+    let selectedIndex = -1;
+    let visibleResults = [];
+    let isKeyboardNavActive = false
     const files = [
         { name: "Manila", path: "/pages/browsemore.html#manila" },
         { name: "Makati City", path: "/pages/browsemore.html#makati" },
@@ -140,21 +145,57 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Kalea Heights", path: "/pages/kalea.html" },
     ];
 
-    const searchBar = document.getElementById("search-bar");
-    const resultsContainer = document.getElementById("results");
-    let selectedIndex = -1;
-    let visibleResults = [];
 
-    if (!searchBar || !resultsContainer) {
-        console.error("Search elements not found");
-        return;
-    }
+    if (!searchBar || !resultsContainer) return;
 
-    // Attach event listeners
+    // Initialize search functionality
     searchBar.addEventListener("input", validateInput);
     searchBar.addEventListener("keydown", handleKeyNavigation);
-    disableCopyPaste(searchBar);
-    disableAutocomplete(searchBar);
+
+    // Handle mouse events to detect when mouse interaction should override keyboard
+    resultsContainer.addEventListener("mouseenter", function () {
+        // When mouse enters dropdown, disable keyboard-style navigation
+        isKeyboardNavActive = false;
+    });
+
+    resultsContainer.addEventListener("mouseleave", function () {
+        // When mouse leaves dropdown, allow keyboard navigation to take precedence again
+        // but don't automatically set isKeyboardNavActive to true
+    });
+
+    // Add mouse event listeners to dropdown items when they're created
+    function addMouseListeners() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
+        Array.from(items).forEach((item, index) => {
+            // Remove any existing listeners to avoid duplicates
+            item.removeEventListener("mouseenter", handleMouseEnter);
+            item.removeEventListener("mouseleave", handleMouseLeave);
+
+            // Add new listeners
+            item.addEventListener("mouseenter", function () {
+                handleMouseEnter(index);
+            });
+
+            item.addEventListener("mouseleave", handleMouseLeave);
+        });
+    }
+
+    function handleMouseEnter(index) {
+        if (!isKeyboardNavActive) {
+            // Clear keyboard selection when mouse takes over
+            clearSelection();
+            selectedIndex = index;
+            updateSelection();
+        }
+    }
+
+    function handleMouseLeave() {
+        if (!isKeyboardNavActive) {
+            // Clear selection when mouse leaves
+            selectedIndex = -1;
+            clearSelection();
+        }
+    }
 
     function validateInput(event) {
         let input = event.target.value.replace(/[^a-zA-Z\s]/g, "").slice(0, 16).trim();
@@ -162,24 +203,27 @@ document.addEventListener("DOMContentLoaded", () => {
         event.target.value = input;
         searchFiles(input);
         selectedIndex = -1; // Reset selection when input changes
+        isKeyboardNavActive = false; // Reset keyboard navigation
     }
 
     function handleKeyNavigation(event) {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
 
-        if (resultsContainer.style.display === "none") return;
+        if (resultsContainer.style.display === "none" || items.length === 0) return;
 
         switch (event.key) {
             case "ArrowDown":
                 event.preventDefault();
+                isKeyboardNavActive = true; // Enable keyboard navigation
                 selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-                updateSelection(items);
+                updateSelection();
                 break;
 
             case "ArrowUp":
                 event.preventDefault();
+                isKeyboardNavActive = true; // Enable keyboard navigation
                 selectedIndex = Math.max(selectedIndex - 1, 0);
-                updateSelection(items);
+                updateSelection();
                 break;
 
             case "Enter":
@@ -196,11 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 resultsContainer.style.display = "none";
                 selectedIndex = -1;
+                isKeyboardNavActive = false;
                 break;
         }
     }
 
-    function updateSelection(items) {
+    function updateSelection() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
         Array.from(items).forEach((item, index) => {
             if (index === selectedIndex) {
                 item.classList.add("selected");
@@ -209,6 +255,13 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 item.classList.remove("selected");
             }
+        });
+    }
+
+    function clearSelection() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
+        Array.from(items).forEach((item) => {
+            item.classList.remove("selected");
         });
     }
 
@@ -232,6 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         resultsContainer.style.display = "block";
         selectedIndex = -1; // Reset selection when search results change
+        isKeyboardNavActive = false; // Reset keyboard navigation
+
+        // Add mouse listeners to new items
+        addMouseListeners();
     }
 
     function disableCopyPaste(inputElement) {
@@ -244,15 +301,16 @@ document.addEventListener("DOMContentLoaded", () => {
         inputElement.setAttribute("autocomplete", "off");
     }
 
+    // Initialize security features
+    disableCopyPaste(searchBar);
+    disableAutocomplete(searchBar);
+
     // Close results when clicking outside the search bar or results
     document.addEventListener("click", (e) => {
         if (!searchBar.contains(e.target) && !resultsContainer.contains(e.target)) {
             resultsContainer.style.display = "none";
             selectedIndex = -1;
+            isKeyboardNavActive = false;
         }
     });
-
-
 });
-
-

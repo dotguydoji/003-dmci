@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeMobileMenu();
 });
 
-// Search functionality (integrated from hanap.js)
+// Search functionality (integrated from hanap.js) - FIXED VERSION
 function initializeSearch() {
     const files = [
         // Manila/Makati/Ortigas:
@@ -76,25 +76,21 @@ function initializeSearch() {
         { name: "Batangas", path: "/pages/browsemore.html#batangas" },
         { name: "Cebu", path: "/pages/browsemore.html#cebu" },
 
-
         // Manila:
         { name: "Sorrel Residences", path: "/pages/sorrel.html" },
         { name: "The Camden Place", path: "/pages/camden.html" },
         { name: "Torre De Manila", path: "/pages/torre.html" },
         { name: "Illumina Residences Manila", path: "/pages/illumina.html" },
 
-
         // Makati:
         { name: "Fortis Residences", path: "/pages/fortis.html" },
         { name: "Brio Tower", path: "/pages/brio.html" },
-
 
         // Pasay:
         { name: "Fairway Terraces", path: "/pages/fairway.html" },
         { name: "La Verti Residences", path: "/pages/laverti.html" },
         { name: "The Aston Place", path: "/pages/aston.html" },
         { name: "Anissa Heights", path: "/pages/anissa.html" },
-
 
         // Quezon:
         { name: "The Oriana", path: "/pages/oriana.html" },
@@ -113,14 +109,12 @@ function initializeSearch() {
         { name: "One Delta Terraces", path: "/pages/delta.html" },
         { name: "The Redwoods", path: "/pages/redwoods.html" },
 
-
         // Mandaluyong:
         { name: "Kai Garden Residences", path: "/pages/kai.html" },
         { name: "Tivoli Garden Residences", path: "/pages/tivoli.html" },
         { name: "Flair Towers", path: "/pages/flair.html" },
         { name: "Sage Residences", path: "/pages/sage.html" },
         { name: "Dansalan Gardens Condominiums", path: "/pages/dansalan.html" },
-
 
         // Pasig:
         { name: "Lumiere Residences", path: "/pages/lumiere.html" },
@@ -134,7 +128,6 @@ function initializeSearch() {
         { name: "Levina Place", path: "/pages/levina.html" },
         { name: "The Valeron Tower", path: "/pages/valeron.html" },
 
-
         // Taguig:
         { name: "Mahogany Place III", path: "/pages/mahogany.html" },
         { name: "The Birchwood", path: "/pages/birchwood.html" },
@@ -145,15 +138,12 @@ function initializeSearch() {
         { name: "Cypress Towers", path: "/pages/cypress.html" },
         { name: "Alder Residences", path: "/pages/alder.html" },
 
-
         // Caloocan:
         { name: "The Calinea Tower", path: "/pages/calinea.html" },
-
 
         // Las Pinas:
         { name: "Sonora Garden Residences", path: "/pages/sonora.html" },
         { name: "Maricielo Villas", path: "/pages/maricielo.html" },
-
 
         // Paranaque:
         { name: "Siena Park Residences", path: "/pages/siena.html" },
@@ -163,35 +153,27 @@ function initializeSearch() {
         { name: "Arista Place", path: "/pages/arista.html" },
         { name: "Calathea Place", path: "/pages/calathea.html" },
 
-
         // Muntinlupa:
         { name: "Rhapsody Residences", path: "/pages/rhapsody.html" },
 
-
         // Cavite:
         { name: "Alea Residences", path: "/pages/alea.html" },
-
 
         // Baguio:
         { name: "Outlook Ridge Residences", path: "/pages/outlook.html" },
         { name: "Bristle Ridge", path: "/pages/bristle.html" },
 
-
         // Boracay:
         { name: "Alta Vista De Boracay", path: "/pages/alta.html" },
-
 
         // Davao:
         { name: "Verdon Parc", path: "/pages/verdon.html" },
 
-
         // Benguet:
         { name: "Moncello Crest", path: "/pages/moncello.html" },
 
-
         // Batangas: 
         { name: "Solmera Coast", path: "/pages/solmera.html" },
-
 
         // Cebu:
         { name: "Kalea Heights", path: "/pages/kalea.html" },
@@ -201,6 +183,7 @@ function initializeSearch() {
     const resultsContainer = document.getElementById("results");
     let selectedIndex = -1;
     let visibleResults = [];
+    let isKeyboardNavActive = false; // FIXED: Track if keyboard navigation is being used
 
     if (!searchBar || !resultsContainer) {
         console.error("Search elements not found");
@@ -213,30 +196,78 @@ function initializeSearch() {
     disableCopyPaste(searchBar);
     disableAutocomplete(searchBar);
 
+    // FIXED: Handle mouse events to detect when mouse interaction should override keyboard
+    resultsContainer.addEventListener("mouseenter", function () {
+        // When mouse enters dropdown, disable keyboard-style navigation
+        isKeyboardNavActive = false;
+    });
+
+    resultsContainer.addEventListener("mouseleave", function () {
+        // When mouse leaves dropdown, allow keyboard navigation to take precedence again
+        // but don't automatically set isKeyboardNavActive to true
+    });
+
+    // FIXED: Add mouse event listeners to dropdown items when they're created
+    function addMouseListeners() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
+        Array.from(items).forEach((item, index) => {
+            // Remove any existing listeners to avoid duplicates
+            item.removeEventListener("mouseenter", handleMouseEnter);
+            item.removeEventListener("mouseleave", handleMouseLeave);
+
+            // Add new listeners
+            item.addEventListener("mouseenter", function () {
+                handleMouseEnter(index);
+            });
+
+            item.addEventListener("mouseleave", handleMouseLeave);
+        });
+    }
+
+    function handleMouseEnter(index) {
+        if (!isKeyboardNavActive) {
+            // Clear keyboard selection when mouse takes over
+            clearSelection();
+            selectedIndex = index;
+            updateSelection();
+        }
+    }
+
+    function handleMouseLeave() {
+        if (!isKeyboardNavActive) {
+            // Clear selection when mouse leaves
+            selectedIndex = -1;
+            clearSelection();
+        }
+    }
+
     function validateInput(event) {
         let input = event.target.value.replace(/[^a-zA-Z\s]/g, "").slice(0, 16).trim();
         if (!/^[a-zA-Z\s]*$/.test(input)) input = "";
         event.target.value = input;
         searchFiles(input);
         selectedIndex = -1; // Reset selection when input changes
+        isKeyboardNavActive = false; // FIXED: Reset keyboard navigation
     }
 
     function handleKeyNavigation(event) {
         const items = resultsContainer.getElementsByClassName("dropdown-item");
 
-        if (resultsContainer.style.display === "none") return;
+        if (resultsContainer.style.display === "none" || items.length === 0) return;
 
         switch (event.key) {
             case "ArrowDown":
                 event.preventDefault();
+                isKeyboardNavActive = true; // FIXED: Enable keyboard navigation
                 selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-                updateSelection(items);
+                updateSelection();
                 break;
 
             case "ArrowUp":
                 event.preventDefault();
+                isKeyboardNavActive = true; // FIXED: Enable keyboard navigation
                 selectedIndex = Math.max(selectedIndex - 1, 0);
-                updateSelection(items);
+                updateSelection();
                 break;
 
             case "Enter":
@@ -253,11 +284,13 @@ function initializeSearch() {
                 event.preventDefault();
                 resultsContainer.style.display = "none";
                 selectedIndex = -1;
+                isKeyboardNavActive = false; // FIXED: Reset keyboard navigation
                 break;
         }
     }
 
-    function updateSelection(items) {
+    function updateSelection() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
         Array.from(items).forEach((item, index) => {
             if (index === selectedIndex) {
                 item.classList.add("selected");
@@ -266,6 +299,14 @@ function initializeSearch() {
             } else {
                 item.classList.remove("selected");
             }
+        });
+    }
+
+    // FIXED: New function to clear all selections
+    function clearSelection() {
+        const items = resultsContainer.getElementsByClassName("dropdown-item");
+        Array.from(items).forEach((item) => {
+            item.classList.remove("selected");
         });
     }
 
@@ -289,6 +330,10 @@ function initializeSearch() {
 
         resultsContainer.style.display = "block";
         selectedIndex = -1; // Reset selection when search results change
+        isKeyboardNavActive = false; // FIXED: Reset keyboard navigation
+
+        // FIXED: Add mouse listeners to new items
+        addMouseListeners();
     }
 
     function disableCopyPaste(inputElement) {
@@ -306,6 +351,7 @@ function initializeSearch() {
         if (!searchBar.contains(e.target) && !resultsContainer.contains(e.target)) {
             resultsContainer.style.display = "none";
             selectedIndex = -1;
+            isKeyboardNavActive = false; // FIXED: Reset keyboard navigation
         }
     });
 }
@@ -339,6 +385,3 @@ function initializeMobileMenu() {
         });
     }
 }
-
-
-
