@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "");
+    </script>
+
     <!-- Character Set and Viewport -->
-    <script src="js/schema.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>DMCI HOMES - Premium Real Estate</title>
+    <title>DMCI HOMES - Premium Real Estate | Rossana B.</title>
+
+    <!-- Essential Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
 
     <!-- Favicon -->
     <link
@@ -15,6 +33,13 @@
       type="image/x-icon"
     />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.dmcicondoliving.com/index.html" />
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/responsive-design.css" />
@@ -22,10 +47,8 @@
     <link rel="stylesheet" href="css/whatsapp.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -39,25 +62,25 @@
     />
 
     <!-- SEO Meta Tags -->
-    <meta name="title" content="DMCI HOMES - Rossana B." />
     <meta
       name="description"
-      content="Explore premium real estate offerings by DMCI Homes featuring luxury condominiums, landscaped residences, and modern urban living."
+      content="Explore premium DMCI Homes condominiums and properties in Manila, Makati, and key Philippine locations. Contact Rossana B. for luxury real estate investments."
     />
     <meta
       name="keywords"
-      content="DMCI Homes, premium real estate, luxury condominiums, landscaped residences, urban living, property investments, premium condos Philippines"
+      content="DMCI Homes, luxury condominiums, Manila properties, Makati condos, Philippine real estate, Rossana B agent"
     />
-    <meta name="author" content="Rossna B." />
+    <meta name="author" content="Rossana B." />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="en, tl" />
-    <meta name="generator" content="custom" />
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="DMCI HOMES - Premium Real Estate" />
+    <meta
+      property="og:title"
+      content="DMCI HOMES - Premium Real Estate | Rossana B."
+    />
     <meta
       property="og:description"
-      content="Explore premium real estate offerings by DMCI Homes featuring luxury condominiums, landscaped residences, and modern urban living."
+      content="Explore premium DMCI Homes condominiums and properties in Manila, Makati, and key Philippine locations."
     />
     <meta
       property="og:image"
@@ -68,35 +91,73 @@
       content="https://www.dmcicondoliving.com/index.html"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DMCI Homes | Rossna B." />
-    <meta property="og:locale" content="tl_PH" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="DMCI Homes | Rossana B." />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.dmcicondoliving.com/index.html" />
-
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="frame-src https://www.google.com https://maps.googleapis.com;"
-    />
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp" />
-    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin" />
-    <meta name="referrer" content="no-referrer" />
-
-    <!-- Google Analytics (Gtag) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-V63G60PQL4"
-    ></script>
-    <script src="/js/analytics.js"></script>
-
-    <!-- DOM Purify for Search Security -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    <!-- Single Consolidated Structured Data Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "RealEstateAgent",
+            "@id": "https://www.dmcicondoliving.com/#agent",
+            "name": "Rossana B. - DMCI Homes",
+            "url": "https://www.dmcicondoliving.com",
+            "description": "Premium real estate agent specializing in DMCI Homes luxury condominiums across the Philippines",
+            "telephone": "+63-XXX-XXX-XXXX",
+            "email": "contact@dmcicondoliving.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "PH",
+              "addressRegion": "Metro Manila"
+            },
+            "areaServed": [
+              "Manila",
+              "Makati City",
+              "Pasay City",
+              "Quezon City",
+              "Taguig City",
+              "Cavite"
+            ],
+            "serviceType": [
+              "Luxury Condominium Sales",
+              "Property Investment Consultation"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.dmcicondoliving.com/#website",
+            "name": "DMCI Homes - Rossana B.",
+            "url": "https://www.dmcicondoliving.com",
+            "description": "Premium real estate website featuring DMCI Homes luxury condominiums",
+            "publisher": {
+              "@id": "https://www.dmcicondoliving.com/#agent"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.dmcicondoliving.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.dmcicondoliving.com/#organization",
+            "name": "DMCI Homes",
+            "description": "Leading real estate developer in the Philippines",
+            "url": "https://www.dmcicondoliving.com",
+            "logo": "https://www.dmcicondoliving.com/images/dmci-logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "telephone": "+63-XXX-XXX-XXXX",
+              "email": "contact@dmcicondoliving.com",
+              "areaServed": "PH",
+              "availableLanguage": ["English", "Filipino"]
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
