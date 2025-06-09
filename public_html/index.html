@@ -1015,35 +1015,6 @@
     <script src="js/cookie_consent.js"></script>
     <!-- <script src="js/devtool.js"></script> -->
     <script src="js/index-search.js"></script>
-
-    <script>
-      // Temporary debug script - add to your homepage
-      setTimeout(() => {
-        console.log("=== Cookie Consent Debug ===");
-        console.log("Analytics Manager:", window.analyticsManager);
-        console.log("Cookie Consent UI:", window.cookieConsentUI);
-
-        if (window.analyticsManager) {
-          console.log(
-            "Should show banner:",
-            window.analyticsManager.shouldShowConsentBanner()
-          );
-          console.log(
-            "Consent status:",
-            window.analyticsManager.getConsentStatus()
-          );
-        }
-
-        // Force show banner for testing
-        const banner = document.getElementById("cookie-consent-banner");
-        if (banner) {
-          console.log("Banner found, forcing display...");
-          banner.style.display = "block";
-          banner.classList.add("show");
-        } else {
-          console.error("Banner element not found!");
-        }
-      }, 1000);
-    </script>
+    <script src="js/analytics.js"></script>
   </body>
 </html>
