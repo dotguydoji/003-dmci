@@ -602,31 +602,139 @@
             We deliver the results that are best for you.
           </div>
 
-          <!-- Contact Form -->
-          <div class="contact-form">
-            <form>
-              <div class="form-row">
-                <input type="text" placeholder="Full Name" required />
-                <input type="email" placeholder="Email Address" required />
-                <input type="tel" placeholder="Phone Number" required />
+          <!-- NEW FORM STRUCTURE - REPLACING OLD FORM -->
+          <div class="form-section-container form-wrapper">
+            <div class="property-inquiry-form">
+              <div class="form-container-wrapper">
+                <form id="propertyInquiryForm" class="property-form-container">
+                  <h2 class="form-title">Find Your Dream Property</h2>
+
+                  <div class="input-wrapper">
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="clientName"
+                      name="name"
+                      pattern="[a-zA-ZÀ-ÿ\s\-'\.]{2,50}"
+                      placeholder="Full Name*"
+                      aria-required="true"
+                      required
+                    />
+                  </div>
+
+                  <div class="input-wrapper">
+                    <input
+                      class="form-input"
+                      type="email"
+                      id="clientEmail"
+                      name="email"
+                      pattern="[a-zA-Z0-9._\-+]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                      placeholder="Email*"
+                      aria-required="true"
+                      required
+                    />
+                  </div>
+
+                  <div class="input-wrapper">
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="clientPhone"
+                      name="phone"
+                      pattern="(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)"
+                      placeholder="Phone*"
+                      aria-required="true"
+                      required
+                    />
+                  </div>
+
+                  <div class="input-wrapper">
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="desiredLocation"
+                      name="location"
+                      pattern="[a-zA-Z0-9\s,.\-]{2,100}"
+                      placeholder="Desired Location*"
+                      aria-required="true"
+                      required
+                    />
+                  </div>
+
+                  <div class="input-wrapper">
+                    <select
+                      class="form-dropdown"
+                      id="typeOfProperty"
+                      name="propertyType"
+                      aria-required="true"
+                      required
+                    >
+                      <option value="">Select Property Type</option>
+                      <option value="residential">Residential</option>
+                      <option value="commercial">Commercial</option>
+                      <option value="luxury">Luxury</option>
+                      <option value="investment">Investment</option>
+                    </select>
+                  </div>
+
+                  <div class="input-wrapper">
+                    <select
+                      class="form-dropdown"
+                      id="budgetRange"
+                      name="budget"
+                      aria-required="true"
+                      required
+                    >
+                      <option value="">Select Budget Range</option>
+                      <option value="100-300k">₱1,000,000 - ₱3,000,000</option>
+                      <option value="300-500k">₱4,000,000 - ₱5,000,000</option>
+                      <option value="500-750k">₱6,000,000 - ₱10,000,000</option>
+                      <option value="1m+">₱10,000,000+</option>
+                    </select>
+                  </div>
+
+                  <div class="input-wrapper">
+                    <textarea
+                      class="form-text-area"
+                      id="additionalMessage"
+                      name="message"
+                      rows="4"
+                      placeholder="Additional Comments"
+                    ></textarea>
+                  </div>
+
+                  <div
+                    class="g-recaptcha"
+                    data-sitekey="6LcE0cEqAAAAAIuUmoVpVudswXTooHZyku0OVR-F"
+                  ></div>
+
+                  <div class="input-wrapper">
+                    <button
+                      type="submit"
+                      id="formSubmitButton"
+                      class="submit-btn"
+                    >
+                      Send Message
+                      <div
+                        id="buttonLoadingSpinner"
+                        class="loading-indicator"
+                      ></div>
+                    </button>
+                  </div>
+
+                  <div
+                    id="formSuccessMessage"
+                    class="status-message success-notification"
+                  >
+                    Thank you! We'll contact you shortly.
+                  </div>
+                  <div
+                    id="formErrorMessage"
+                    class="status-message error-notification"
+                  ></div>
+                </form>
               </div>
-              <div class="form-row">
-                <select required>
-                  <option value="">Select Property Type</option>
-                  <option value="condo">Condominium</option>
-                  <option value="house">House & Lot</option>
-                  <option value="townhouse">Townhouse</option>
-                </select>
-                <select required>
-                  <option value="">Select Budget Range</option>
-                  <option value="under-5m">Under 5M</option>
-                  <option value="5m-10m">5M - 10M</option>
-                  <option value="above-10m">Above 10M</option>
-                </select>
-              </div>
-              <textarea placeholder="Additional Details" rows="4"></textarea>
-              <button type="submit" class="submit-btn">Submit Inquiry</button>
-            </form>
+            </div>
           </div>
         </div>
 
