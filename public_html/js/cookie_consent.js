@@ -18,16 +18,11 @@ class CookieConsentUI {
             console.error('Analytics manager not found. Make sure analytics.js is loaded first.');
             return;
         }
-        console.log('Cookie Consent UI initializing...');
         const consentStatus = window.analyticsManager.getConsentStatus();
-        console.log('Current consent status:', consentStatus);
-        console.log('Should show banner:', window.analyticsManager.shouldShowConsentBanner());
         const shouldShow = window.analyticsManager.shouldShowConsentBanner();
         if (shouldShow) {
-            console.log('Showing banner because consent needed');
             this.showConsentBanner();
         } else {
-            console.log('Not showing banner - consent already given and valid');
         }
         this.addEventListeners();
     }
@@ -40,20 +35,14 @@ class CookieConsentUI {
             console.error('Cookie consent banner element not found in DOM');
             return;
         }
-        console.log('Showing consent banner...');
-        console.log('Banner element found:', banner);
-        console.log('Banner current display:', getComputedStyle(banner).display);
-        console.log('Banner current transform:', getComputedStyle(banner).transform);
         banner.style.display = 'block';
         banner.style.visibility = 'visible';
         requestAnimationFrame(() => {
             banner.classList.add('show');
-            console.log('Banner show class added');
         });
         setTimeout(() => {
             if (!banner.classList.contains('show')) {
                 banner.style.transform = 'translateY(0)';
-                console.log('Fallback: forced banner position');
             }
         }, 200);
     }
@@ -73,7 +62,6 @@ class CookieConsentUI {
             analyticsToggle.checked = window.analyticsManager.getStoredConsent() === 'accepted';
             modal.style.display = 'flex';
             modal.classList.add('show');
-            console.log('Settings modal shown');
         }
     }
     hideSettingsModal() {
@@ -83,7 +71,6 @@ class CookieConsentUI {
             setTimeout(() => {
                 modal.style.display = 'none';
             }, 300);
-            console.log('Settings modal hidden');
         }
     }
     addEventListeners() {
@@ -91,7 +78,6 @@ class CookieConsentUI {
         if (acceptBtn) {
             acceptBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Accept button clicked');
                 window.analyticsManager.acceptConsent();
                 this.hideConsentBanner();
             });
@@ -100,7 +86,6 @@ class CookieConsentUI {
         if (declineBtn) {
             declineBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Decline button clicked');
                 window.analyticsManager.declineConsent();
                 this.hideConsentBanner();
             });
@@ -109,7 +94,6 @@ class CookieConsentUI {
         if (settingsBtn) {
             settingsBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Settings button clicked');
                 this.showSettingsModal();
             });
         }
@@ -117,7 +101,6 @@ class CookieConsentUI {
         if (cancelBtn) {
             cancelBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Cancel button clicked');
                 this.hideSettingsModal();
             });
         }
@@ -125,10 +108,8 @@ class CookieConsentUI {
         if (saveBtn) {
             saveBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Save button clicked');
                 const analyticsToggle = document.getElementById('analytics-toggle');
                 const analyticsEnabled = analyticsToggle ? analyticsToggle.checked : false;
-                console.log('Analytics enabled:', analyticsEnabled);
                 if (analyticsEnabled) {
                     window.analyticsManager.acceptConsent();
                 } else {
@@ -144,7 +125,6 @@ class CookieConsentUI {
         if (modal) {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    console.log('Modal backdrop clicked');
                     this.hideSettingsModal();
                 }
             });
@@ -153,20 +133,17 @@ class CookieConsentUI {
             if (e.key === 'Escape') {
                 const modal = document.getElementById('cookie-settings-modal');
                 if (modal && modal.classList.contains('show')) {
-                    console.log('ESC key pressed - closing modal');
                     this.hideSettingsModal();
                 }
             }
         });
     }
     showConsentBannerManually() {
-        console.log('Manually showing consent banner...');
         this.showConsentBanner();
     }
     forceShowBanner() {
         const banner = document.getElementById('cookie-consent-banner');
         if (banner) {
-            console.log('Force showing banner...');
             banner.style.display = 'block';
             banner.style.visibility = 'visible';
             banner.style.transform = 'translateY(0)';
@@ -176,40 +153,26 @@ class CookieConsentUI {
     forceCloseModal() {
         const modal = document.getElementById('cookie-settings-modal');
         if (modal) {
-            console.log('Force closing modal...');
             modal.classList.remove('show');
             modal.style.display = 'none';
             modal.style.opacity = '0';
         }
     }
     debugStatus() {
-        console.log('=== Cookie Consent Debug Info ===');
-        console.log('Analytics Manager:', window.analyticsManager);
-        console.log('Cookie Consent UI:', window.cookieConsentUI);
         if (window.analyticsManager) {
             const status = window.analyticsManager.getConsentStatus();
-            console.log('Consent Status:', status);
-            console.log('Should Show Banner:', window.analyticsManager.shouldShowConsentBanner());
         }
         const banner = document.getElementById('cookie-consent-banner');
-        console.log('Banner Element:', banner);
         if (banner) {
-            console.log('Banner Display:', getComputedStyle(banner).display);
-            console.log('Banner Transform:', getComputedStyle(banner).transform);
-            console.log('Banner Classes:', banner.className);
         }
         const modal = document.getElementById('cookie-settings-modal');
-        console.log('Modal Element:', modal);
         if (modal) {
-            console.log('Modal Display:', getComputedStyle(modal).display);
-            console.log('Modal Classes:', modal.className);
         }
     }
 }
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
-            console.log('Initializing Cookie Consent UI...');
             window.cookieConsentUI = new CookieConsentUI();
             window.debugCookieConsent = () => window.cookieConsentUI.debugStatus();
             window.forceShowCookieBanner = () => window.cookieConsentUI.forceShowBanner();
@@ -220,16 +183,10 @@ if (document.readyState === 'loading') {
                     window.cookieConsentUI.reinitialize();
                 }
             };
-            console.log('Debug functions available:');
-            console.log('- debugCookieConsent()');
-            console.log('- forceShowCookieBanner()');
-            console.log('- forceCloseModal()');
-            console.log('- resetCookieConsent()');
         }, 200);
     });
 } else {
     setTimeout(() => {
-        console.log('Initializing Cookie Consent UI...');
         window.cookieConsentUI = new CookieConsentUI();
         window.debugCookieConsent = () => window.cookieConsentUI.debugStatus();
         window.forceShowCookieBanner = () => window.cookieConsentUI.forceShowBanner();
@@ -240,10 +197,5 @@ if (document.readyState === 'loading') {
                 window.cookieConsentUI.reinitialize();
             }
         };
-        console.log('Debug functions available:');
-        console.log('- debugCookieConsent()');
-        console.log('- forceShowCookieBanner()');
-        console.log('- forceCloseModal()');
-        console.log('- resetCookieConsent()');
     }, 200);
 }
