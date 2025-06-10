@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const selectedPlatform = document.querySelector('input[name="platform"]:checked').value;
         try {
-            // Use the same serverless function as your main form
             const apiUrl = window.location.hostname === 'localhost' ||
                 window.location.hostname === '127.0.0.1'
                 ? 'http://localhost:8888/.netlify/functions/sendEmail'
