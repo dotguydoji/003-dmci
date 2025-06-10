@@ -212,7 +212,7 @@
   .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
-  .nav-links {
+.nav-links {
     position: fixed;
     top: 0;
     left: -100%;
@@ -225,7 +225,7 @@
     align-items: center;
     gap: 2.5rem;
     transition: left 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 10000; /* Increased from 999 to 10000 */
     transform: none;
     position: fixed;
   }
