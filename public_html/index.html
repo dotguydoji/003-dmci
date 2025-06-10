@@ -2,10 +2,6 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5PZMV7DBVF"
-    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -16,13 +12,18 @@
       gtag("config", "G-5PZMV7DBVF");
     </script>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6LcD-ForAAAAAAGLN9bmO4uFB71gGCEYrC_IXbCe"
+    ></div>
 
     <!-- Character Set and Viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>DMCI HOMES - Premium Real Estate | Rossana B.</title>
+
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcD-ForAAAAAAGLN9bmO4uFB71gGCEYrC_IXbCe"></script>
 
     <!-- Enhanced Content Security Policy -->
     <meta
@@ -798,26 +799,18 @@
                   </div>
 
                   <!-- reCAPTCHA -->
-                  <div class="input-wrapper">
-                    <div
-                      class="g-recaptcha"
-                      data-sitekey="6LcD-ForAAAAAAGLN9bmO4uFB71gGCEYrC_IXbCe"
-                    ></div>
-                  </div>
 
-                  <div class="input-wrapper">
-                    <button
-                      type="submit"
-                      id="formSubmitButton"
-                      class="submit-btn"
-                    >
-                      Send Message
-                      <div
-                        id="buttonLoadingSpinner"
-                        class="loading-indicator"
-                      ></div>
-                    </button>
-                  </div>
+                  <button
+                    id="formSubmitButton"
+                    class="submit-btn"
+                    type="submit"
+                  >
+                    Send Message
+                    <div
+                      id="buttonLoadingSpinner"
+                      class="loading-indicator"
+                    ></div>
+                  </button>
 
                   <div
                     id="formSuccessMessage"
@@ -1048,5 +1041,16 @@
     <!-- <script src="js/devtool.js"></script> -->
     <script src="js/index-search.js"></script>
     <script src="js/analytics.js"></script>
+    <!-- <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute(
+            "6LcD-ForAAAAAAGLN9bmO4uFB71gGCEYrC_IXbCe",
+            { action: "LOGIN" }
+          );
+        });
+      }
+    </script> -->
   </body>
 </html>

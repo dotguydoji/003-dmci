@@ -1,14 +1,13 @@
 /**
- * Fixed Property Inquiry Form JavaScript
- * Prevents page reload/jump and ensures proper form submission
- * Based on your existing code with fixes applied
+ * Complete Property Inquiry Form JavaScript with Enterprise reCAPTCHA v3
+ * Based on grecaptcha.enterprise.execute() pattern
  */
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Form script loading...');
 
     // ═══════════════════════════════════════════════════════════════════════════════════
-    // 🎯 ELEMENT SELECTORS - Get all form elements
+    // 🎯 ELEMENT SELECTORS
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     const form = document.getElementById('propertyInquiryForm');
@@ -25,50 +24,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const propertyTypeSelect = document.getElementById('typeOfProperty');
     const budgetSelect = document.getElementById('budgetRange');
     const messageTextarea = document.getElementById('additionalMessage');
-    const recaptchaElement = document.querySelector('.g-recaptcha');
 
-    // Debug: Check if elements exist
+    // reCAPTCHA configuration
+    const RECAPTCHA_SITE_KEY = '6LcD-ForAAAAAAGLN9bmO4uFB71gGCEYrC_IXbCe';
+
     console.log('Form found:', !!form);
     console.log('Submit button found:', !!submitButton);
-    console.log('Form ID:', form?.id);
 
     // ═══════════════════════════════════════════════════════════════════════════════════
     // ⚙️ CONFIGURATION
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     const config = {
-        // Rate limiting - 1 minute between submissions
         minTimeBetweenSubmits: 60000,
-
-        // Validation patterns
         patterns: {
             email: /^[a-zA-Z0-9._\-+]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/,
             phone: /^(\+?[0-9]{10,15}$)|(^09[0-9]{9}$)/,
             name: /^[a-zA-ZÀ-ÿ\s\-'\.]{2,50}$/,
-            location: /^[a-zA-Z0-9\s,.\-]{2,100}$/
+            location: /^.{2,100}$/
         },
-
-        // API endpoints
-        apiUrl: {
-            development: 'http://localhost:8888/.netlify/functions/sendEmail',
-            production: '/.netlify/functions/sendEmail'
-        },
-
-        // Input length limits
         maxLengths: {
-            name: 50,
+            name: 100,
             email: 100,
             phone: 20,
-            location: 100,
+            location: 200,
             message: 1000
         }
     };
 
-    // Track last submission time for rate limiting
     let lastSubmitTime = 0;
 
     // ═══════════════════════════════════════════════════════════════════════════════════
-    // 🛡️ UTILITY FUNCTIONS
+    // 🛡️ VALIDATION HELPERS
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     function sanitizeInput(input, maxLength = 1000) {
@@ -96,49 +83,24 @@ document.addEventListener('DOMContentLoaded', function () {
         return config.patterns.location.test(location);
     }
 
-    function getApiUrl() {
-        const isDevelopment = window.location.hostname === 'localhost' ||
-            window.location.hostname === '127.0.0.1';
-        return isDevelopment ? config.apiUrl.development : config.apiUrl.production;
-    }
-
     // ═══════════════════════════════════════════════════════════════════════════════════
-    // 🎭 UI STATE MANAGEMENT
+    // 🎨 UI STATE MANAGEMENT
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     function setLoadingState(isLoading) {
-        console.log('Setting loading state:', isLoading);
-
-        if (!submitButton) {
-            console.error('Submit button not found!');
-            return;
-        }
+        if (!submitButton) return;
 
         if (isLoading) {
             submitButton.disabled = true;
-            submitButton.style.pointerEvents = 'none';
+            submitButton.textContent = 'Sending...';
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'inline-block';
             }
-
-            // Change button text
-            const originalText = submitButton.textContent;
-            submitButton.setAttribute('data-original-text', originalText);
-            submitButton.innerHTML = 'Sending... <div id="buttonLoadingSpinner" class="loading-indicator"></div>';
-
         } else {
             submitButton.disabled = false;
-            submitButton.style.pointerEvents = 'auto';
+            submitButton.innerHTML = 'Send Message <div id="buttonLoadingSpinner" class="loading-indicator"></div>';
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'none';
-            }
-
-            // Restore button text
-            const originalText = submitButton.getAttribute('data-original-text');
-            if (originalText) {
-                submitButton.textContent = originalText;
-            } else {
-                submitButton.innerHTML = 'Send Message <div id="buttonLoadingSpinner" class="loading-indicator"></div>';
             }
         }
     }
@@ -153,15 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
-        // Update button to show success
         if (submitButton) {
             submitButton.innerHTML = '✓ Message Sent!';
             submitButton.style.background = '#28a745';
-
-            // Reset after 3 seconds
-            setTimeout(() => {
-                resetForm();
-            }, 3000);
+            setTimeout(() => resetForm(), 3000);
         }
     }
 
@@ -173,11 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.textContent = message;
             errorMessage.style.display = 'block';
             errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Auto-hide error after 8 seconds
-            setTimeout(() => {
-                hideMessages();
-            }, 8000);
+            setTimeout(() => hideMessages(), 8000);
         }
     }
 
@@ -189,26 +142,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function resetForm() {
         console.log('Resetting form');
 
-        if (form) {
-            form.reset();
-        }
-
+        if (form) form.reset();
         setLoadingState(false);
         hideMessages();
 
-        // Reset button
         if (submitButton) {
             submitButton.innerHTML = 'Send Message <div id="buttonLoadingSpinner" class="loading-indicator"></div>';
             submitButton.style.background = '#ff6b35';
-        }
-
-        // Reset reCAPTCHA if present
-        if (typeof grecaptcha !== 'undefined' && recaptchaElement) {
-            try {
-                grecaptcha.reset();
-            } catch (e) {
-                console.log('reCAPTCHA reset not available');
-            }
         }
     }
 
@@ -219,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateForm() {
         const errors = [];
 
-        // Get and sanitize form values
         const formData = {
             name: sanitizeInput(nameInput?.value || '', config.maxLengths.name),
             email: sanitizeInput(emailInput?.value || '', config.maxLengths.email),
@@ -230,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function () {
             message: sanitizeInput(messageTextarea?.value || '', config.maxLengths.message)
         };
 
-        // Required field validation
         if (!formData.name) {
             errors.push('Full name is required');
         } else if (!isValidName(formData.name)) {
@@ -246,13 +184,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!formData.phone) {
             errors.push('Phone number is required');
         } else if (!isValidPhone(formData.phone)) {
-            errors.push('Please enter a valid phone number (e.g., 09123456789 or +639123456789)');
+            errors.push('Please enter a valid phone number');
         }
 
         if (!formData.location) {
             errors.push('Desired location is required');
         } else if (!isValidLocation(formData.location)) {
-            errors.push('Please enter a valid location (2-100 characters)');
+            errors.push('Please enter a valid location');
         }
 
         if (!formData.propertyType) {
@@ -271,13 +209,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ═══════════════════════════════════════════════════════════════════════════════════
-    // 📤 FORM SUBMISSION - FIXED VERSION
+    // 📤 FORM SUBMISSION with Enterprise reCAPTCHA v3
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     async function handleFormSubmission(event) {
         console.log('Form submission triggered');
 
-        // CRITICAL: Prevent default form submission
+        // Prevent default form submission
         event.preventDefault();
         event.stopPropagation();
 
@@ -288,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (now - lastSubmitTime < config.minTimeBetweenSubmits) {
             const remainingTime = Math.ceil((config.minTimeBetweenSubmits - (now - lastSubmitTime)) / 1000);
             showError(`Please wait ${remainingTime} seconds before submitting again.`);
-            return false; // Return false to prevent any further processing
+            return false;
         }
 
         // Validate form
@@ -298,37 +236,57 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
-        // Get reCAPTCHA token if available
-        let recaptchaToken = null;
-        if (typeof grecaptcha !== 'undefined' && recaptchaElement) {
-            try {
-                recaptchaToken = grecaptcha.getResponse();
-                if (!recaptchaToken) {
-                    showError('Please complete the reCAPTCHA verification.');
-                    return false;
-                }
-            } catch (e) {
-                console.log('reCAPTCHA not available:', e);
-            }
-        }
-
-        // Set loading state
         setLoadingState(true);
 
         try {
-            // Prepare submission data
+            // Execute Enterprise reCAPTCHA v3
+            console.log('Executing Enterprise reCAPTCHA v3...');
+
+            await grecaptcha.enterprise.ready(async () => {
+                try {
+                    const token = await grecaptcha.enterprise.execute(RECAPTCHA_SITE_KEY, {
+                        action: 'SUBMIT_FORM'
+                    });
+
+                    console.log('Enterprise reCAPTCHA token obtained:', token ? 'Success' : 'Failed');
+
+                    if (!token) {
+                        throw new Error('reCAPTCHA token generation failed');
+                    }
+
+                    // Submit form with token
+                    await submitFormData(validation.data, token);
+
+                } catch (recaptchaError) {
+                    console.error('Enterprise reCAPTCHA error:', recaptchaError);
+                    showError('reCAPTCHA verification failed. Please try again.');
+                    setLoadingState(false);
+                }
+            });
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showError('Unable to submit form. Please try again.');
+            setLoadingState(false);
+        }
+
+        return false;
+    }
+
+    // Submit form data to server
+    async function submitFormData(formData, recaptchaToken) {
+        try {
             const submissionData = {
-                ...validation.data,
+                ...formData,
                 recaptcha: recaptchaToken,
                 timestamp: new Date().toISOString(),
                 userAgent: navigator.userAgent,
                 source: 'property-inquiry-form'
             };
 
-            console.log('Submitting to:', getApiUrl());
+            console.log('Submitting to Netlify function...');
 
-            // Submit to Netlify function
-            const response = await fetch(getApiUrl(), {
+            const response = await fetch('/.netlify/functions/sendEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -339,14 +297,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const responseData = await response.json();
 
             if (!response.ok) {
-                throw new Error(responseData.error || responseData.details || 'Failed to submit form');
+                throw new Error(responseData.error || 'Failed to submit form');
             }
 
             // Success!
-            lastSubmitTime = now;
+            lastSubmitTime = Date.now();
             showSuccess();
 
-            // Optional: Track successful submission
+            // Track successful submission
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', {
                     'event_category': 'engagement',
@@ -357,14 +315,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (error) {
             console.error('Form submission error:', error);
 
-            // Show user-friendly error message
             let errorMessage = 'Unable to submit form. Please try again.';
 
             if (error.message.includes('reCAPTCHA')) {
                 errorMessage = 'reCAPTCHA verification failed. Please try again.';
             } else if (error.message.includes('rate limit')) {
                 errorMessage = 'Too many requests. Please wait a moment and try again.';
-            } else if (error.message.includes('network') || error.message.includes('fetch')) {
+            } else if (error.message.includes('network')) {
                 errorMessage = 'Network error. Please check your connection and try again.';
             }
 
@@ -373,33 +330,24 @@ document.addEventListener('DOMContentLoaded', function () {
         } finally {
             setLoadingState(false);
         }
-
-        return false; // Always return false to prevent default behavior
     }
 
     // ═══════════════════════════════════════════════════════════════════════════════════
-    // 🚀 INITIALIZATION - FIXED VERSION
+    // 🚀 INITIALIZATION
     // ═══════════════════════════════════════════════════════════════════════════════════
 
     function initializeForm() {
         console.log('Initializing form...');
 
-        // Check if form exists
         if (!form) {
-            console.error('Property inquiry form not found! Looking for ID: propertyInquiryForm');
-            // Try to find form by other means
-            const forms = document.querySelectorAll('form');
-            console.log('Available forms:', Array.from(forms).map(f => f.id || f.className));
+            console.error('Form not found! Looking for ID: propertyInquiryForm');
             return;
         }
 
-        // Check required elements
         if (!submitButton) {
             console.error('Submit button not found! Looking for ID: formSubmitButton');
             return;
         }
-
-        console.log('Form elements found successfully');
 
         // Hide messages initially
         hideMessages();
@@ -407,115 +355,40 @@ document.addEventListener('DOMContentLoaded', function () {
             loadingSpinner.style.display = 'none';
         }
 
-        // CRITICAL: Remove any existing event listeners and add new one
-        form.removeEventListener('submit', handleFormSubmission);
+        // Add form submit event listener
         form.addEventListener('submit', handleFormSubmission);
 
-        // Also add click listener to submit button as backup
-        submitButton.removeEventListener('click', handleButtonClick);
-        submitButton.addEventListener('click', handleButtonClick);
-
-        // Add real-time validation (optional)
-        addRealTimeValidation();
+        // Add click listener to submit button as backup
+        submitButton.addEventListener('click', function (event) {
+            if (submitButton.type !== 'submit') {
+                event.preventDefault();
+                const submitEvent = new Event('submit', {
+                    bubbles: true,
+                    cancelable: true
+                });
+                form.dispatchEvent(submitEvent);
+            }
+        });
 
         console.log('Form initialized successfully');
     }
 
-    // Handle button clicks (backup method)
-    function handleButtonClick(event) {
-        console.log('Submit button clicked');
-
-        // Prevent default button behavior
-        event.preventDefault();
-        event.stopPropagation();
-
-        // Manually trigger form submission
-        const submitEvent = new Event('submit', {
-            bubbles: true,
-            cancelable: true
-        });
-
-        form.dispatchEvent(submitEvent);
-
-        return false;
-    }
-
-    // Add real-time validation
-    function addRealTimeValidation() {
-        if (!nameInput || !emailInput || !phoneInput || !locationInput) return;
-
-        // Name validation
-        nameInput.addEventListener('blur', function () {
-            const value = this.value.trim();
-            if (value && !isValidName(value)) {
-                this.style.borderColor = '#e74c3c';
-                this.title = 'Please enter a valid name (2-50 characters, letters only)';
-            } else {
-                this.style.borderColor = '';
-                this.title = '';
-            }
-        });
-
-        // Email validation
-        emailInput.addEventListener('blur', function () {
-            const value = this.value.trim();
-            if (value && !isValidEmail(value)) {
-                this.style.borderColor = '#e74c3c';
-                this.title = 'Please enter a valid email address';
-            } else {
-                this.style.borderColor = '';
-                this.title = '';
-            }
-        });
-
-        // Phone validation
-        phoneInput.addEventListener('blur', function () {
-            const value = this.value.trim();
-            if (value && !isValidPhone(value)) {
-                this.style.borderColor = '#e74c3c';
-                this.title = 'Please enter a valid phone number';
-            } else {
-                this.style.borderColor = '';
-                this.title = '';
-            }
-        });
-
-        // Location validation
-        locationInput.addEventListener('blur', function () {
-            const value = this.value.trim();
-            if (value && !isValidLocation(value)) {
-                this.style.borderColor = '#e74c3c';
-                this.title = 'Please enter a valid location';
-            } else {
-                this.style.borderColor = '';
-                this.title = '';
-            }
-        });
-
-        // Clear error styling on focus
-        [nameInput, emailInput, phoneInput, locationInput].forEach(input => {
-            input.addEventListener('focus', function () {
-                this.style.borderColor = '';
-                this.title = '';
-            });
-        });
-
-        console.log('Real-time validation added');
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════════════════
-    // 🏁 START APPLICATION
-    // ═══════════════════════════════════════════════════════════════════════════════════
-
-    // Initialize with a small delay to ensure DOM is fully ready
-    setTimeout(() => {
-        initializeForm();
-    }, 100);
-
-    // Also initialize immediately in case DOM is already ready
+    // Initialize the form
     initializeForm();
 
-    // Expose utilities for debugging
+    // Wait for Enterprise reCAPTCHA to load
+    function checkEnterpriseRecaptcha() {
+        if (typeof grecaptcha !== 'undefined' && grecaptcha.enterprise && grecaptcha.enterprise.ready) {
+            console.log('Enterprise reCAPTCHA v3 loaded successfully');
+        } else {
+            console.log('Waiting for Enterprise reCAPTCHA to load...');
+            setTimeout(checkEnterpriseRecaptcha, 1000);
+        }
+    }
+
+    checkEnterpriseRecaptcha();
+
+    // Debug utilities
     window.FormDebug = {
         form: form,
         submitButton: submitButton,
@@ -523,37 +396,22 @@ document.addEventListener('DOMContentLoaded', function () {
         reset: resetForm,
         showError: showError,
         showSuccess: showSuccess,
-        testSubmit: () => {
-            console.log('Testing form submission...');
-            const event = new Event('submit', { bubbles: true, cancelable: true });
-            form.dispatchEvent(event);
+        testEnterpriseRecaptcha: async () => {
+            console.log('Testing Enterprise reCAPTCHA...');
+            try {
+                await grecaptcha.enterprise.ready(async () => {
+                    const token = await grecaptcha.enterprise.execute(RECAPTCHA_SITE_KEY, {
+                        action: 'TEST'
+                    });
+                    console.log('Enterprise reCAPTCHA test token:', token);
+                    return token;
+                });
+            } catch (e) {
+                console.error('Enterprise reCAPTCHA test failed:', e);
+                return null;
+            }
         }
     };
 
-    console.log('Form script loaded successfully');
+    console.log('Enterprise reCAPTCHA form script loaded successfully');
 });
-
-// Additional safeguards to prevent page reload
-window.addEventListener('beforeunload', function (event) {
-    // Only show warning if form is being submitted
-    const formSubmitButton = document.getElementById('formSubmitButton');
-    if (formSubmitButton && formSubmitButton.disabled) {
-        event.preventDefault();
-        event.returnValue = 'Form is being submitted. Are you sure you want to leave?';
-        return event.returnValue;
-    }
-});
-
-// Prevent any accidental form submissions
-document.addEventListener('submit', function (event) {
-    const target = event.target;
-
-    // Only handle our specific form
-    if (target && target.id === 'propertyInquiryForm') {
-        console.log('Form submit event intercepted');
-        // The event will be handled by our form handler
-        return;
-    }
-});
-
-console.log('Form submission prevention script loaded');
