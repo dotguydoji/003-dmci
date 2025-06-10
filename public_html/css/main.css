@@ -1151,3 +1151,9 @@ body {
         outline: 3px solid #007cba;
         outline-offset: 2px;
       }
+
+      .logo-img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain; /* Prevents distortion */
+}
