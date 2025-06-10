@@ -49,25 +49,29 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       // Navigation
-      prevBtn.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        showImage(currentImageIndex);
-      });
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          showImage(currentImageIndex);
+        });
+      }
 
-      nextBtn.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showImage(currentImageIndex);
-      });
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          showImage(currentImageIndex);
+        });
+      }
 
-      // Keyboard navigation
+      // Keyboard navigation  
       document.addEventListener('keydown', (e) => {
-        if (modal.style.display === 'none') return;
+        if (modal.style.display === 'none' || modal.style.display === '') return;
 
-        if (e.key === 'ArrowLeft') {
+        if (e.key === 'ArrowLeft' && prevBtn) {
           currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
           showImage(currentImageIndex);
         }
-        else if (e.key === 'ArrowRight') {
+        else if (e.key === 'ArrowRight' && nextBtn) {
           currentImageIndex = (currentImageIndex + 1) % images.length;
           showImage(currentImageIndex);
         }
@@ -102,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = modal.querySelector('.property-next-btn');
     const dotsContainer = modal.querySelector('.property-dots-container');
 
-    // Check if all required elements exist
-    if (modalImg && closeBtn && prevBtn && nextBtn && dotsContainer) {
+    // Check if all required elements exist (relaxed check)
+    if (modalImg && closeBtn && dotsContainer) {
       let currentImageIndex = 0;
       const images = Array.from(gallery.querySelectorAll('img'));
 
@@ -117,7 +121,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const dots = Array.from(dotsContainer.children);
 
+      // Open modal
+      gallery.addEventListener('click', function (e) {
+        const clickedItem = e.target.closest('.property-gallery-item');
+        if (!clickedItem) return;
 
+        const clickedImg = clickedItem.querySelector('img');
+        currentImageIndex = images.indexOf(clickedImg);
+        showImage(currentImageIndex);
+        modal.style.display = 'block';
+      });
 
       // Close modal
       closeBtn.addEventListener('click', () => {
