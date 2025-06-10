@@ -1,0 +1,55 @@
+# Robots.txt for DMCI Condo Living Website
+# Allow all web crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Specific permissions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Disallow access to system files and directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /node_modules/
+Disallow: /package*.json
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /.htaccess
+Disallow: /.*
+
+# Allow access to important resources
+Allow: /images/
+Allow: /public_html/images/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.dmcicondoliving.com/sitemap.xml
