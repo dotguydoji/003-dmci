@@ -44,78 +44,24 @@
     <!-- ===== CANONICAL URL ===== -->
     <link rel="canonical" href="https://www.dmcicondoliving.com/index.html" />
 
-    <!-- ===== CRITICAL CSS (Preload with high priority) ===== -->
-    <link
-      rel="preload"
-      href="css/main.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+    <!-- ===== CRITICAL CSS (Direct loading - highest priority) ===== -->
+    <link rel="stylesheet" href="css/main.css" />
 
-    <!-- ===== NON-CRITICAL CSS (Deferred loading) ===== -->
-    <link
-      rel="preload"
-      href="css/responsive-design.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="css/responsive-design.css"
-    /></noscript>
+    <!-- ===== IMPORTANT CSS (Direct loading) ===== -->
+    <link rel="stylesheet" href="css/responsive-design.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/whatsapp.css" />
+    <link rel="stylesheet" href="css/cookie_consent.css" />
+
+    <!-- ===== EXTERNAL FONTS (Direct loading with display optimization) ===== -->
 
     <link
-      rel="preload"
-      href="css/search.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/search.css" /></noscript>
-
-    <link
-      rel="preload"
-      href="css/whatsapp.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/whatsapp.css" /></noscript>
-
-    <link
-      rel="preload"
-      href="css/cookie_consent.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/cookie_consent.css" /></noscript>
-
-    <!-- ===== EXTERNAL FONTS (Optimized loading) ===== -->
-    <link
-      rel="preload"
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    /></noscript>
-
-    <!-- ===== EXISTING GOOGLE ANALYTICS (Optimized) ===== -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-5PZMV7DBVF");
-    </script>
 
     <!-- ===== SEO META TAGS ===== -->
     <meta
@@ -211,7 +157,17 @@
       }
     </script>
 
-    <!-- ===== EXTERNAL SCRIPTS (Non-blocking) ===== -->
+    <!-- ===== GOOGLE ANALYTICS (Inline for better control) ===== -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5PZMV7DBVF");
+    </script>
+
+    <!-- ===== EXTERNAL SCRIPTS (Optimized loading) ===== -->
     <!-- Load Google Analytics script asynchronously -->
     <script
       async
