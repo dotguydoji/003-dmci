@@ -404,34 +404,45 @@
         font-size: 18px;
     }
 }
+/* Replace your mobile media query with this: */
+
 @media screen and (max-width: 767px) {
     .whatsapp-btn {
         bottom: 4vh;
         right: 4vw;
-        padding: 2vh 4vw;
+        /* Keep these circular properties: */
+        width: 60px;           /* Fixed width */
+        height: 60px;          /* Fixed height */
+        border-radius: 50%;    /* Keep it circular */
+        padding: 0;            /* No padding */
         font-size: 1em;
-        height: 6vh;
-        line-height: 1.2;
     }
+    
     .whatsapp-btn i {
         font-size: 1.2em;
     }
+    
     .quick-contact-btn {
-        bottom: 12vh;
+        bottom: 14vh;
         right: 4vw;
-        padding: 2vh 4vw;
+        /* Keep these circular properties: */
+        width: 60px;           /* Fixed width */
+        height: 60px;          /* Fixed height */
+        border-radius: 50%;    /* Keep it circular */
+        padding: 0;            /* No padding */
         font-size: 1em;
-        height: 6vh;
-        line-height: 1.2;
     }
+    
     .quick-contact-btn i {
         font-size: 1em;
     }
+    
     .whatsapp-chatbox,
     .quick-contact-popup {
         width: 80vw;
         right: 4vw;
     }
+    
     .quick-contact-popup {
         bottom: 20vh;
         padding: 5vw;
