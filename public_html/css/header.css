@@ -225,7 +225,6 @@
     align-items: center;
     gap: 2.5rem;
     transition: left 0.3s ease-in-out;
-    z-index: 10000; /* Increased from 999 to 10000 */
     transform: none;
     position: fixed;
   }
