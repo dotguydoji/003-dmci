@@ -190,7 +190,7 @@ body {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://www.dmcihomes.com/uploads/news/dmci-homes-to-introduce-premium-loft-units-1748836155107.jpg");
+    url("../images/bg-fortis.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -396,6 +396,27 @@ body {
   color: #ccc;
   font-size: 0.85rem;
 }
+
+.project-card1{
+  background: url("../images/bg-fortis.jpg");
+}
+.project-card2{
+  background: url("../images/bg-kalea.jpg");
+}
+.project-card3{
+  background: url("../images/bg-solmera.jpg");
+}
+
+.project-card1,
+.project-card2,
+.project-card3 {
+  background-size: cover;      /* ensures image covers the area */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat;/* avoids image tiling */
+  height: 90vh;               /* or a fixed height like 600px */
+  width: 100%;                 /* optional, keeps it responsive */
+}
+
 .carousel-section {
   height: 100vh;
   display: flex;
