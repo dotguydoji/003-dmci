@@ -13,7 +13,7 @@ if (!whatsappButton || !chatbox || !closeChat || !sendMessage || !chatInput) {
     console.error('Required WhatsApp elements not found');
 }
 const config = {
-    phone: '6399297044108',
+    phone: '639297044108',
     minMessageLength: 2,
     rateLimit: 3000,
     maxMessageLength: 500
