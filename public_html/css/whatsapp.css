@@ -92,7 +92,19 @@
 }
 
 #send-message {
-    display: none;
+    padding: 12px 16px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 60px;
+}
+
+#send-message:hover {
+    background: #128C7E;
 }
 
 .whatsapp-btn {
